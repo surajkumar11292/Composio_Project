@@ -1,0 +1,17 @@
+[
+  {
+    "url": "https://github.com/pricing",
+    "title": "Pricing \u00b7 Plans for every developer \u00b7 GitHub",
+    "content": "GitHub, the complete developer platform \u30fb $ 4 USD per user 12 months. Access to GitHub Codespaces \u30fb developers can code, collaborate. MCP Registry Support"
+  },
+  {
+    "url": "https://www.scalekit.com/blog/github-mcp-vs-api",
+    "title": "GitHub MCP vs GitHub API for AI Agents: Auth Architecture",
+    "content": "GitHub MCP requires a Copilot license and lacks GitHub App tokens. Compare MCP vs REST API auth models, toolset gaps, and rate limits for ..."
+  },
+  {
+    "url": "https://zuplo.com/videos/building-a-monetized-api-part-3",
+    "title": "Video: Control Access to MCP Servers (2026-04-02)",
+    "content": "Monetize an MCP server on Zuplo by gating access to paid plans, blocking free users with a 403. Connect Zuplo to GitHub, enable self-serve."
+  }
+]

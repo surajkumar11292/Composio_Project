@@ -1,0 +1,17 @@
+[
+  {
+    "url": "https://developer.salesforce.com/docs/platform/connect-rest-api/guide/intro_using_oauth.html",
+    "title": "OAuth and Connect REST API",
+    "content": "Connect REST API uses OAuth to securely identify your application before connecting to Salesforce. To use Connect REST API, create a REST entry point."
+  },
+  {
+    "url": "https://developer.salesforce.com/docs/platform/api-rest/guide/quickstart-oauth.html",
+    "title": "Step Two: Set Up Authentication | Quick Start | REST API ...",
+    "content": "To successfully send requests, REST API requires an access token obtained by authentication. Although you can create and authenticate against your own."
+  },
+  {
+    "url": "https://developer.salesforce.com/docs/platform/api-rest/guide/intro-oauth-and-connected-apps.html",
+    "title": "Authorization Through External Client Apps or Connected ...",
+    "content": "For a client application to access REST API resources, it must be authorized as a safe visitor. To implement this authorization, use either an externa."
+  }
+]

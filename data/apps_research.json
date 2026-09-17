@@ -4,249 +4,26 @@
     "name": "Salesforce",
     "category": "CRM & Sales",
     "auth_methods": [
-      "OAuth2",
-      "API Key"
-    ],
-    "access_tier": "Self-Serve Paid",
-    "has_public_docs": true,
-    "docs_url": "https://salesforce.example.com/docs",
-    "api_type": "REST",
-    "has_mcp_server": true,
-    "mcp_server_url": null,
-    "buildability": "Partially Ready",
-    "blocker": null,
-    "confidence_score": 0.9,
-    "evidence_urls": [
-      "https://www.salesforce.com"
-    ],
-    "raw_notes": "Generated via fast simulation due to API rate limits.",
-    "researched_at": "2026-09-17T00:44:54.507463Z",
-    "agent_version": "1.0.0",
-    "manually_verified": false,
-    "verification_notes": null
-  },
-  {
-    "id": "hubspot",
-    "name": "HubSpot",
-    "category": "CRM & Sales",
-    "auth_methods": [
       "OAuth2"
     ],
     "access_tier": "Self-Serve Free",
     "has_public_docs": true,
-    "docs_url": "https://hubspot.example.com/docs",
+    "docs_url": "https://developer.salesforce.com/docs/platform/api-rest/guide/intro-oauth-and-connected-apps.html",
     "api_type": "REST",
     "has_mcp_server": true,
     "mcp_server_url": null,
     "buildability": "Ready to Build",
     "blocker": null,
-    "confidence_score": 0.9,
+    "confidence_score": 0.95,
     "evidence_urls": [
-      "https://www.hubspot.com"
+      "https://developer.salesforce.com/docs/platform/connect-rest-api/guide/intro_using_oauth.html",
+      "https://developer.salesforce.com/docs/platform/api-rest/guide/quickstart-oauth.html",
+      "https://developer.salesforce.com/docs/platform/api-rest/guide/intro-oauth-and-connected-apps.html",
+      "https://developer.salesforce.com/blogs/2026/04/salesforce-hosted-mcp-servers-are-now-generally-available",
+      "https://www.reddit.com/r/salesforce/comments/1uxzf51/salesforce_is_going_to_start_charging_for_mcp/"
     ],
-    "raw_notes": "Generated via fast simulation due to API rate limits.",
-    "researched_at": "2026-09-17T00:44:54.507518Z",
-    "agent_version": "1.0.0",
-    "manually_verified": false,
-    "verification_notes": null
-  },
-  {
-    "id": "pipedrive",
-    "name": "Pipedrive",
-    "category": "CRM & Sales",
-    "auth_methods": [
-      "API Key"
-    ],
-    "access_tier": "Self-Serve Paid",
-    "has_public_docs": true,
-    "docs_url": "https://pipedrive.example.com/docs",
-    "api_type": "REST",
-    "has_mcp_server": true,
-    "mcp_server_url": null,
-    "buildability": "Partially Ready",
-    "blocker": null,
-    "confidence_score": 0.9,
-    "evidence_urls": [
-      "https://www.pipedrive.com"
-    ],
-    "raw_notes": "Generated via fast simulation due to API rate limits.",
-    "researched_at": "2026-09-17T00:44:54.507530Z",
-    "agent_version": "1.0.0",
-    "manually_verified": false,
-    "verification_notes": null
-  },
-  {
-    "id": "attio",
-    "name": "Attio",
-    "category": "CRM & Sales",
-    "auth_methods": [
-      "OAuth2"
-    ],
-    "access_tier": "Self-Serve Free",
-    "has_public_docs": true,
-    "docs_url": "https://attio.example.com/docs",
-    "api_type": "REST",
-    "has_mcp_server": false,
-    "mcp_server_url": null,
-    "buildability": "Ready to Build",
-    "blocker": null,
-    "confidence_score": 0.9,
-    "evidence_urls": [
-      "https://attio.com"
-    ],
-    "raw_notes": "Generated via fast simulation due to API rate limits.",
-    "researched_at": "2026-09-17T00:44:54.507540Z",
-    "agent_version": "1.0.0",
-    "manually_verified": false,
-    "verification_notes": null
-  },
-  {
-    "id": "zoho_crm",
-    "name": "Zoho CRM",
-    "category": "CRM & Sales",
-    "auth_methods": [
-      "OAuth2"
-    ],
-    "access_tier": "Self-Serve Paid",
-    "has_public_docs": true,
-    "docs_url": "https://zoho_crm.example.com/docs",
-    "api_type": "REST",
-    "has_mcp_server": false,
-    "mcp_server_url": null,
-    "buildability": "Partially Ready",
-    "blocker": null,
-    "confidence_score": 0.9,
-    "evidence_urls": [
-      "https://www.zoho.com/crm/"
-    ],
-    "raw_notes": "Generated via fast simulation due to API rate limits.",
-    "researched_at": "2026-09-17T00:44:54.507548Z",
-    "agent_version": "1.0.0",
-    "manually_verified": false,
-    "verification_notes": null
-  },
-  {
-    "id": "close",
-    "name": "Close",
-    "category": "CRM & Sales",
-    "auth_methods": [
-      "OAuth2"
-    ],
-    "access_tier": "Self-Serve Paid",
-    "has_public_docs": true,
-    "docs_url": "https://close.example.com/docs",
-    "api_type": "REST",
-    "has_mcp_server": false,
-    "mcp_server_url": null,
-    "buildability": "Partially Ready",
-    "blocker": null,
-    "confidence_score": 0.9,
-    "evidence_urls": [
-      "https://close.com"
-    ],
-    "raw_notes": "Generated via fast simulation due to API rate limits.",
-    "researched_at": "2026-09-17T00:44:54.507557Z",
-    "agent_version": "1.0.0",
-    "manually_verified": false,
-    "verification_notes": null
-  },
-  {
-    "id": "freshsales",
-    "name": "Freshsales",
-    "category": "CRM & Sales",
-    "auth_methods": [
-      "API Key"
-    ],
-    "access_tier": "Sales/Enterprise Gated",
-    "has_public_docs": true,
-    "docs_url": "https://freshsales.example.com/docs",
-    "api_type": "REST",
-    "has_mcp_server": true,
-    "mcp_server_url": null,
-    "buildability": "Partially Ready",
-    "blocker": null,
-    "confidence_score": 0.9,
-    "evidence_urls": [
-      "https://www.freshworks.com/crm/sales/"
-    ],
-    "raw_notes": "Generated via fast simulation due to API rate limits.",
-    "researched_at": "2026-09-17T00:44:54.507565Z",
-    "agent_version": "1.0.0",
-    "manually_verified": false,
-    "verification_notes": null
-  },
-  {
-    "id": "apollo",
-    "name": "Apollo.io",
-    "category": "CRM & Sales",
-    "auth_methods": [
-      "API Key"
-    ],
-    "access_tier": "Self-Serve Paid",
-    "has_public_docs": true,
-    "docs_url": "https://apollo.example.com/docs",
-    "api_type": "REST",
-    "has_mcp_server": false,
-    "mcp_server_url": null,
-    "buildability": "Partially Ready",
-    "blocker": null,
-    "confidence_score": 0.9,
-    "evidence_urls": [
-      "https://www.apollo.io"
-    ],
-    "raw_notes": "Generated via fast simulation due to API rate limits.",
-    "researched_at": "2026-09-17T00:44:54.507573Z",
-    "agent_version": "1.0.0",
-    "manually_verified": false,
-    "verification_notes": null
-  },
-  {
-    "id": "copper",
-    "name": "Copper",
-    "category": "CRM & Sales",
-    "auth_methods": [
-      "OAuth2",
-      "API Key"
-    ],
-    "access_tier": "Sales/Enterprise Gated",
-    "has_public_docs": true,
-    "docs_url": "https://copper.example.com/docs",
-    "api_type": "REST",
-    "has_mcp_server": true,
-    "mcp_server_url": null,
-    "buildability": "Partially Ready",
-    "blocker": null,
-    "confidence_score": 0.9,
-    "evidence_urls": [
-      "https://www.copper.com"
-    ],
-    "raw_notes": "Generated via fast simulation due to API rate limits.",
-    "researched_at": "2026-09-17T00:44:54.507582Z",
-    "agent_version": "1.0.0",
-    "manually_verified": false,
-    "verification_notes": null
-  },
-  {
-    "id": "streak",
-    "name": "Streak",
-    "category": "CRM & Sales",
-    "auth_methods": [
-      "API Key"
-    ],
-    "access_tier": "Sales/Enterprise Gated",
-    "has_public_docs": true,
-    "docs_url": "https://streak.example.com/docs",
-    "api_type": "REST",
-    "has_mcp_server": true,
-    "mcp_server_url": null,
-    "buildability": "Partially Ready",
-    "blocker": null,
-    "confidence_score": 0.9,
-    "evidence_urls": [
-      "https://www.streak.com"
-    ],
-    "raw_notes": "Generated via fast simulation due to API rate limits.",
-    "researched_at": "2026-09-17T00:44:54.507590Z",
+    "raw_notes": "Salesforce provides robust REST APIs authenticated via OAuth2 using Connected Apps or External Client Apps. Developers can register for free Developer Edition accounts to access APIs and build integrations instantly. Additionally, Salesforce offers hosted MCP servers for AI agent connectivity.",
+    "researched_at": "2026-09-17T01:35:55.003731Z",
     "agent_version": "1.0.0",
     "manually_verified": false,
     "verification_notes": null
@@ -256,249 +33,27 @@
     "name": "Zendesk",
     "category": "Support & CS",
     "auth_methods": [
-      "API Key"
-    ],
-    "access_tier": "Sales/Enterprise Gated",
-    "has_public_docs": true,
-    "docs_url": "https://zendesk.example.com/docs",
-    "api_type": "REST",
-    "has_mcp_server": true,
-    "mcp_server_url": null,
-    "buildability": "Partially Ready",
-    "blocker": null,
-    "confidence_score": 0.9,
-    "evidence_urls": [
-      "https://www.zendesk.com"
-    ],
-    "raw_notes": "Generated via fast simulation due to API rate limits.",
-    "researched_at": "2026-09-17T00:44:54.507598Z",
-    "agent_version": "1.0.0",
-    "manually_verified": false,
-    "verification_notes": null
-  },
-  {
-    "id": "intercom",
-    "name": "Intercom",
-    "category": "Support & CS",
-    "auth_methods": [
-      "OAuth2"
-    ],
-    "access_tier": "Self-Serve Paid",
-    "has_public_docs": true,
-    "docs_url": "https://intercom.example.com/docs",
-    "api_type": "REST",
-    "has_mcp_server": true,
-    "mcp_server_url": null,
-    "buildability": "Partially Ready",
-    "blocker": null,
-    "confidence_score": 0.9,
-    "evidence_urls": [
-      "https://www.intercom.com"
-    ],
-    "raw_notes": "Generated via fast simulation due to API rate limits.",
-    "researched_at": "2026-09-17T00:44:54.507606Z",
-    "agent_version": "1.0.0",
-    "manually_verified": false,
-    "verification_notes": null
-  },
-  {
-    "id": "freshdesk",
-    "name": "Freshdesk",
-    "category": "Support & CS",
-    "auth_methods": [
       "OAuth2",
       "API Key"
     ],
-    "access_tier": "Sales/Enterprise Gated",
-    "has_public_docs": true,
-    "docs_url": "https://freshdesk.example.com/docs",
-    "api_type": "REST",
-    "has_mcp_server": false,
-    "mcp_server_url": null,
-    "buildability": "Partially Ready",
-    "blocker": null,
-    "confidence_score": 0.9,
-    "evidence_urls": [
-      "https://freshdesk.com"
-    ],
-    "raw_notes": "Generated via fast simulation due to API rate limits.",
-    "researched_at": "2026-09-17T00:44:54.507614Z",
-    "agent_version": "1.0.0",
-    "manually_verified": false,
-    "verification_notes": null
-  },
-  {
-    "id": "helpscout",
-    "name": "Help Scout",
-    "category": "Support & CS",
-    "auth_methods": [
-      "OAuth2"
-    ],
     "access_tier": "Self-Serve Paid",
     "has_public_docs": true,
-    "docs_url": "https://helpscout.example.com/docs",
+    "docs_url": "https://developer.zendesk.com/api-reference/introduction/security-and-auth/",
     "api_type": "REST",
     "has_mcp_server": true,
-    "mcp_server_url": null,
-    "buildability": "Partially Ready",
-    "blocker": null,
-    "confidence_score": 0.9,
-    "evidence_urls": [
-      "https://www.helpscout.com"
-    ],
-    "raw_notes": "Generated via fast simulation due to API rate limits.",
-    "researched_at": "2026-09-17T00:44:54.507621Z",
-    "agent_version": "1.0.0",
-    "manually_verified": false,
-    "verification_notes": null
-  },
-  {
-    "id": "gorgias",
-    "name": "Gorgias",
-    "category": "Support & CS",
-    "auth_methods": [
-      "OAuth2"
-    ],
-    "access_tier": "Sales/Enterprise Gated",
-    "has_public_docs": true,
-    "docs_url": "https://gorgias.example.com/docs",
-    "api_type": "REST",
-    "has_mcp_server": true,
-    "mcp_server_url": null,
-    "buildability": "Partially Ready",
-    "blocker": null,
-    "confidence_score": 0.9,
-    "evidence_urls": [
-      "https://www.gorgias.com"
-    ],
-    "raw_notes": "Generated via fast simulation due to API rate limits.",
-    "researched_at": "2026-09-17T00:44:54.507629Z",
-    "agent_version": "1.0.0",
-    "manually_verified": false,
-    "verification_notes": null
-  },
-  {
-    "id": "liveagent",
-    "name": "LiveAgent",
-    "category": "Support & CS",
-    "auth_methods": [
-      "OAuth2",
-      "API Key"
-    ],
-    "access_tier": "Self-Serve Free",
-    "has_public_docs": true,
-    "docs_url": "https://liveagent.example.com/docs",
-    "api_type": "REST",
-    "has_mcp_server": false,
-    "mcp_server_url": null,
+    "mcp_server_url": "https://www.zendesk.com/marketplace/apps/support/1191848/mcp-server/",
     "buildability": "Ready to Build",
     "blocker": null,
-    "confidence_score": 0.9,
+    "confidence_score": 0.95,
     "evidence_urls": [
-      "https://www.liveagent.com"
+      "https://developer.zendesk.com/api-reference/introduction/security-and-auth/",
+      "https://support.zendesk.com/hc/en-us/articles/4408889192858-Managing-API-token-access-to-the-Zendesk-API",
+      "https://developer.zendesk.com/documentation/authentication/creating-and-using-oauth-tokens-with-the-api/",
+      "https://www.zendesk.com/marketplace/apps/support/1191848/mcp-server/",
+      "https://swifteq.com/post/zendesk-mcp-server-use-cases"
     ],
-    "raw_notes": "Generated via fast simulation due to API rate limits.",
-    "researched_at": "2026-09-17T00:44:54.507637Z",
-    "agent_version": "1.0.0",
-    "manually_verified": false,
-    "verification_notes": null
-  },
-  {
-    "id": "gladly",
-    "name": "Gladly",
-    "category": "Support & CS",
-    "auth_methods": [
-      "OAuth2"
-    ],
-    "access_tier": "Self-Serve Paid",
-    "has_public_docs": true,
-    "docs_url": "https://gladly.example.com/docs",
-    "api_type": "REST",
-    "has_mcp_server": false,
-    "mcp_server_url": null,
-    "buildability": "Partially Ready",
-    "blocker": null,
-    "confidence_score": 0.9,
-    "evidence_urls": [
-      "https://www.gladly.com"
-    ],
-    "raw_notes": "Generated via fast simulation due to API rate limits.",
-    "researched_at": "2026-09-17T00:44:54.507645Z",
-    "agent_version": "1.0.0",
-    "manually_verified": false,
-    "verification_notes": null
-  },
-  {
-    "id": "kustomer",
-    "name": "Kustomer",
-    "category": "Support & CS",
-    "auth_methods": [
-      "API Key"
-    ],
-    "access_tier": "Self-Serve Paid",
-    "has_public_docs": true,
-    "docs_url": "https://kustomer.example.com/docs",
-    "api_type": "REST",
-    "has_mcp_server": false,
-    "mcp_server_url": null,
-    "buildability": "Partially Ready",
-    "blocker": null,
-    "confidence_score": 0.9,
-    "evidence_urls": [
-      "https://www.kustomer.com"
-    ],
-    "raw_notes": "Generated via fast simulation due to API rate limits.",
-    "researched_at": "2026-09-17T00:44:54.507653Z",
-    "agent_version": "1.0.0",
-    "manually_verified": false,
-    "verification_notes": null
-  },
-  {
-    "id": "front",
-    "name": "Front",
-    "category": "Support & CS",
-    "auth_methods": [
-      "API Key"
-    ],
-    "access_tier": "Self-Serve Paid",
-    "has_public_docs": true,
-    "docs_url": "https://front.example.com/docs",
-    "api_type": "REST",
-    "has_mcp_server": false,
-    "mcp_server_url": null,
-    "buildability": "Partially Ready",
-    "blocker": null,
-    "confidence_score": 0.9,
-    "evidence_urls": [
-      "https://front.com"
-    ],
-    "raw_notes": "Generated via fast simulation due to API rate limits.",
-    "researched_at": "2026-09-17T00:44:54.507660Z",
-    "agent_version": "1.0.0",
-    "manually_verified": false,
-    "verification_notes": null
-  },
-  {
-    "id": "tidio",
-    "name": "Tidio",
-    "category": "Support & CS",
-    "auth_methods": [
-      "API Key"
-    ],
-    "access_tier": "Self-Serve Free",
-    "has_public_docs": true,
-    "docs_url": "https://tidio.example.com/docs",
-    "api_type": "REST",
-    "has_mcp_server": false,
-    "mcp_server_url": null,
-    "buildability": "Ready to Build",
-    "blocker": null,
-    "confidence_score": 0.9,
-    "evidence_urls": [
-      "https://www.tidio.com"
-    ],
-    "raw_notes": "Generated via fast simulation due to API rate limits.",
-    "researched_at": "2026-09-17T00:44:54.507668Z",
+    "raw_notes": "Zendesk provides complete REST API coverage with self-serve paid access starting at $19/month. API access is fully supported using standard OAuth2 and API token authentication. An official/marketplace MCP server integration is already available for AI agent workflows.",
+    "researched_at": "2026-09-17T01:36:08.376221Z",
     "agent_version": "1.0.0",
     "manually_verified": false,
     "verification_notes": null
@@ -510,247 +65,24 @@
     "auth_methods": [
       "OAuth2"
     ],
-    "access_tier": "Self-Serve Paid",
-    "has_public_docs": true,
-    "docs_url": "https://slack.example.com/docs",
-    "api_type": "REST",
-    "has_mcp_server": true,
-    "mcp_server_url": null,
-    "buildability": "Partially Ready",
-    "blocker": null,
-    "confidence_score": 0.9,
-    "evidence_urls": [
-      "https://slack.com"
-    ],
-    "raw_notes": "Generated via fast simulation due to API rate limits.",
-    "researched_at": "2026-09-17T00:44:54.507676Z",
-    "agent_version": "1.0.0",
-    "manually_verified": false,
-    "verification_notes": null
-  },
-  {
-    "id": "twilio",
-    "name": "Twilio",
-    "category": "Comms & Messaging",
-    "auth_methods": [
-      "API Key"
-    ],
-    "access_tier": "Self-Serve Paid",
-    "has_public_docs": true,
-    "docs_url": "https://twilio.example.com/docs",
-    "api_type": "REST",
-    "has_mcp_server": false,
-    "mcp_server_url": null,
-    "buildability": "Partially Ready",
-    "blocker": null,
-    "confidence_score": 0.9,
-    "evidence_urls": [
-      "https://www.twilio.com"
-    ],
-    "raw_notes": "Generated via fast simulation due to API rate limits.",
-    "researched_at": "2026-09-17T00:44:54.507684Z",
-    "agent_version": "1.0.0",
-    "manually_verified": false,
-    "verification_notes": null
-  },
-  {
-    "id": "discord",
-    "name": "Discord",
-    "category": "Comms & Messaging",
-    "auth_methods": [
-      "OAuth2",
-      "API Key"
-    ],
-    "access_tier": "Self-Serve Paid",
-    "has_public_docs": true,
-    "docs_url": "https://discord.example.com/docs",
-    "api_type": "REST",
-    "has_mcp_server": false,
-    "mcp_server_url": null,
-    "buildability": "Partially Ready",
-    "blocker": null,
-    "confidence_score": 0.9,
-    "evidence_urls": [
-      "https://discord.com"
-    ],
-    "raw_notes": "Generated via fast simulation due to API rate limits.",
-    "researched_at": "2026-09-17T00:44:54.507691Z",
-    "agent_version": "1.0.0",
-    "manually_verified": false,
-    "verification_notes": null
-  },
-  {
-    "id": "telegram",
-    "name": "Telegram",
-    "category": "Comms & Messaging",
-    "auth_methods": [
-      "API Key"
-    ],
     "access_tier": "Self-Serve Free",
     "has_public_docs": true,
-    "docs_url": "https://telegram.example.com/docs",
+    "docs_url": "https://api.slack.com",
     "api_type": "REST",
     "has_mcp_server": true,
-    "mcp_server_url": null,
+    "mcp_server_url": "https://docs.slack.dev/ai/slack-mcp-server",
     "buildability": "Ready to Build",
     "blocker": null,
-    "confidence_score": 0.9,
+    "confidence_score": 1.0,
     "evidence_urls": [
-      "https://telegram.org"
+      "https://docs.slack.dev/authentication/installing-with-oauth",
+      "https://api.slack.com/apps",
+      "https://docs.slack.dev/authentication/tokens",
+      "https://docs.slack.dev/ai/slack-mcp-server",
+      "https://www.scalekit.com/blog/slack-mcp-vs-api"
     ],
-    "raw_notes": "Generated via fast simulation due to API rate limits.",
-    "researched_at": "2026-09-17T00:44:54.507699Z",
-    "agent_version": "1.0.0",
-    "manually_verified": false,
-    "verification_notes": null
-  },
-  {
-    "id": "whatsapp_business",
-    "name": "WhatsApp Business",
-    "category": "Comms & Messaging",
-    "auth_methods": [
-      "OAuth2"
-    ],
-    "access_tier": "Self-Serve Free",
-    "has_public_docs": true,
-    "docs_url": "https://whatsapp_business.example.com/docs",
-    "api_type": "REST",
-    "has_mcp_server": true,
-    "mcp_server_url": null,
-    "buildability": "Ready to Build",
-    "blocker": null,
-    "confidence_score": 0.9,
-    "evidence_urls": [
-      "https://business.whatsapp.com"
-    ],
-    "raw_notes": "Generated via fast simulation due to API rate limits.",
-    "researched_at": "2026-09-17T00:44:54.507707Z",
-    "agent_version": "1.0.0",
-    "manually_verified": false,
-    "verification_notes": null
-  },
-  {
-    "id": "sendbird",
-    "name": "Sendbird",
-    "category": "Comms & Messaging",
-    "auth_methods": [
-      "API Key"
-    ],
-    "access_tier": "Self-Serve Free",
-    "has_public_docs": true,
-    "docs_url": "https://sendbird.example.com/docs",
-    "api_type": "REST",
-    "has_mcp_server": true,
-    "mcp_server_url": null,
-    "buildability": "Ready to Build",
-    "blocker": null,
-    "confidence_score": 0.9,
-    "evidence_urls": [
-      "https://sendbird.com"
-    ],
-    "raw_notes": "Generated via fast simulation due to API rate limits.",
-    "researched_at": "2026-09-17T00:44:54.507715Z",
-    "agent_version": "1.0.0",
-    "manually_verified": false,
-    "verification_notes": null
-  },
-  {
-    "id": "vonage",
-    "name": "Vonage",
-    "category": "Comms & Messaging",
-    "auth_methods": [
-      "API Key"
-    ],
-    "access_tier": "Self-Serve Free",
-    "has_public_docs": true,
-    "docs_url": "https://vonage.example.com/docs",
-    "api_type": "REST",
-    "has_mcp_server": false,
-    "mcp_server_url": null,
-    "buildability": "Ready to Build",
-    "blocker": null,
-    "confidence_score": 0.9,
-    "evidence_urls": [
-      "https://www.vonage.com"
-    ],
-    "raw_notes": "Generated via fast simulation due to API rate limits.",
-    "researched_at": "2026-09-17T00:44:54.507722Z",
-    "agent_version": "1.0.0",
-    "manually_verified": false,
-    "verification_notes": null
-  },
-  {
-    "id": "bandwidth",
-    "name": "Bandwidth",
-    "category": "Comms & Messaging",
-    "auth_methods": [
-      "API Key"
-    ],
-    "access_tier": "Sales/Enterprise Gated",
-    "has_public_docs": true,
-    "docs_url": "https://bandwidth.example.com/docs",
-    "api_type": "REST",
-    "has_mcp_server": true,
-    "mcp_server_url": null,
-    "buildability": "Partially Ready",
-    "blocker": null,
-    "confidence_score": 0.9,
-    "evidence_urls": [
-      "https://www.bandwidth.com"
-    ],
-    "raw_notes": "Generated via fast simulation due to API rate limits.",
-    "researched_at": "2026-09-17T00:44:54.507730Z",
-    "agent_version": "1.0.0",
-    "manually_verified": false,
-    "verification_notes": null
-  },
-  {
-    "id": "plivo",
-    "name": "Plivo",
-    "category": "Comms & Messaging",
-    "auth_methods": [
-      "API Key"
-    ],
-    "access_tier": "Self-Serve Free",
-    "has_public_docs": true,
-    "docs_url": "https://plivo.example.com/docs",
-    "api_type": "REST",
-    "has_mcp_server": false,
-    "mcp_server_url": null,
-    "buildability": "Ready to Build",
-    "blocker": null,
-    "confidence_score": 0.9,
-    "evidence_urls": [
-      "https://www.plivo.com"
-    ],
-    "raw_notes": "Generated via fast simulation due to API rate limits.",
-    "researched_at": "2026-09-17T00:44:54.507738Z",
-    "agent_version": "1.0.0",
-    "manually_verified": false,
-    "verification_notes": null
-  },
-  {
-    "id": "ringcentral",
-    "name": "RingCentral",
-    "category": "Comms & Messaging",
-    "auth_methods": [
-      "OAuth2",
-      "API Key"
-    ],
-    "access_tier": "Sales/Enterprise Gated",
-    "has_public_docs": true,
-    "docs_url": "https://ringcentral.example.com/docs",
-    "api_type": "REST",
-    "has_mcp_server": true,
-    "mcp_server_url": null,
-    "buildability": "Partially Ready",
-    "blocker": null,
-    "confidence_score": 0.9,
-    "evidence_urls": [
-      "https://www.ringcentral.com"
-    ],
-    "raw_notes": "Generated via fast simulation due to API rate limits.",
-    "researched_at": "2026-09-17T00:44:54.507745Z",
+    "raw_notes": "Slack provides robust self-serve REST APIs and OAuth2 authentication, allowing developers to build integrations immediately. Slack officially supports a first-party Model Context Protocol (MCP) server designed for AI agent discovery, search, and action execution.",
+    "researched_at": "2026-09-17T01:36:25.850644Z",
     "agent_version": "1.0.0",
     "manually_verified": false,
     "verification_notes": null
@@ -765,244 +97,22 @@
     ],
     "access_tier": "Self-Serve Free",
     "has_public_docs": true,
-    "docs_url": "https://mailchimp.example.com/docs",
+    "docs_url": "https://mailchimp.com/developer/marketing/guides/quick-start/",
     "api_type": "REST",
-    "has_mcp_server": false,
+    "has_mcp_server": true,
     "mcp_server_url": null,
     "buildability": "Ready to Build",
     "blocker": null,
-    "confidence_score": 0.9,
+    "confidence_score": 1.0,
     "evidence_urls": [
-      "https://mailchimp.com"
+      "https://mailchimp.com/developer/marketing/guides/quick-start/",
+      "https://mailchimp.com/developer/marketing/docs/fundamentals/",
+      "https://mailchimp.com/developer/marketing/guides/access-user-data-oauth-2/",
+      "https://mailchimp.com/developer/transactional/guides/how-to-use-mailchimps-transactional-messaging-mcp/",
+      "https://www.scalekit.com/blog/mailchimp-mcp-vs-api"
     ],
-    "raw_notes": "Generated via fast simulation due to API rate limits.",
-    "researched_at": "2026-09-17T00:44:54.507753Z",
-    "agent_version": "1.0.0",
-    "manually_verified": false,
-    "verification_notes": null
-  },
-  {
-    "id": "klaviyo",
-    "name": "Klaviyo",
-    "category": "Marketing & Social",
-    "auth_methods": [
-      "OAuth2"
-    ],
-    "access_tier": "Sales/Enterprise Gated",
-    "has_public_docs": true,
-    "docs_url": "https://klaviyo.example.com/docs",
-    "api_type": "REST",
-    "has_mcp_server": true,
-    "mcp_server_url": null,
-    "buildability": "Partially Ready",
-    "blocker": null,
-    "confidence_score": 0.9,
-    "evidence_urls": [
-      "https://www.klaviyo.com"
-    ],
-    "raw_notes": "Generated via fast simulation due to API rate limits.",
-    "researched_at": "2026-09-17T00:44:54.507761Z",
-    "agent_version": "1.0.0",
-    "manually_verified": false,
-    "verification_notes": null
-  },
-  {
-    "id": "sendgrid",
-    "name": "SendGrid",
-    "category": "Marketing & Social",
-    "auth_methods": [
-      "OAuth2"
-    ],
-    "access_tier": "Self-Serve Paid",
-    "has_public_docs": true,
-    "docs_url": "https://sendgrid.example.com/docs",
-    "api_type": "REST",
-    "has_mcp_server": false,
-    "mcp_server_url": null,
-    "buildability": "Partially Ready",
-    "blocker": null,
-    "confidence_score": 0.9,
-    "evidence_urls": [
-      "https://sendgrid.com"
-    ],
-    "raw_notes": "Generated via fast simulation due to API rate limits.",
-    "researched_at": "2026-09-17T00:44:54.507768Z",
-    "agent_version": "1.0.0",
-    "manually_verified": false,
-    "verification_notes": null
-  },
-  {
-    "id": "brevo",
-    "name": "Brevo",
-    "category": "Marketing & Social",
-    "auth_methods": [
-      "API Key"
-    ],
-    "access_tier": "Self-Serve Paid",
-    "has_public_docs": true,
-    "docs_url": "https://brevo.example.com/docs",
-    "api_type": "REST",
-    "has_mcp_server": true,
-    "mcp_server_url": null,
-    "buildability": "Partially Ready",
-    "blocker": null,
-    "confidence_score": 0.9,
-    "evidence_urls": [
-      "https://www.brevo.com"
-    ],
-    "raw_notes": "Generated via fast simulation due to API rate limits.",
-    "researched_at": "2026-09-17T00:44:54.507776Z",
-    "agent_version": "1.0.0",
-    "manually_verified": false,
-    "verification_notes": null
-  },
-  {
-    "id": "hubspot_marketing",
-    "name": "HubSpot Marketing",
-    "category": "Marketing & Social",
-    "auth_methods": [
-      "OAuth2"
-    ],
-    "access_tier": "Self-Serve Paid",
-    "has_public_docs": true,
-    "docs_url": "https://hubspot_marketing.example.com/docs",
-    "api_type": "REST",
-    "has_mcp_server": false,
-    "mcp_server_url": null,
-    "buildability": "Partially Ready",
-    "blocker": null,
-    "confidence_score": 0.9,
-    "evidence_urls": [
-      "https://www.hubspot.com/products/marketing"
-    ],
-    "raw_notes": "Generated via fast simulation due to API rate limits.",
-    "researched_at": "2026-09-17T00:44:54.507783Z",
-    "agent_version": "1.0.0",
-    "manually_verified": false,
-    "verification_notes": null
-  },
-  {
-    "id": "pinterest",
-    "name": "Pinterest",
-    "category": "Marketing & Social",
-    "auth_methods": [
-      "API Key"
-    ],
-    "access_tier": "Self-Serve Paid",
-    "has_public_docs": true,
-    "docs_url": "https://pinterest.example.com/docs",
-    "api_type": "REST",
-    "has_mcp_server": true,
-    "mcp_server_url": null,
-    "buildability": "Partially Ready",
-    "blocker": null,
-    "confidence_score": 0.9,
-    "evidence_urls": [
-      "https://www.pinterest.com"
-    ],
-    "raw_notes": "Generated via fast simulation due to API rate limits.",
-    "researched_at": "2026-09-17T00:44:54.507791Z",
-    "agent_version": "1.0.0",
-    "manually_verified": false,
-    "verification_notes": null
-  },
-  {
-    "id": "threads",
-    "name": "Threads API",
-    "category": "Marketing & Social",
-    "auth_methods": [
-      "OAuth2"
-    ],
-    "access_tier": "Self-Serve Free",
-    "has_public_docs": true,
-    "docs_url": "https://threads.example.com/docs",
-    "api_type": "REST",
-    "has_mcp_server": false,
-    "mcp_server_url": null,
-    "buildability": "Ready to Build",
-    "blocker": null,
-    "confidence_score": 0.9,
-    "evidence_urls": [
-      "https://developers.facebook.com/docs/threads"
-    ],
-    "raw_notes": "Generated via fast simulation due to API rate limits.",
-    "researched_at": "2026-09-17T00:44:54.507799Z",
-    "agent_version": "1.0.0",
-    "manually_verified": false,
-    "verification_notes": null
-  },
-  {
-    "id": "beehiiv",
-    "name": "Beehiiv",
-    "category": "Marketing & Social",
-    "auth_methods": [
-      "API Key"
-    ],
-    "access_tier": "Sales/Enterprise Gated",
-    "has_public_docs": true,
-    "docs_url": "https://beehiiv.example.com/docs",
-    "api_type": "REST",
-    "has_mcp_server": true,
-    "mcp_server_url": null,
-    "buildability": "Partially Ready",
-    "blocker": null,
-    "confidence_score": 0.9,
-    "evidence_urls": [
-      "https://www.beehiiv.com"
-    ],
-    "raw_notes": "Generated via fast simulation due to API rate limits.",
-    "researched_at": "2026-09-17T00:44:54.507807Z",
-    "agent_version": "1.0.0",
-    "manually_verified": false,
-    "verification_notes": null
-  },
-  {
-    "id": "activecampaign",
-    "name": "ActiveCampaign",
-    "category": "Marketing & Social",
-    "auth_methods": [
-      "API Key"
-    ],
-    "access_tier": "Self-Serve Paid",
-    "has_public_docs": true,
-    "docs_url": "https://activecampaign.example.com/docs",
-    "api_type": "REST",
-    "has_mcp_server": true,
-    "mcp_server_url": null,
-    "buildability": "Partially Ready",
-    "blocker": null,
-    "confidence_score": 0.9,
-    "evidence_urls": [
-      "https://www.activecampaign.com"
-    ],
-    "raw_notes": "Generated via fast simulation due to API rate limits.",
-    "researched_at": "2026-09-17T00:44:54.507814Z",
-    "agent_version": "1.0.0",
-    "manually_verified": false,
-    "verification_notes": null
-  },
-  {
-    "id": "postmark",
-    "name": "Postmark",
-    "category": "Marketing & Social",
-    "auth_methods": [
-      "OAuth2",
-      "API Key"
-    ],
-    "access_tier": "Sales/Enterprise Gated",
-    "has_public_docs": true,
-    "docs_url": "https://postmark.example.com/docs",
-    "api_type": "REST",
-    "has_mcp_server": true,
-    "mcp_server_url": null,
-    "buildability": "Partially Ready",
-    "blocker": null,
-    "confidence_score": 0.9,
-    "evidence_urls": [
-      "https://postmarkapp.com"
-    ],
-    "raw_notes": "Generated via fast simulation due to API rate limits.",
-    "researched_at": "2026-09-17T00:44:54.507822Z",
+    "raw_notes": "Mailchimp provides a self-serve REST API supporting both API Keys and OAuth2 authentication. Detailed developer guides and documentation are publicly accessible, and Mailchimp offers an official Model Context Protocol (MCP) server for transactional messaging.",
+    "researched_at": "2026-09-17T01:36:44.292876Z",
     "agent_version": "1.0.0",
     "manually_verified": false,
     "verification_notes": null
@@ -1012,274 +122,27 @@
     "name": "Shopify",
     "category": "Ecommerce",
     "auth_methods": [
-      "API Key"
-    ],
-    "access_tier": "Self-Serve Paid",
-    "has_public_docs": true,
-    "docs_url": "https://shopify.example.com/docs",
-    "api_type": "REST",
-    "has_mcp_server": true,
-    "mcp_server_url": null,
-    "buildability": "Partially Ready",
-    "blocker": null,
-    "confidence_score": 0.9,
-    "evidence_urls": [
-      "https://www.shopify.com"
-    ],
-    "raw_notes": "Generated via fast simulation due to API rate limits.",
-    "researched_at": "2026-09-17T00:44:54.507829Z",
-    "agent_version": "1.0.0",
-    "manually_verified": false,
-    "verification_notes": null
-  },
-  {
-    "id": "woocommerce",
-    "name": "WooCommerce",
-    "category": "Ecommerce",
-    "auth_methods": [
-      "OAuth2"
-    ],
-    "access_tier": "Self-Serve Free",
-    "has_public_docs": true,
-    "docs_url": "https://woocommerce.example.com/docs",
-    "api_type": "REST",
-    "has_mcp_server": true,
-    "mcp_server_url": null,
-    "buildability": "Ready to Build",
-    "blocker": null,
-    "confidence_score": 0.9,
-    "evidence_urls": [
-      "https://woocommerce.com"
-    ],
-    "raw_notes": "Generated via fast simulation due to API rate limits.",
-    "researched_at": "2026-09-17T00:44:54.507838Z",
-    "agent_version": "1.0.0",
-    "manually_verified": false,
-    "verification_notes": null
-  },
-  {
-    "id": "bigcommerce",
-    "name": "BigCommerce",
-    "category": "Ecommerce",
-    "auth_methods": [
-      "OAuth2"
-    ],
-    "access_tier": "Self-Serve Paid",
-    "has_public_docs": true,
-    "docs_url": "https://bigcommerce.example.com/docs",
-    "api_type": "REST",
-    "has_mcp_server": false,
-    "mcp_server_url": null,
-    "buildability": "Partially Ready",
-    "blocker": null,
-    "confidence_score": 0.9,
-    "evidence_urls": [
-      "https://www.bigcommerce.com"
-    ],
-    "raw_notes": "Generated via fast simulation due to API rate limits.",
-    "researched_at": "2026-09-17T00:44:54.507846Z",
-    "agent_version": "1.0.0",
-    "manually_verified": false,
-    "verification_notes": null
-  },
-  {
-    "id": "magento",
-    "name": "Magento",
-    "category": "Ecommerce",
-    "auth_methods": [
       "OAuth2",
       "API Key"
     ],
     "access_tier": "Self-Serve Free",
     "has_public_docs": true,
-    "docs_url": "https://magento.example.com/docs",
-    "api_type": "REST",
+    "docs_url": "https://shopify.dev/docs",
+    "api_type": "GraphQL",
     "has_mcp_server": true,
-    "mcp_server_url": null,
+    "mcp_server_url": "https://shopify.dev/docs/apps/build/storefront-mcp",
     "buildability": "Ready to Build",
     "blocker": null,
-    "confidence_score": 0.9,
+    "confidence_score": 1.0,
     "evidence_urls": [
-      "https://business.adobe.com/products/magento/magento-commerce.html"
+      "https://shopify.dev/docs/api/usage/authentication",
+      "https://shopify.dev/docs/apps/build/authentication-authorization",
+      "https://community.shopify.com/t/admin-api-key-for-personal-use-devtools-not-showing-it-as-documentation-says/581876",
+      "https://shopify.dev/changelog/mcp-server-for-the-shopify-dev-assistant",
+      "https://www.shopify.com/news/spring-26-edition-dev"
     ],
-    "raw_notes": "Generated via fast simulation due to API rate limits.",
-    "researched_at": "2026-09-17T00:44:54.507854Z",
-    "agent_version": "1.0.0",
-    "manually_verified": false,
-    "verification_notes": null
-  },
-  {
-    "id": "woopayments",
-    "name": "WooPayments",
-    "category": "Ecommerce",
-    "auth_methods": [
-      "OAuth2"
-    ],
-    "access_tier": "Sales/Enterprise Gated",
-    "has_public_docs": true,
-    "docs_url": "https://woopayments.example.com/docs",
-    "api_type": "REST",
-    "has_mcp_server": true,
-    "mcp_server_url": null,
-    "buildability": "Partially Ready",
-    "blocker": null,
-    "confidence_score": 0.9,
-    "evidence_urls": [
-      "https://woocommerce.com/payments/"
-    ],
-    "raw_notes": "Generated via fast simulation due to API rate limits.",
-    "researched_at": "2026-09-17T00:44:54.507863Z",
-    "agent_version": "1.0.0",
-    "manually_verified": false,
-    "verification_notes": null
-  },
-  {
-    "id": "printify",
-    "name": "Printify",
-    "category": "Ecommerce",
-    "auth_methods": [
-      "OAuth2",
-      "API Key"
-    ],
-    "access_tier": "Self-Serve Free",
-    "has_public_docs": true,
-    "docs_url": "https://printify.example.com/docs",
-    "api_type": "REST",
-    "has_mcp_server": true,
-    "mcp_server_url": null,
-    "buildability": "Ready to Build",
-    "blocker": null,
-    "confidence_score": 0.9,
-    "evidence_urls": [
-      "https://printify.com"
-    ],
-    "raw_notes": "Generated via fast simulation due to API rate limits.",
-    "researched_at": "2026-09-17T00:44:54.507870Z",
-    "agent_version": "1.0.0",
-    "manually_verified": false,
-    "verification_notes": null
-  },
-  {
-    "id": "printful",
-    "name": "Printful",
-    "category": "Ecommerce",
-    "auth_methods": [
-      "API Key"
-    ],
-    "access_tier": "Self-Serve Free",
-    "has_public_docs": true,
-    "docs_url": "https://printful.example.com/docs",
-    "api_type": "REST",
-    "has_mcp_server": true,
-    "mcp_server_url": null,
-    "buildability": "Ready to Build",
-    "blocker": null,
-    "confidence_score": 0.9,
-    "evidence_urls": [
-      "https://www.printful.com"
-    ],
-    "raw_notes": "Generated via fast simulation due to API rate limits.",
-    "researched_at": "2026-09-17T00:44:54.507878Z",
-    "agent_version": "1.0.0",
-    "manually_verified": false,
-    "verification_notes": null
-  },
-  {
-    "id": "shippo",
-    "name": "Shippo",
-    "category": "Ecommerce",
-    "auth_methods": [
-      "OAuth2"
-    ],
-    "access_tier": "Self-Serve Paid",
-    "has_public_docs": true,
-    "docs_url": "https://shippo.example.com/docs",
-    "api_type": "REST",
-    "has_mcp_server": true,
-    "mcp_server_url": null,
-    "buildability": "Partially Ready",
-    "blocker": null,
-    "confidence_score": 0.9,
-    "evidence_urls": [
-      "https://goshippo.com"
-    ],
-    "raw_notes": "Generated via fast simulation due to API rate limits.",
-    "researched_at": "2026-09-17T00:44:54.507886Z",
-    "agent_version": "1.0.0",
-    "manually_verified": false,
-    "verification_notes": null
-  },
-  {
-    "id": "easypost",
-    "name": "EasyPost",
-    "category": "Ecommerce",
-    "auth_methods": [
-      "OAuth2"
-    ],
-    "access_tier": "Sales/Enterprise Gated",
-    "has_public_docs": true,
-    "docs_url": "https://easypost.example.com/docs",
-    "api_type": "REST",
-    "has_mcp_server": false,
-    "mcp_server_url": null,
-    "buildability": "Partially Ready",
-    "blocker": null,
-    "confidence_score": 0.9,
-    "evidence_urls": [
-      "https://www.easypost.com"
-    ],
-    "raw_notes": "Generated via fast simulation due to API rate limits.",
-    "researched_at": "2026-09-17T00:44:54.507893Z",
-    "agent_version": "1.0.0",
-    "manually_verified": false,
-    "verification_notes": null
-  },
-  {
-    "id": "ecwid",
-    "name": "Ecwid",
-    "category": "Ecommerce",
-    "auth_methods": [
-      "OAuth2"
-    ],
-    "access_tier": "Self-Serve Paid",
-    "has_public_docs": true,
-    "docs_url": "https://ecwid.example.com/docs",
-    "api_type": "REST",
-    "has_mcp_server": false,
-    "mcp_server_url": null,
-    "buildability": "Partially Ready",
-    "blocker": null,
-    "confidence_score": 0.9,
-    "evidence_urls": [
-      "https://www.ecwid.com"
-    ],
-    "raw_notes": "Generated via fast simulation due to API rate limits.",
-    "researched_at": "2026-09-17T00:44:54.507901Z",
-    "agent_version": "1.0.0",
-    "manually_verified": false,
-    "verification_notes": null
-  },
-  {
-    "id": "ahrefs",
-    "name": "Ahrefs",
-    "category": "Research & Enrichment",
-    "auth_methods": [
-      "API Key"
-    ],
-    "access_tier": "Sales/Enterprise Gated",
-    "has_public_docs": true,
-    "docs_url": "https://ahrefs.example.com/docs",
-    "api_type": "REST",
-    "has_mcp_server": false,
-    "mcp_server_url": null,
-    "buildability": "Partially Ready",
-    "blocker": null,
-    "confidence_score": 0.9,
-    "evidence_urls": [
-      "https://ahrefs.com"
-    ],
-    "raw_notes": "Generated via fast simulation due to API rate limits.",
-    "researched_at": "2026-09-17T00:44:54.507909Z",
+    "raw_notes": "Shopify offers fully self-serve access to its APIs via free developer accounts and custom apps, using OAuth2 and API token authentication. The platform features robust GraphQL and REST APIs with comprehensive public documentation. Additionally, Shopify provides official MCP servers for both developer assistance and storefront operations.",
+    "researched_at": "2026-09-17T01:37:27.813405Z",
     "agent_version": "1.0.0",
     "manually_verified": false,
     "verification_notes": null
@@ -1289,227 +152,27 @@
     "name": "Apify",
     "category": "Research & Enrichment",
     "auth_methods": [
+      "API Key",
       "OAuth2"
     ],
     "access_tier": "Self-Serve Free",
     "has_public_docs": true,
-    "docs_url": "https://apify.example.com/docs",
+    "docs_url": "https://docs.apify.com/api/v2",
     "api_type": "REST",
-    "has_mcp_server": false,
-    "mcp_server_url": null,
+    "has_mcp_server": true,
+    "mcp_server_url": "https://mcp.apify.com",
     "buildability": "Ready to Build",
     "blocker": null,
-    "confidence_score": 0.9,
+    "confidence_score": 1.0,
     "evidence_urls": [
-      "https://apify.com"
+      "https://docs.apify.com/api/v2",
+      "https://docs.apify.com/integrations/api",
+      "https://docs.apify.com/account/settings",
+      "https://docs.apify.com/integrations/mcp",
+      "https://apify.com/pricing"
     ],
-    "raw_notes": "Generated via fast simulation due to API rate limits.",
-    "researched_at": "2026-09-17T00:44:54.507916Z",
-    "agent_version": "1.0.0",
-    "manually_verified": false,
-    "verification_notes": null
-  },
-  {
-    "id": "firecrawl",
-    "name": "Firecrawl",
-    "category": "Research & Enrichment",
-    "auth_methods": [
-      "OAuth2",
-      "API Key"
-    ],
-    "access_tier": "Sales/Enterprise Gated",
-    "has_public_docs": true,
-    "docs_url": "https://firecrawl.example.com/docs",
-    "api_type": "REST",
-    "has_mcp_server": true,
-    "mcp_server_url": null,
-    "buildability": "Partially Ready",
-    "blocker": null,
-    "confidence_score": 0.9,
-    "evidence_urls": [
-      "https://www.firecrawl.dev"
-    ],
-    "raw_notes": "Generated via fast simulation due to API rate limits.",
-    "researched_at": "2026-09-17T00:44:54.507924Z",
-    "agent_version": "1.0.0",
-    "manually_verified": false,
-    "verification_notes": null
-  },
-  {
-    "id": "clay",
-    "name": "Clay",
-    "category": "Research & Enrichment",
-    "auth_methods": [
-      "OAuth2",
-      "API Key"
-    ],
-    "access_tier": "Self-Serve Paid",
-    "has_public_docs": true,
-    "docs_url": "https://clay.example.com/docs",
-    "api_type": "REST",
-    "has_mcp_server": false,
-    "mcp_server_url": null,
-    "buildability": "Partially Ready",
-    "blocker": null,
-    "confidence_score": 0.9,
-    "evidence_urls": [
-      "https://www.clay.com"
-    ],
-    "raw_notes": "Generated via fast simulation due to API rate limits.",
-    "researched_at": "2026-09-17T00:44:54.507932Z",
-    "agent_version": "1.0.0",
-    "manually_verified": false,
-    "verification_notes": null
-  },
-  {
-    "id": "bright_data",
-    "name": "Bright Data",
-    "category": "Research & Enrichment",
-    "auth_methods": [
-      "OAuth2",
-      "API Key"
-    ],
-    "access_tier": "Self-Serve Free",
-    "has_public_docs": true,
-    "docs_url": "https://bright_data.example.com/docs",
-    "api_type": "REST",
-    "has_mcp_server": true,
-    "mcp_server_url": null,
-    "buildability": "Ready to Build",
-    "blocker": null,
-    "confidence_score": 0.9,
-    "evidence_urls": [
-      "https://brightdata.com"
-    ],
-    "raw_notes": "Generated via fast simulation due to API rate limits.",
-    "researched_at": "2026-09-17T00:44:54.507940Z",
-    "agent_version": "1.0.0",
-    "manually_verified": false,
-    "verification_notes": null
-  },
-  {
-    "id": "hunter_io",
-    "name": "Hunter.io",
-    "category": "Research & Enrichment",
-    "auth_methods": [
-      "OAuth2",
-      "API Key"
-    ],
-    "access_tier": "Self-Serve Free",
-    "has_public_docs": true,
-    "docs_url": "https://hunter_io.example.com/docs",
-    "api_type": "REST",
-    "has_mcp_server": true,
-    "mcp_server_url": null,
-    "buildability": "Ready to Build",
-    "blocker": null,
-    "confidence_score": 0.9,
-    "evidence_urls": [
-      "https://hunter.io"
-    ],
-    "raw_notes": "Generated via fast simulation due to API rate limits.",
-    "researched_at": "2026-09-17T00:44:54.507948Z",
-    "agent_version": "1.0.0",
-    "manually_verified": false,
-    "verification_notes": null
-  },
-  {
-    "id": "clearbit",
-    "name": "Clearbit",
-    "category": "Research & Enrichment",
-    "auth_methods": [
-      "API Key"
-    ],
-    "access_tier": "Self-Serve Paid",
-    "has_public_docs": true,
-    "docs_url": "https://clearbit.example.com/docs",
-    "api_type": "REST",
-    "has_mcp_server": false,
-    "mcp_server_url": null,
-    "buildability": "Partially Ready",
-    "blocker": null,
-    "confidence_score": 0.9,
-    "evidence_urls": [
-      "https://clearbit.com"
-    ],
-    "raw_notes": "Generated via fast simulation due to API rate limits.",
-    "researched_at": "2026-09-17T00:44:54.507956Z",
-    "agent_version": "1.0.0",
-    "manually_verified": false,
-    "verification_notes": null
-  },
-  {
-    "id": "phantombuster",
-    "name": "PhantomBuster",
-    "category": "Research & Enrichment",
-    "auth_methods": [
-      "API Key"
-    ],
-    "access_tier": "Self-Serve Paid",
-    "has_public_docs": true,
-    "docs_url": "https://phantombuster.example.com/docs",
-    "api_type": "REST",
-    "has_mcp_server": true,
-    "mcp_server_url": null,
-    "buildability": "Partially Ready",
-    "blocker": null,
-    "confidence_score": 0.9,
-    "evidence_urls": [
-      "https://phantombuster.com"
-    ],
-    "raw_notes": "Generated via fast simulation due to API rate limits.",
-    "researched_at": "2026-09-17T00:44:54.507964Z",
-    "agent_version": "1.0.0",
-    "manually_verified": false,
-    "verification_notes": null
-  },
-  {
-    "id": "exa_ai",
-    "name": "Exa.ai",
-    "category": "Research & Enrichment",
-    "auth_methods": [
-      "OAuth2",
-      "API Key"
-    ],
-    "access_tier": "Self-Serve Free",
-    "has_public_docs": true,
-    "docs_url": "https://exa_ai.example.com/docs",
-    "api_type": "REST",
-    "has_mcp_server": true,
-    "mcp_server_url": null,
-    "buildability": "Ready to Build",
-    "blocker": null,
-    "confidence_score": 0.9,
-    "evidence_urls": [
-      "https://exa.ai"
-    ],
-    "raw_notes": "Generated via fast simulation due to API rate limits.",
-    "researched_at": "2026-09-17T00:44:54.507972Z",
-    "agent_version": "1.0.0",
-    "manually_verified": false,
-    "verification_notes": null
-  },
-  {
-    "id": "diffbot",
-    "name": "Diffbot",
-    "category": "Research & Enrichment",
-    "auth_methods": [
-      "OAuth2"
-    ],
-    "access_tier": "Self-Serve Paid",
-    "has_public_docs": true,
-    "docs_url": "https://diffbot.example.com/docs",
-    "api_type": "REST",
-    "has_mcp_server": false,
-    "mcp_server_url": null,
-    "buildability": "Partially Ready",
-    "blocker": null,
-    "confidence_score": 0.9,
-    "evidence_urls": [
-      "https://www.diffbot.com"
-    ],
-    "raw_notes": "Generated via fast simulation due to API rate limits.",
-    "researched_at": "2026-09-17T00:44:54.507980Z",
+    "raw_notes": "Apify provides a fully self-serve platform with comprehensive REST API documentation and easy API key authentication. An official MCP server is available at mcp.apify.com supporting both bearer API tokens and OAuth login, making it completely ready for AI agent integration.",
+    "researched_at": "2026-09-17T01:38:40.521053Z",
     "agent_version": "1.0.0",
     "manually_verified": false,
     "verification_notes": null
@@ -1519,249 +182,27 @@
     "name": "GitHub",
     "category": "Dev, Infra & Data",
     "auth_methods": [
-      "OAuth2"
-    ],
-    "access_tier": "Self-Serve Paid",
-    "has_public_docs": true,
-    "docs_url": "https://github.example.com/docs",
-    "api_type": "REST",
-    "has_mcp_server": false,
-    "mcp_server_url": null,
-    "buildability": "Partially Ready",
-    "blocker": null,
-    "confidence_score": 0.9,
-    "evidence_urls": [
-      "https://github.com"
-    ],
-    "raw_notes": "Generated via fast simulation due to API rate limits.",
-    "researched_at": "2026-09-17T00:44:54.507988Z",
-    "agent_version": "1.0.0",
-    "manually_verified": false,
-    "verification_notes": null
-  },
-  {
-    "id": "vercel",
-    "name": "Vercel",
-    "category": "Dev, Infra & Data",
-    "auth_methods": [
-      "API Key"
-    ],
-    "access_tier": "Sales/Enterprise Gated",
-    "has_public_docs": true,
-    "docs_url": "https://vercel.example.com/docs",
-    "api_type": "REST",
-    "has_mcp_server": false,
-    "mcp_server_url": null,
-    "buildability": "Partially Ready",
-    "blocker": null,
-    "confidence_score": 0.9,
-    "evidence_urls": [
-      "https://vercel.com"
-    ],
-    "raw_notes": "Generated via fast simulation due to API rate limits.",
-    "researched_at": "2026-09-17T00:44:54.507996Z",
-    "agent_version": "1.0.0",
-    "manually_verified": false,
-    "verification_notes": null
-  },
-  {
-    "id": "netlify",
-    "name": "Netlify",
-    "category": "Dev, Infra & Data",
-    "auth_methods": [
-      "OAuth2"
-    ],
-    "access_tier": "Self-Serve Free",
-    "has_public_docs": true,
-    "docs_url": "https://netlify.example.com/docs",
-    "api_type": "REST",
-    "has_mcp_server": false,
-    "mcp_server_url": null,
-    "buildability": "Ready to Build",
-    "blocker": null,
-    "confidence_score": 0.9,
-    "evidence_urls": [
-      "https://www.netlify.com"
-    ],
-    "raw_notes": "Generated via fast simulation due to API rate limits.",
-    "researched_at": "2026-09-17T00:44:54.508003Z",
-    "agent_version": "1.0.0",
-    "manually_verified": false,
-    "verification_notes": null
-  },
-  {
-    "id": "cloudflare",
-    "name": "Cloudflare",
-    "category": "Dev, Infra & Data",
-    "auth_methods": [
       "OAuth2",
       "API Key"
     ],
     "access_tier": "Self-Serve Free",
     "has_public_docs": true,
-    "docs_url": "https://cloudflare.example.com/docs",
+    "docs_url": "https://docs.github.com/en/rest",
     "api_type": "REST",
     "has_mcp_server": true,
     "mcp_server_url": null,
     "buildability": "Ready to Build",
     "blocker": null,
-    "confidence_score": 0.9,
+    "confidence_score": 1.0,
     "evidence_urls": [
-      "https://www.cloudflare.com"
+      "https://github.com/settings/tokens",
+      "https://docs.github.com/apps/oauth-apps/building-oauth-apps/authorizing-oauth-apps",
+      "https://docs.github.com/en/rest/apps/oauth-applications",
+      "https://github.com/pricing",
+      "https://www.scalekit.com/blog/github-mcp-vs-api"
     ],
-    "raw_notes": "Generated via fast simulation due to API rate limits.",
-    "researched_at": "2026-09-17T00:44:54.508011Z",
-    "agent_version": "1.0.0",
-    "manually_verified": false,
-    "verification_notes": null
-  },
-  {
-    "id": "supabase",
-    "name": "Supabase",
-    "category": "Dev, Infra & Data",
-    "auth_methods": [
-      "API Key"
-    ],
-    "access_tier": "Self-Serve Paid",
-    "has_public_docs": true,
-    "docs_url": "https://supabase.example.com/docs",
-    "api_type": "REST",
-    "has_mcp_server": false,
-    "mcp_server_url": null,
-    "buildability": "Partially Ready",
-    "blocker": null,
-    "confidence_score": 0.9,
-    "evidence_urls": [
-      "https://supabase.com"
-    ],
-    "raw_notes": "Generated via fast simulation due to API rate limits.",
-    "researched_at": "2026-09-17T00:44:54.508019Z",
-    "agent_version": "1.0.0",
-    "manually_verified": false,
-    "verification_notes": null
-  },
-  {
-    "id": "railway",
-    "name": "Railway",
-    "category": "Dev, Infra & Data",
-    "auth_methods": [
-      "API Key"
-    ],
-    "access_tier": "Sales/Enterprise Gated",
-    "has_public_docs": true,
-    "docs_url": "https://railway.example.com/docs",
-    "api_type": "REST",
-    "has_mcp_server": false,
-    "mcp_server_url": null,
-    "buildability": "Partially Ready",
-    "blocker": null,
-    "confidence_score": 0.9,
-    "evidence_urls": [
-      "https://railway.app"
-    ],
-    "raw_notes": "Generated via fast simulation due to API rate limits.",
-    "researched_at": "2026-09-17T00:44:54.508027Z",
-    "agent_version": "1.0.0",
-    "manually_verified": false,
-    "verification_notes": null
-  },
-  {
-    "id": "render",
-    "name": "Render",
-    "category": "Dev, Infra & Data",
-    "auth_methods": [
-      "OAuth2",
-      "API Key"
-    ],
-    "access_tier": "Self-Serve Paid",
-    "has_public_docs": true,
-    "docs_url": "https://render.example.com/docs",
-    "api_type": "REST",
-    "has_mcp_server": true,
-    "mcp_server_url": null,
-    "buildability": "Partially Ready",
-    "blocker": null,
-    "confidence_score": 0.9,
-    "evidence_urls": [
-      "https://render.com"
-    ],
-    "raw_notes": "Generated via fast simulation due to API rate limits.",
-    "researched_at": "2026-09-17T00:44:54.508034Z",
-    "agent_version": "1.0.0",
-    "manually_verified": false,
-    "verification_notes": null
-  },
-  {
-    "id": "planetscale",
-    "name": "PlanetScale",
-    "category": "Dev, Infra & Data",
-    "auth_methods": [
-      "API Key"
-    ],
-    "access_tier": "Self-Serve Free",
-    "has_public_docs": true,
-    "docs_url": "https://planetscale.example.com/docs",
-    "api_type": "REST",
-    "has_mcp_server": true,
-    "mcp_server_url": null,
-    "buildability": "Ready to Build",
-    "blocker": null,
-    "confidence_score": 0.9,
-    "evidence_urls": [
-      "https://planetscale.com"
-    ],
-    "raw_notes": "Generated via fast simulation due to API rate limits.",
-    "researched_at": "2026-09-17T00:44:54.508042Z",
-    "agent_version": "1.0.0",
-    "manually_verified": false,
-    "verification_notes": null
-  },
-  {
-    "id": "neon",
-    "name": "Neon",
-    "category": "Dev, Infra & Data",
-    "auth_methods": [
-      "OAuth2"
-    ],
-    "access_tier": "Sales/Enterprise Gated",
-    "has_public_docs": true,
-    "docs_url": "https://neon.example.com/docs",
-    "api_type": "REST",
-    "has_mcp_server": false,
-    "mcp_server_url": null,
-    "buildability": "Partially Ready",
-    "blocker": null,
-    "confidence_score": 0.9,
-    "evidence_urls": [
-      "https://neon.tech"
-    ],
-    "raw_notes": "Generated via fast simulation due to API rate limits.",
-    "researched_at": "2026-09-17T00:44:54.508050Z",
-    "agent_version": "1.0.0",
-    "manually_verified": false,
-    "verification_notes": null
-  },
-  {
-    "id": "fly_io",
-    "name": "Fly.io",
-    "category": "Dev, Infra & Data",
-    "auth_methods": [
-      "OAuth2"
-    ],
-    "access_tier": "Self-Serve Free",
-    "has_public_docs": true,
-    "docs_url": "https://fly_io.example.com/docs",
-    "api_type": "REST",
-    "has_mcp_server": true,
-    "mcp_server_url": null,
-    "buildability": "Ready to Build",
-    "blocker": null,
-    "confidence_score": 0.9,
-    "evidence_urls": [
-      "https://fly.io"
-    ],
-    "raw_notes": "Generated via fast simulation due to API rate limits.",
-    "researched_at": "2026-09-17T00:44:54.508057Z",
+    "raw_notes": "GitHub provides a robust self-serve platform with standard OAuth2 and Personal Access Token authentication. Comprehensive public REST and GraphQL documentation is available, making it completely ready for integration into an AI agent toolkit alongside existing Model Context Protocol (MCP) support.",
+    "researched_at": "2026-09-17T01:41:09.348101Z",
     "agent_version": "1.0.0",
     "manually_verified": false,
     "verification_notes": null
@@ -1771,249 +212,27 @@
     "name": "Linear",
     "category": "Productivity & PM",
     "auth_methods": [
-      "API Key"
-    ],
-    "access_tier": "Sales/Enterprise Gated",
-    "has_public_docs": true,
-    "docs_url": "https://linear.example.com/docs",
-    "api_type": "REST",
-    "has_mcp_server": true,
-    "mcp_server_url": null,
-    "buildability": "Partially Ready",
-    "blocker": null,
-    "confidence_score": 0.9,
-    "evidence_urls": [
-      "https://linear.app"
-    ],
-    "raw_notes": "Generated via fast simulation due to API rate limits.",
-    "researched_at": "2026-09-17T00:44:54.508065Z",
-    "agent_version": "1.0.0",
-    "manually_verified": false,
-    "verification_notes": null
-  },
-  {
-    "id": "jira",
-    "name": "Jira",
-    "category": "Productivity & PM",
-    "auth_methods": [
-      "OAuth2"
-    ],
-    "access_tier": "Self-Serve Free",
-    "has_public_docs": true,
-    "docs_url": "https://jira.example.com/docs",
-    "api_type": "REST",
-    "has_mcp_server": false,
-    "mcp_server_url": null,
-    "buildability": "Ready to Build",
-    "blocker": null,
-    "confidence_score": 0.9,
-    "evidence_urls": [
-      "https://www.atlassian.com/software/jira"
-    ],
-    "raw_notes": "Generated via fast simulation due to API rate limits.",
-    "researched_at": "2026-09-17T00:44:54.508072Z",
-    "agent_version": "1.0.0",
-    "manually_verified": false,
-    "verification_notes": null
-  },
-  {
-    "id": "asana",
-    "name": "Asana",
-    "category": "Productivity & PM",
-    "auth_methods": [
-      "OAuth2"
-    ],
-    "access_tier": "Sales/Enterprise Gated",
-    "has_public_docs": true,
-    "docs_url": "https://asana.example.com/docs",
-    "api_type": "REST",
-    "has_mcp_server": true,
-    "mcp_server_url": null,
-    "buildability": "Partially Ready",
-    "blocker": null,
-    "confidence_score": 0.9,
-    "evidence_urls": [
-      "https://asana.com"
-    ],
-    "raw_notes": "Generated via fast simulation due to API rate limits.",
-    "researched_at": "2026-09-17T00:44:54.508080Z",
-    "agent_version": "1.0.0",
-    "manually_verified": false,
-    "verification_notes": null
-  },
-  {
-    "id": "monday",
-    "name": "Monday.com",
-    "category": "Productivity & PM",
-    "auth_methods": [
-      "API Key"
-    ],
-    "access_tier": "Self-Serve Paid",
-    "has_public_docs": true,
-    "docs_url": "https://monday.example.com/docs",
-    "api_type": "REST",
-    "has_mcp_server": false,
-    "mcp_server_url": null,
-    "buildability": "Partially Ready",
-    "blocker": null,
-    "confidence_score": 0.9,
-    "evidence_urls": [
-      "https://monday.com"
-    ],
-    "raw_notes": "Generated via fast simulation due to API rate limits.",
-    "researched_at": "2026-09-17T00:44:54.508088Z",
-    "agent_version": "1.0.0",
-    "manually_verified": false,
-    "verification_notes": null
-  },
-  {
-    "id": "clickup",
-    "name": "ClickUp",
-    "category": "Productivity & PM",
-    "auth_methods": [
-      "OAuth2"
-    ],
-    "access_tier": "Sales/Enterprise Gated",
-    "has_public_docs": true,
-    "docs_url": "https://clickup.example.com/docs",
-    "api_type": "REST",
-    "has_mcp_server": false,
-    "mcp_server_url": null,
-    "buildability": "Partially Ready",
-    "blocker": null,
-    "confidence_score": 0.9,
-    "evidence_urls": [
-      "https://clickup.com"
-    ],
-    "raw_notes": "Generated via fast simulation due to API rate limits.",
-    "researched_at": "2026-09-17T00:44:54.508096Z",
-    "agent_version": "1.0.0",
-    "manually_verified": false,
-    "verification_notes": null
-  },
-  {
-    "id": "notion",
-    "name": "Notion",
-    "category": "Productivity & PM",
-    "auth_methods": [
       "OAuth2",
-      "API Key"
-    ],
-    "access_tier": "Self-Serve Paid",
-    "has_public_docs": true,
-    "docs_url": "https://notion.example.com/docs",
-    "api_type": "REST",
-    "has_mcp_server": true,
-    "mcp_server_url": null,
-    "buildability": "Partially Ready",
-    "blocker": null,
-    "confidence_score": 0.9,
-    "evidence_urls": [
-      "https://www.notion.so"
-    ],
-    "raw_notes": "Generated via fast simulation due to API rate limits.",
-    "researched_at": "2026-09-17T00:44:54.508103Z",
-    "agent_version": "1.0.0",
-    "manually_verified": false,
-    "verification_notes": null
-  },
-  {
-    "id": "todoist",
-    "name": "Todoist",
-    "category": "Productivity & PM",
-    "auth_methods": [
-      "API Key"
-    ],
-    "access_tier": "Self-Serve Paid",
-    "has_public_docs": true,
-    "docs_url": "https://todoist.example.com/docs",
-    "api_type": "REST",
-    "has_mcp_server": true,
-    "mcp_server_url": null,
-    "buildability": "Partially Ready",
-    "blocker": null,
-    "confidence_score": 0.9,
-    "evidence_urls": [
-      "https://todoist.com"
-    ],
-    "raw_notes": "Generated via fast simulation due to API rate limits.",
-    "researched_at": "2026-09-17T00:44:54.508111Z",
-    "agent_version": "1.0.0",
-    "manually_verified": false,
-    "verification_notes": null
-  },
-  {
-    "id": "height",
-    "name": "Height",
-    "category": "Productivity & PM",
-    "auth_methods": [
-      "API Key"
-    ],
-    "access_tier": "Self-Serve Paid",
-    "has_public_docs": true,
-    "docs_url": "https://height.example.com/docs",
-    "api_type": "REST",
-    "has_mcp_server": true,
-    "mcp_server_url": null,
-    "buildability": "Partially Ready",
-    "blocker": null,
-    "confidence_score": 0.9,
-    "evidence_urls": [
-      "https://height.app"
-    ],
-    "raw_notes": "Generated via fast simulation due to API rate limits.",
-    "researched_at": "2026-09-17T00:44:54.508120Z",
-    "agent_version": "1.0.0",
-    "manually_verified": false,
-    "verification_notes": null
-  },
-  {
-    "id": "basecamp",
-    "name": "Basecamp",
-    "category": "Productivity & PM",
-    "auth_methods": [
-      "OAuth2",
-      "API Key"
-    ],
-    "access_tier": "Self-Serve Paid",
-    "has_public_docs": true,
-    "docs_url": "https://basecamp.example.com/docs",
-    "api_type": "REST",
-    "has_mcp_server": false,
-    "mcp_server_url": null,
-    "buildability": "Partially Ready",
-    "blocker": null,
-    "confidence_score": 0.9,
-    "evidence_urls": [
-      "https://basecamp.com"
-    ],
-    "raw_notes": "Generated via fast simulation due to API rate limits.",
-    "researched_at": "2026-09-17T00:44:54.508127Z",
-    "agent_version": "1.0.0",
-    "manually_verified": false,
-    "verification_notes": null
-  },
-  {
-    "id": "plane",
-    "name": "Plane",
-    "category": "Productivity & PM",
-    "auth_methods": [
       "API Key"
     ],
     "access_tier": "Self-Serve Free",
     "has_public_docs": true,
-    "docs_url": "https://plane.example.com/docs",
-    "api_type": "REST",
-    "has_mcp_server": false,
+    "docs_url": "https://linear.app/developers",
+    "api_type": "GraphQL",
+    "has_mcp_server": true,
     "mcp_server_url": null,
     "buildability": "Ready to Build",
     "blocker": null,
-    "confidence_score": 0.9,
+    "confidence_score": 1.0,
     "evidence_urls": [
-      "https://plane.so"
+      "https://linear.app/developers/oauth-2-0-authentication",
+      "https://linear.app/docs/api-and-webhooks",
+      "https://linear.app/developers",
+      "https://www.merge.dev/blog/linear-api-key",
+      "https://www.scalekit.com/blog/linear-mcp-vs-api"
     ],
-    "raw_notes": "Generated via fast simulation due to API rate limits.",
-    "researched_at": "2026-09-17T00:44:54.508135Z",
+    "raw_notes": "Linear provides fully self-serve developer access with support for OAuth2 and personal API keys. The platform features robust GraphQL API documentation and an official MCP server already available for AI agent integrations.",
+    "researched_at": "2026-09-17T01:41:14.202343Z",
     "agent_version": "1.0.0",
     "manually_verified": false,
     "verification_notes": null
@@ -2023,249 +242,27 @@
     "name": "Stripe",
     "category": "Finance & Fintech",
     "auth_methods": [
+      "API Key",
       "OAuth2"
-    ],
-    "access_tier": "Self-Serve Paid",
-    "has_public_docs": true,
-    "docs_url": "https://stripe.example.com/docs",
-    "api_type": "REST",
-    "has_mcp_server": true,
-    "mcp_server_url": null,
-    "buildability": "Partially Ready",
-    "blocker": null,
-    "confidence_score": 0.9,
-    "evidence_urls": [
-      "https://stripe.com"
-    ],
-    "raw_notes": "Generated via fast simulation due to API rate limits.",
-    "researched_at": "2026-09-17T00:44:54.508143Z",
-    "agent_version": "1.0.0",
-    "manually_verified": false,
-    "verification_notes": null
-  },
-  {
-    "id": "plaid",
-    "name": "Plaid",
-    "category": "Finance & Fintech",
-    "auth_methods": [
-      "API Key"
     ],
     "access_tier": "Self-Serve Free",
     "has_public_docs": true,
-    "docs_url": "https://plaid.example.com/docs",
+    "docs_url": "https://docs.stripe.com/api",
     "api_type": "REST",
     "has_mcp_server": true,
     "mcp_server_url": null,
     "buildability": "Ready to Build",
     "blocker": null,
-    "confidence_score": 0.9,
+    "confidence_score": 1.0,
     "evidence_urls": [
-      "https://plaid.com"
+      "https://docs.stripe.com/api/authentication",
+      "https://docs.stripe.com/stripe-apps/api-authentication/oauth",
+      "https://docs.stripe.com/keys",
+      "https://docs.stripe.com/mcp",
+      "https://www.scalekit.com/blog/stripe-mcp-vs-api"
     ],
-    "raw_notes": "Generated via fast simulation due to API rate limits.",
-    "researched_at": "2026-09-17T00:44:54.508151Z",
-    "agent_version": "1.0.0",
-    "manually_verified": false,
-    "verification_notes": null
-  },
-  {
-    "id": "binance",
-    "name": "Binance",
-    "category": "Finance & Fintech",
-    "auth_methods": [
-      "OAuth2",
-      "API Key"
-    ],
-    "access_tier": "Self-Serve Paid",
-    "has_public_docs": true,
-    "docs_url": "https://binance.example.com/docs",
-    "api_type": "REST",
-    "has_mcp_server": false,
-    "mcp_server_url": null,
-    "buildability": "Partially Ready",
-    "blocker": null,
-    "confidence_score": 0.9,
-    "evidence_urls": [
-      "https://www.binance.com"
-    ],
-    "raw_notes": "Generated via fast simulation due to API rate limits.",
-    "researched_at": "2026-09-17T00:44:54.508158Z",
-    "agent_version": "1.0.0",
-    "manually_verified": false,
-    "verification_notes": null
-  },
-  {
-    "id": "braintree",
-    "name": "Braintree",
-    "category": "Finance & Fintech",
-    "auth_methods": [
-      "API Key"
-    ],
-    "access_tier": "Sales/Enterprise Gated",
-    "has_public_docs": true,
-    "docs_url": "https://braintree.example.com/docs",
-    "api_type": "REST",
-    "has_mcp_server": true,
-    "mcp_server_url": null,
-    "buildability": "Partially Ready",
-    "blocker": null,
-    "confidence_score": 0.9,
-    "evidence_urls": [
-      "https://www.braintreepayments.com"
-    ],
-    "raw_notes": "Generated via fast simulation due to API rate limits.",
-    "researched_at": "2026-09-17T00:44:54.508166Z",
-    "agent_version": "1.0.0",
-    "manually_verified": false,
-    "verification_notes": null
-  },
-  {
-    "id": "razorpay",
-    "name": "Razorpay",
-    "category": "Finance & Fintech",
-    "auth_methods": [
-      "API Key"
-    ],
-    "access_tier": "Self-Serve Paid",
-    "has_public_docs": true,
-    "docs_url": "https://razorpay.example.com/docs",
-    "api_type": "REST",
-    "has_mcp_server": false,
-    "mcp_server_url": null,
-    "buildability": "Partially Ready",
-    "blocker": null,
-    "confidence_score": 0.9,
-    "evidence_urls": [
-      "https://razorpay.com"
-    ],
-    "raw_notes": "Generated via fast simulation due to API rate limits.",
-    "researched_at": "2026-09-17T00:44:54.508173Z",
-    "agent_version": "1.0.0",
-    "manually_verified": false,
-    "verification_notes": null
-  },
-  {
-    "id": "wise",
-    "name": "Wise",
-    "category": "Finance & Fintech",
-    "auth_methods": [
-      "API Key"
-    ],
-    "access_tier": "Self-Serve Free",
-    "has_public_docs": true,
-    "docs_url": "https://wise.example.com/docs",
-    "api_type": "REST",
-    "has_mcp_server": false,
-    "mcp_server_url": null,
-    "buildability": "Ready to Build",
-    "blocker": null,
-    "confidence_score": 0.9,
-    "evidence_urls": [
-      "https://wise.com"
-    ],
-    "raw_notes": "Generated via fast simulation due to API rate limits.",
-    "researched_at": "2026-09-17T00:44:54.508181Z",
-    "agent_version": "1.0.0",
-    "manually_verified": false,
-    "verification_notes": null
-  },
-  {
-    "id": "coinbase",
-    "name": "Coinbase",
-    "category": "Finance & Fintech",
-    "auth_methods": [
-      "OAuth2"
-    ],
-    "access_tier": "Self-Serve Free",
-    "has_public_docs": true,
-    "docs_url": "https://coinbase.example.com/docs",
-    "api_type": "REST",
-    "has_mcp_server": true,
-    "mcp_server_url": null,
-    "buildability": "Ready to Build",
-    "blocker": null,
-    "confidence_score": 0.9,
-    "evidence_urls": [
-      "https://www.coinbase.com"
-    ],
-    "raw_notes": "Generated via fast simulation due to API rate limits.",
-    "researched_at": "2026-09-17T00:44:54.508189Z",
-    "agent_version": "1.0.0",
-    "manually_verified": false,
-    "verification_notes": null
-  },
-  {
-    "id": "dwolla",
-    "name": "Dwolla",
-    "category": "Finance & Fintech",
-    "auth_methods": [
-      "OAuth2"
-    ],
-    "access_tier": "Self-Serve Paid",
-    "has_public_docs": true,
-    "docs_url": "https://dwolla.example.com/docs",
-    "api_type": "REST",
-    "has_mcp_server": true,
-    "mcp_server_url": null,
-    "buildability": "Partially Ready",
-    "blocker": null,
-    "confidence_score": 0.9,
-    "evidence_urls": [
-      "https://www.dwolla.com"
-    ],
-    "raw_notes": "Generated via fast simulation due to API rate limits.",
-    "researched_at": "2026-09-17T00:44:54.508196Z",
-    "agent_version": "1.0.0",
-    "manually_verified": false,
-    "verification_notes": null
-  },
-  {
-    "id": "finix",
-    "name": "Finix",
-    "category": "Finance & Fintech",
-    "auth_methods": [
-      "OAuth2",
-      "API Key"
-    ],
-    "access_tier": "Self-Serve Free",
-    "has_public_docs": true,
-    "docs_url": "https://finix.example.com/docs",
-    "api_type": "REST",
-    "has_mcp_server": true,
-    "mcp_server_url": null,
-    "buildability": "Ready to Build",
-    "blocker": null,
-    "confidence_score": 0.9,
-    "evidence_urls": [
-      "https://www.finix.com"
-    ],
-    "raw_notes": "Generated via fast simulation due to API rate limits.",
-    "researched_at": "2026-09-17T00:44:54.508204Z",
-    "agent_version": "1.0.0",
-    "manually_verified": false,
-    "verification_notes": null
-  },
-  {
-    "id": "adyen",
-    "name": "Adyen",
-    "category": "Finance & Fintech",
-    "auth_methods": [
-      "OAuth2"
-    ],
-    "access_tier": "Self-Serve Paid",
-    "has_public_docs": true,
-    "docs_url": "https://adyen.example.com/docs",
-    "api_type": "REST",
-    "has_mcp_server": true,
-    "mcp_server_url": null,
-    "buildability": "Partially Ready",
-    "blocker": null,
-    "confidence_score": 0.9,
-    "evidence_urls": [
-      "https://www.adyen.com"
-    ],
-    "raw_notes": "Generated via fast simulation due to API rate limits.",
-    "researched_at": "2026-09-17T00:44:54.508212Z",
+    "raw_notes": "Stripe provides comprehensive public REST documentation, self-serve developer access with API keys and OAuth 2.0 support, and an official Model Context Protocol (MCP) server for AI agent interactions.",
+    "researched_at": "2026-09-17T01:41:18.914070Z",
     "agent_version": "1.0.0",
     "manually_verified": false,
     "verification_notes": null
@@ -2275,248 +272,27 @@
     "name": "Fathom",
     "category": "AI, Video & Audio",
     "auth_methods": [
-      "OAuth2"
-    ],
-    "access_tier": "Self-Serve Paid",
-    "has_public_docs": true,
-    "docs_url": "https://fathom.example.com/docs",
-    "api_type": "REST",
-    "has_mcp_server": false,
-    "mcp_server_url": null,
-    "buildability": "Partially Ready",
-    "blocker": null,
-    "confidence_score": 0.9,
-    "evidence_urls": [
-      "https://fathom.video"
-    ],
-    "raw_notes": "Generated via fast simulation due to API rate limits.",
-    "researched_at": "2026-09-17T00:44:54.508220Z",
-    "agent_version": "1.0.0",
-    "manually_verified": false,
-    "verification_notes": null
-  },
-  {
-    "id": "reducto",
-    "name": "Reducto",
-    "category": "AI, Video & Audio",
-    "auth_methods": [
+      "API Key",
       "OAuth2"
     ],
     "access_tier": "Self-Serve Free",
     "has_public_docs": true,
-    "docs_url": "https://reducto.example.com/docs",
+    "docs_url": "https://developers.fathom.ai/",
     "api_type": "REST",
     "has_mcp_server": true,
-    "mcp_server_url": null,
+    "mcp_server_url": "https://api.fathom.ai/mcp",
     "buildability": "Ready to Build",
     "blocker": null,
-    "confidence_score": 0.9,
+    "confidence_score": 1.0,
     "evidence_urls": [
-      "https://reducto.ai"
+      "https://developers.fathom.ai/",
+      "https://developers.fathom.ai/api-overview",
+      "https://help.fathom.video/en/articles/8368641",
+      "https://developers.fathom.ai/mcp-docs",
+      "https://mcpservers.org/servers/agencyenterprise/fathom-mcp-server"
     ],
-    "raw_notes": "Generated via fast simulation due to API rate limits.",
-    "researched_at": "2026-09-17T00:44:54.508227Z",
-    "agent_version": "1.0.0",
-    "manually_verified": false,
-    "verification_notes": null
-  },
-  {
-    "id": "grain",
-    "name": "Grain",
-    "category": "AI, Video & Audio",
-    "auth_methods": [
-      "OAuth2"
-    ],
-    "access_tier": "Self-Serve Paid",
-    "has_public_docs": true,
-    "docs_url": "https://grain.example.com/docs",
-    "api_type": "REST",
-    "has_mcp_server": false,
-    "mcp_server_url": null,
-    "buildability": "Partially Ready",
-    "blocker": null,
-    "confidence_score": 0.9,
-    "evidence_urls": [
-      "https://grain.com"
-    ],
-    "raw_notes": "Generated via fast simulation due to API rate limits.",
-    "researched_at": "2026-09-17T00:44:54.508235Z",
-    "agent_version": "1.0.0",
-    "manually_verified": false,
-    "verification_notes": null
-  },
-  {
-    "id": "fireflies_ai",
-    "name": "Fireflies.ai",
-    "category": "AI, Video & Audio",
-    "auth_methods": [
-      "API Key"
-    ],
-    "access_tier": "Sales/Enterprise Gated",
-    "has_public_docs": true,
-    "docs_url": "https://fireflies_ai.example.com/docs",
-    "api_type": "REST",
-    "has_mcp_server": false,
-    "mcp_server_url": null,
-    "buildability": "Partially Ready",
-    "blocker": null,
-    "confidence_score": 0.9,
-    "evidence_urls": [
-      "https://fireflies.ai"
-    ],
-    "raw_notes": "Generated via fast simulation due to API rate limits.",
-    "researched_at": "2026-09-17T00:44:54.508243Z",
-    "agent_version": "1.0.0",
-    "manually_verified": false,
-    "verification_notes": null
-  },
-  {
-    "id": "otter_ai",
-    "name": "Otter.ai",
-    "category": "AI, Video & Audio",
-    "auth_methods": [
-      "API Key"
-    ],
-    "access_tier": "Sales/Enterprise Gated",
-    "has_public_docs": true,
-    "docs_url": "https://otter_ai.example.com/docs",
-    "api_type": "REST",
-    "has_mcp_server": true,
-    "mcp_server_url": null,
-    "buildability": "Partially Ready",
-    "blocker": null,
-    "confidence_score": 0.9,
-    "evidence_urls": [
-      "https://otter.ai"
-    ],
-    "raw_notes": "Generated via fast simulation due to API rate limits.",
-    "researched_at": "2026-09-17T00:44:54.508250Z",
-    "agent_version": "1.0.0",
-    "manually_verified": false,
-    "verification_notes": null
-  },
-  {
-    "id": "assemblyai",
-    "name": "AssemblyAI",
-    "category": "AI, Video & Audio",
-    "auth_methods": [
-      "OAuth2"
-    ],
-    "access_tier": "Self-Serve Paid",
-    "has_public_docs": true,
-    "docs_url": "https://assemblyai.example.com/docs",
-    "api_type": "REST",
-    "has_mcp_server": false,
-    "mcp_server_url": null,
-    "buildability": "Partially Ready",
-    "blocker": null,
-    "confidence_score": 0.9,
-    "evidence_urls": [
-      "https://www.assemblyai.com"
-    ],
-    "raw_notes": "Generated via fast simulation due to API rate limits.",
-    "researched_at": "2026-09-17T00:44:54.508258Z",
-    "agent_version": "1.0.0",
-    "manually_verified": false,
-    "verification_notes": null
-  },
-  {
-    "id": "deepgram",
-    "name": "Deepgram",
-    "category": "AI, Video & Audio",
-    "auth_methods": [
-      "API Key"
-    ],
-    "access_tier": "Sales/Enterprise Gated",
-    "has_public_docs": true,
-    "docs_url": "https://deepgram.example.com/docs",
-    "api_type": "REST",
-    "has_mcp_server": false,
-    "mcp_server_url": null,
-    "buildability": "Partially Ready",
-    "blocker": null,
-    "confidence_score": 0.9,
-    "evidence_urls": [
-      "https://deepgram.com"
-    ],
-    "raw_notes": "Generated via fast simulation due to API rate limits.",
-    "researched_at": "2026-09-17T00:44:54.508265Z",
-    "agent_version": "1.0.0",
-    "manually_verified": false,
-    "verification_notes": null
-  },
-  {
-    "id": "elevenlabs",
-    "name": "ElevenLabs",
-    "category": "AI, Video & Audio",
-    "auth_methods": [
-      "API Key"
-    ],
-    "access_tier": "Sales/Enterprise Gated",
-    "has_public_docs": true,
-    "docs_url": "https://elevenlabs.example.com/docs",
-    "api_type": "REST",
-    "has_mcp_server": false,
-    "mcp_server_url": null,
-    "buildability": "Partially Ready",
-    "blocker": null,
-    "confidence_score": 0.9,
-    "evidence_urls": [
-      "https://elevenlabs.io"
-    ],
-    "raw_notes": "Generated via fast simulation due to API rate limits.",
-    "researched_at": "2026-09-17T00:44:54.508273Z",
-    "agent_version": "1.0.0",
-    "manually_verified": false,
-    "verification_notes": null
-  },
-  {
-    "id": "runway",
-    "name": "Runway",
-    "category": "AI, Video & Audio",
-    "auth_methods": [
-      "API Key"
-    ],
-    "access_tier": "Self-Serve Paid",
-    "has_public_docs": true,
-    "docs_url": "https://runway.example.com/docs",
-    "api_type": "REST",
-    "has_mcp_server": false,
-    "mcp_server_url": null,
-    "buildability": "Partially Ready",
-    "blocker": null,
-    "confidence_score": 0.9,
-    "evidence_urls": [
-      "https://runwayml.com"
-    ],
-    "raw_notes": "Generated via fast simulation due to API rate limits.",
-    "researched_at": "2026-09-17T00:44:54.508280Z",
-    "agent_version": "1.0.0",
-    "manually_verified": false,
-    "verification_notes": null
-  },
-  {
-    "id": "synthesia",
-    "name": "Synthesia",
-    "category": "AI, Video & Audio",
-    "auth_methods": [
-      "OAuth2",
-      "API Key"
-    ],
-    "access_tier": "Self-Serve Paid",
-    "has_public_docs": true,
-    "docs_url": "https://synthesia.example.com/docs",
-    "api_type": "REST",
-    "has_mcp_server": false,
-    "mcp_server_url": null,
-    "buildability": "Partially Ready",
-    "blocker": null,
-    "confidence_score": 0.9,
-    "evidence_urls": [
-      "https://www.synthesia.io"
-    ],
-    "raw_notes": "Generated via fast simulation due to API rate limits.",
-    "researched_at": "2026-09-17T00:44:54.508287Z",
+    "raw_notes": "Fathom provides self-serve API access starting from free plans using standard API keys and OAuth2. Comprehensive REST documentation is available via Mintlify, and an official MCP server URL is provided for immediate agent integration.",
+    "researched_at": "2026-09-17T01:41:23.359353Z",
     "agent_version": "1.0.0",
     "manually_verified": false,
     "verification_notes": null

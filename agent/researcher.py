@@ -1,153 +1,208 @@
 import json
 import os
+import sys
+import re
 import asyncio
-from typing import List
+from typing import List, Optional
 from datetime import datetime, timezone
+
+if sys.platform == "win32":
+    try:
+        sys.stdout.reconfigure(encoding='utf-8')
+    except Exception:
+        pass
+
 import google.generativeai as genai
-from rich.progress import Progress, SpinnerColumn, TextColumn, BarColumn, TimeElapsedColumn
 
 from agent.config import GEMINI_API_KEY
 from agent.app_registry import AppEntry
-from agent.models.app_profile import AppProfile
+from agent.models.app_profile import AppProfile, AuthMethod, AccessTier, BuildabilityVerdict
 from agent.tools.web_search import search_web
-from agent.prompts.research_prompt import RESEARCH_SYSTEM_PROMPT, get_research_queries, get_research_user_prompt
+from agent.prompts.research_prompt import RESEARCH_SYSTEM_PROMPT
 
-# Configure Gemini
+# Configure Gemini with verified models
 genai.configure(api_key=GEMINI_API_KEY)
-model = genai.GenerativeModel('gemini-1.5-flash', system_instruction=RESEARCH_SYSTEM_PROMPT)
+PRIMARY_MODEL = "gemini-3.5-flash-lite"
+FALLBACK_MODEL = "gemini-3.5-flash"
+
+primary_model = genai.GenerativeModel(PRIMARY_MODEL, system_instruction=RESEARCH_SYSTEM_PROMPT)
+fallback_model = genai.GenerativeModel(FALLBACK_MODEL, system_instruction=RESEARCH_SYSTEM_PROMPT)
+
+def clean_json_response(text: str) -> str:
+    """Strip markdown backticks if present."""
+    text = text.strip()
+    if text.startswith("```"):
+        text = re.sub(r"^```(?:json)?\s*", "", text)
+        text = re.sub(r"\s*```$", "", text)
+    return text.strip()
 
 class AppResearcher:
     def __init__(self, output_dir: str = "data/raw"):
         self.output_dir = output_dir
         os.makedirs(self.output_dir, exist_ok=True)
-        self.semaphore = asyncio.Semaphore(1)  # Strict concurrency limit for free tier
 
-    async def research_app(self, app: AppEntry) -> AppProfile:
-        async with self.semaphore:
-            # Check if already researched (Resume capability)
-            output_file = os.path.join(self.output_dir, f"{app.id}.json")
-            if os.path.exists(output_file):
-                with open(output_file, 'r') as f:
-                    data = json.load(f)
-                    # Verify it's a valid complete profile
-                    if "auth_methods" in data:
-                        return AppProfile.model_validate(data)
-
-            # 1. Generate targeted search queries
-            queries = get_research_queries(app.name, app.docs_hint)
-            
-            # 2. Execute searches concurrently
-            search_tasks = [search_web(q, max_results=3) for q in queries]
-            search_results = await asyncio.gather(*search_tasks, return_exceptions=True)
-            
-            # Combine context
-            context_blocks = []
-            evidence_urls = set()
-            for i, result_batch in enumerate(search_results):
-                if isinstance(result_batch, Exception):
-                    continue
-                for result in result_batch:
-                    url = result.get('url', '')
-                    title = result.get('title', '')
-                    content = result.get('content', '')
-                    context_blocks.append(f"Source: {url}\nTitle: {title}\nContent: {content}\n")
-                    if url:
-                        evidence_urls.add(url)
-            
-            search_context = "\n\n".join(context_blocks)[:30000] # Limit context size
-            
-            # 3. Feed to LLM for extraction
-            user_prompt = get_research_user_prompt(app.name, search_context)
-            
+    async def _generate_with_fallback(self, prompt: str) -> str:
+        """Calls primary model, falls back to secondary, and retries on 429 if needed."""
+        for attempt in range(3):
+            # Try primary
             try:
-                # Add retry logic for Gemini rate limits (free tier is 15 RPM)
-                from tenacity import retry, stop_after_attempt, wait_exponential, retry_if_exception_type
-                from google.api_core.exceptions import ResourceExhausted, TooManyRequests, ServiceUnavailable
-                
-                @retry(
-                    stop=stop_after_attempt(5), 
-                    wait=wait_exponential(multiplier=5, min=15, max=60),
-                    retry=retry_if_exception_type((ResourceExhausted, TooManyRequests, ServiceUnavailable, Exception))
-                )
-                async def generate_with_retry(prompt):
-                    return await model.generate_content_async(
-                        prompt,
-                        generation_config=genai.GenerationConfig(
-                            response_mime_type="application/json",
-                            temperature=0.1
-                        )
+                res = await primary_model.generate_content_async(
+                    prompt,
+                    generation_config=genai.GenerationConfig(
+                        response_mime_type="application/json",
+                        temperature=0.1
                     )
-
-                # Gemini Structured Output
-                response = await generate_with_retry(user_prompt)
-                
-                # Parse JSON
-                result_dict = json.loads(response.text)
-                
-                # Merge base app info
-                result_dict["id"] = app.id
-                result_dict["name"] = app.name
-                result_dict["category"] = app.category
-                result_dict["evidence_urls"] = list(evidence_urls)[:5] # Top 5 URLs
-                result_dict["researched_at"] = datetime.now(timezone.utc).isoformat()
-                
-                # Validate with Pydantic
-                profile = AppProfile.model_validate(result_dict)
-                
-                # 5. Save raw result
-                with open(output_file, 'w') as f:
-                    f.write(profile.model_dump_json(indent=2))
-                
-                # Sleep to respect rate limits (Gemini free tier allows 15 RPM)
-                await asyncio.sleep(0.1)
-                return profile
-                
-            except Exception as e:
-                # Graceful error handling - fallback to mock profile so pipeline can complete
-                print(f"[Error] Failed to extract profile for {app.name}: {e}. Using mock fallback.")
-                import random
-                mock_tier = random.choice(["Self-Serve Free", "Self-Serve Paid", "Sales/Enterprise Gated"])
-                mock_auth = random.choice([["OAuth2"], ["API Key"], ["OAuth2", "API Key"]])
-                
-                fail_profile = AppProfile(
-                    id=app.id,
-                    name=app.name,
-                    category=app.category,
-                    auth_methods=mock_auth,
-                    access_tier=mock_tier,
-                    has_public_docs=True,
-                    docs_url=f"https://{app.id}.example.com/docs",
-                    api_type="REST",
-                    has_mcp_server=random.choice([True, False]),
-                    mcp_server_url=None,
-                    buildability="Ready to Build",
-                    blocker=None,
-                    confidence_score=0.8,
-                    evidence_urls=["https://example.com/docs"],
-                    raw_notes="Generated via fallback mock due to API failure.",
-                    researched_at=datetime.now(timezone.utc)
                 )
-                with open(output_file, 'w') as f:
-                    f.write(fail_profile.model_dump_json(indent=2))
-                return fail_profile
+                return res.text
+            except Exception as e_prim:
+                err_str = str(e_prim)
+                if "429" in err_str:
+                    # Try secondary model
+                    try:
+                        res = await fallback_model.generate_content_async(
+                            prompt,
+                            generation_config=genai.GenerationConfig(
+                                response_mime_type="application/json",
+                                temperature=0.1
+                            )
+                        )
+                        return res.text
+                    except Exception as e_sec:
+                        print(f"  [Rate limit wait] Both models hit 429. Sleeping 12s (attempt {attempt+1}/3)...")
+                        await asyncio.sleep(12)
+                        continue
+                else:
+                    raise e_prim
+        raise RuntimeError("Exceeded maximum retries for Gemini API calls")
 
-    async def research_all(self, apps: List[AppEntry]) -> List[AppProfile]:
+    async def research_app(self, app: AppEntry, delay_seconds: float = 3.0) -> AppProfile:
+        output_file = os.path.join(self.output_dir, f"{app.id}.json")
+        
+        # Check if already researched successfully from a real run
+        if os.path.exists(output_file):
+            try:
+                with open(output_file, 'r', encoding='utf-8') as f:
+                    data = json.load(f)
+                    notes = data.get("raw_notes", "")
+                    blocker = str(data.get("blocker", ""))
+                    # Only reuse if it is genuine, clean, and not an error fallback
+                    if (
+                        "simulation" not in notes 
+                        and "fallback mock" not in notes 
+                        and "example.com" not in str(data.get("evidence_urls", []))
+                        and "429" not in blocker
+                        and "extraction error" not in blocker.lower()
+                    ):
+                        print(f"  ⏩ Using cached profile for {app.name} ({app.category})")
+                        return AppProfile.model_validate(data)
+            except Exception:
+                pass
+
+        print(f"\n🔍 [{app.category}] Researching: {app.name}...")
+
+        # 1. Search for real docs using Serper
+        queries = [
+            f"{app.name} API developer documentation authentication OAuth API key",
+            f"{app.name} API developer access pricing self-serve gated MCP"
+        ]
+
+        evidence_urls = []
+        context_blocks = []
+
+        for q in queries:
+            results = await search_web(q, max_results=3)
+            for res in results:
+                url = res.get("url", "").strip()
+                title = res.get("title", "").strip()
+                snippet = res.get("content", "").strip()
+                if url:
+                    if url not in evidence_urls:
+                        evidence_urls.append(url)
+                    context_blocks.append(f"Source URL: {url}\nTitle: {title}\nSnippet: {snippet}\n")
+
+        search_context = "\n---\n".join(context_blocks)
+        if not search_context:
+            search_context = f"No search results returned for {app.name}. Homepage: {app.homepage}"
+
+        # 2. Prompt Gemini for structured analysis
+        prompt = f"""Analyze the application '{app.name}' ({app.category}) for inclusion in an AI agent toolkit.
+Official Homepage: {app.homepage}
+
+Web Search Findings:
+{search_context}
+
+Output a strictly valid JSON object with EXACTLY these keys:
+{{
+  "auth_methods": ["OAuth2" | "API Key" | "Basic Auth" | "JWT" | "OAuth1" | "Unknown"],
+  "access_tier": "Self-Serve Free" | "Self-Serve Paid" | "Partner/Approval Gated" | "Sales/Enterprise Gated" | "No Public API",
+  "has_public_docs": true | false,
+  "docs_url": "<main developer documentation URL found in evidence or official portal>",
+  "api_type": "REST" | "GraphQL" | "Webhooks" | "gRPC" | "None",
+  "has_mcp_server": true | false,
+  "mcp_server_url": null,
+  "buildability": "Ready to Build" | "Partially Ready" | "Gated (Outreach Required)" | "Blocked (No API)",
+  "blocker": null or "<specific blocker if not Ready to Build>",
+  "confidence_score": <float between 0.2 and 1.0>,
+  "raw_notes": "<concise 2-3 sentence executive summary of findings and credentials access>"
+}}
+Return ONLY the raw JSON object, without explanation."""
+
+        try:
+            # Respect rate limits
+            await asyncio.sleep(delay_seconds)
+
+            raw_text = await self._generate_with_fallback(prompt)
+            clean_text = clean_json_response(raw_text)
+            parsed = json.loads(clean_text)
+
+            # Ensure essential keys and evidence
+            parsed["id"] = app.id
+            parsed["name"] = app.name
+            parsed["category"] = app.category
+            parsed["evidence_urls"] = evidence_urls[:5]
+            parsed["researched_at"] = datetime.now(timezone.utc).isoformat()
+
+            # Ensure valid docs_url fallback from evidence if missing
+            if not parsed.get("docs_url") and evidence_urls:
+                parsed["docs_url"] = evidence_urls[0]
+
+            profile = AppProfile.model_validate(parsed)
+
+            # Save real verified result
+            with open(output_file, 'w', encoding='utf-8') as f:
+                f.write(profile.model_dump_json(indent=2))
+
+            print(f"  ✅ {app.name}: Auth={','.join([a.value for a in profile.auth_methods])} | Tier={profile.access_tier.value} | Verdict={profile.buildability.value}")
+            return profile
+
+        except Exception as e:
+            print(f"  ⚠️ Extraction error for {app.name}: {e}")
+            fallback_profile = AppProfile(
+                id=app.id,
+                name=app.name,
+                category=app.category,
+                auth_methods=[AuthMethod.UNKNOWN],
+                access_tier=AccessTier.PARTNER_GATED,
+                has_public_docs=bool(evidence_urls),
+                docs_url=evidence_urls[0] if evidence_urls else app.homepage,
+                api_type="REST",
+                has_mcp_server=False,
+                mcp_server_url=None,
+                buildability=BuildabilityVerdict.PARTIAL,
+                blocker=f"API extraction error: {str(e)[:100]}",
+                confidence_score=0.3,
+                evidence_urls=evidence_urls[:3],
+                raw_notes=f"Search retrieved {len(evidence_urls)} sources. LLM call error: {str(e)[:100]}.",
+                researched_at=datetime.now(timezone.utc)
+            )
+            with open(output_file, 'w', encoding='utf-8') as f:
+                f.write(fallback_profile.model_dump_json(indent=2))
+            return fallback_profile
+
+    async def research_all(self, apps: List[AppEntry], delay_seconds: float = 3.0) -> List[AppProfile]:
         results = []
-        with Progress(
-            SpinnerColumn(),
-            TextColumn("[progress.description]{task.description}"),
-            BarColumn(),
-            TextColumn("[progress.percentage]{task.percentage:>3.0f}%"),
-            TimeElapsedColumn()
-        ) as progress:
-            task_id = progress.add_task("Researching Apps...", total=len(apps))
-            
-            # Map apps to tasks
-            tasks = [self.research_app(app) for app in apps]
-            
-            for future in asyncio.as_completed(tasks):
-                profile = await future
-                results.append(profile)
-                progress.update(task_id, advance=1, description=f"Completed {profile.name}")
-                
+        for i, app in enumerate(apps, 1):
+            print(f"[{i}/{len(apps)}] Processing {app.name}...")
+            profile = await self.research_app(app, delay_seconds=delay_seconds)
+            results.append(profile)
         return results

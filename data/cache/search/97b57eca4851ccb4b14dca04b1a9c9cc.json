@@ -1,0 +1,17 @@
+[
+  {
+    "url": "https://docs.stripe.com/api/authentication",
+    "title": "Authentication | Stripe API Reference",
+    "content": "The Stripe API uses API keys to authenticate requests. You can view and manage your API keys in the Stripe Dashboard. with Stripe developers on Discord."
+  },
+  {
+    "url": "https://docs.stripe.com/stripe-apps/api-authentication/oauth",
+    "title": "OAuth 2.0",
+    "content": "Use the industry standard OAuth 2.0 to authenticate requests to the Stripe API. You'll need to use the app developer API Key for the relevant link type used in ..."
+  },
+  {
+    "url": "https://docs.stripe.com/keys",
+    "title": "API keys | Stripe Documentation",
+    "content": "Stripe uses API keys to authenticate requests from your integration and determine which Stripe resources it can access."
+  }
+]

@@ -1,0 +1,17 @@
+[
+  {
+    "url": "https://docs.slack.dev/authentication/installing-with-oauth",
+    "title": "Installing via OAuth authorization code flow",
+    "content": "OAuth allows a user in any Slack workspace to install your app. Your app's access token opens the door to Slack API methods, events, and other features."
+  },
+  {
+    "url": "https://api.slack.com/apps",
+    "title": "Slack API: Applications",
+    "content": "You'll need to sign in to your Slack account to create an application. Don't see an app you're looking for? Sign in to another workspace."
+  },
+  {
+    "url": "https://docs.slack.dev/authentication/tokens",
+    "title": "Tokens - Slack Developer Docs",
+    "content": "Tokens are the keys to the Slack platform. They tie together all the scopes and permissions your app has obtained, allowing it to read, write, and interact."
+  }
+]

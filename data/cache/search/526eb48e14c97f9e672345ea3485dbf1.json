@@ -1,0 +1,17 @@
+[
+  {
+    "url": "https://mailchimp.com/developer/marketing/guides/quick-start/",
+    "title": "Marketing API Quick Start Guide",
+    "content": "Use this guide to start using the Mailchimp Marketing API. Learn how to generate your API key, install the client library, and make your first API call."
+  },
+  {
+    "url": "https://mailchimp.com/developer/marketing/docs/fundamentals/",
+    "title": "Fundamentals Documentation | Mailchimp Developer",
+    "content": "You can authenticate requests using either your API key or an OAuth access token, depending on your use case. You should use an API key if you're writing code ..."
+  },
+  {
+    "url": "https://mailchimp.com/developer/marketing/guides/access-user-data-oauth-2/",
+    "title": "Access Data on Behalf of Other Users with OAuth 2 Guide",
+    "content": "OAuth 2 authentication provides developers with a secure way to access Mailchimp Marketing API data on behalf of other Mailchimp users."
+  }
+]

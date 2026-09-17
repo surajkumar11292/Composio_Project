@@ -1,0 +1,17 @@
+[
+  {
+    "url": "https://www.merge.dev/blog/linear-api-key",
+    "title": "How to get your API key in Linear (5 steps)",
+    "content": "Linear offers 3 self-serve plans (\u201cFree\u201d, \u201cStandard\u201d, \u201cPlus\u201d), in addition to \u201cLinear Enterprise.\u201d Linear's pricing plans. As you move up these plans, you'll be ..."
+  },
+  {
+    "url": "https://www.scalekit.com/blog/linear-mcp-vs-api",
+    "title": "Linear MCP vs Linear API - Right Choice for AI Agents?",
+    "content": "Linear's official MCP server covers issue, comment, project, milestone, initiative, and project-update operations plus documentation search."
+  },
+  {
+    "url": "https://www.reddit.com/r/Linear/comments/1s4gqdy/linearnative_ai_dev_agent_using_claude_code_mcp/",
+    "title": "Linear-native AI dev agent using Claude Code, MCP, and ...",
+    "content": "Linear MCP Server \u2013 Facilitates project management with the Linear API via the Model Context Protocol, allowing users to manage initiatives, ..."
+  }
+]

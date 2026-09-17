@@ -212,14 +212,14 @@ footer a{color:var(--accent);text-decoration:none}
 <!-- METRICS -->
 <section class="reveal">
   <div class="metrics">
-    <div class="metric-card accent"><div class="metric-val">100</div><div class="metric-label">Apps Researched</div></div>
-    <div class="metric-card success"><div class="metric-val">43</div><div class="metric-label">Ready to Build Now</div></div>
-    <div class="metric-card warn"><div class="metric-val">28</div><div class="metric-label">Partially Ready</div></div>
-    <div class="metric-card danger"><div class="metric-val">21</div><div class="metric-label">Sales/Approval Gated</div></div>
-    <div class="metric-card"><div class="metric-val">8</div><div class="metric-label">No Public API</div></div>
-    <div class="metric-card accent"><div class="metric-val">34</div><div class="metric-label">Have Existing MCP</div></div>
-    <div class="metric-card success"><div class="metric-val">91%</div><div class="metric-label">Auth Accuracy (verified)</div></div>
-    <div class="metric-card"><div class="metric-val">10</div><div class="metric-label">Categories Mapped</div></div>
+    <div class="metric-card accent"><div class="metric-val" id="statTotalApps">100</div><div class="metric-label">Apps Researched</div></div>
+    <div class="metric-card success"><div class="metric-val" id="statReadyApps">43</div><div class="metric-label">Ready to Build Now</div></div>
+    <div class="metric-card warn"><div class="metric-val" id="statPartialApps">28</div><div class="metric-label">Partially Ready</div></div>
+    <div class="metric-card danger"><div class="metric-val" id="statGatedApps">21</div><div class="metric-label">Sales/Approval Gated</div></div>
+    <div class="metric-card"><div class="metric-val" id="statNoApiApps">8</div><div class="metric-label">No Public API</div></div>
+    <div class="metric-card accent"><div class="metric-val" id="statMcpApps">34</div><div class="metric-label">Have Existing MCP</div></div>
+    <div class="metric-card success"><div class="metric-val" id="statAccuracy">91%</div><div class="metric-label">Auth Accuracy (verified)</div></div>
+    <div class="metric-card"><div class="metric-val" id="statCategories">10</div><div class="metric-label">Categories Mapped</div></div>
   </div>
 </section>
 
@@ -458,125 +458,166 @@ toolset = ComposioToolSet(api_key=COMPOSIO_API_KEY)
 <script>
 // ─── DATA ───────────────────────────────────────────────────────────────────
 const APPS = [
-  // CRM & Sales
-  {n:"Salesforce",cat:"CRM & Sales",auth:["OAuth2","API Key"],tier:"Self-Serve Paid",api:"REST + GraphQL",verdict:"partial",blocker:"Paid plan required for full API",mcp:true,docs:"https://developer.salesforce.com/docs"},
-  {n:"HubSpot",cat:"CRM & Sales",auth:["OAuth2","API Key"],tier:"Self-Serve Free",api:"REST",verdict:"ready",blocker:null,mcp:true,docs:"https://developers.hubspot.com/docs"},
-  {n:"Pipedrive",cat:"CRM & Sales",auth:["OAuth2","API Key"],tier:"Self-Serve Free (trial)",api:"REST",verdict:"ready",blocker:null,mcp:false,docs:"https://developers.pipedrive.com/docs"},
-  {n:"Attio",cat:"CRM & Sales",auth:["OAuth2","API Key"],tier:"Self-Serve Free",api:"REST",verdict:"ready",blocker:null,mcp:false,docs:"https://developers.attio.com"},
-  {n:"Zoho CRM",cat:"CRM & Sales",auth:["OAuth2"],tier:"Self-Serve Paid",api:"REST",verdict:"partial",blocker:"Complex OAuth flow, module-gated APIs",mcp:false,docs:"https://www.zoho.com/crm/developer/docs"},
-  {n:"Close",cat:"CRM & Sales",auth:["API Key"],tier:"Self-Serve Paid",api:"REST",verdict:"partial",blocker:"Paid plan required",mcp:false,docs:"https://developer.close.com"},
-  {n:"Freshsales",cat:"CRM & Sales",auth:["API Key"],tier:"Self-Serve Free (trial)",api:"REST",verdict:"ready",blocker:null,mcp:false,docs:"https://developer.freshworks.com/crm"},
-  {n:"Apollo.io",cat:"CRM & Sales",auth:["API Key"],tier:"Self-Serve Free (limited)",api:"REST",verdict:"ready",blocker:null,mcp:false,docs:"https://apolloio.github.io/apollo-api-docs"},
-  {n:"Copper",cat:"CRM & Sales",auth:["API Key"],tier:"Self-Serve Paid",api:"REST",verdict:"partial",blocker:"Paid plan only",mcp:false,docs:"https://developer.copper.com"},
-  {n:"Streak",cat:"CRM & Sales",auth:["OAuth2","API Key"],tier:"Self-Serve Free",api:"REST",verdict:"partial",blocker:"Partial docs, some endpoints undocumented",mcp:false,docs:"https://www.streak.com/api"},
-
-  // Support & CS
-  {n:"Zendesk",cat:"Support & CS",auth:["OAuth2","API Key","Basic"],tier:"Self-Serve Paid",api:"REST",verdict:"ready",blocker:null,mcp:true,docs:"https://developer.zendesk.com/api-reference"},
-  {n:"Intercom",cat:"Support & CS",auth:["OAuth2","API Key"],tier:"Self-Serve Free (limited)",api:"REST",verdict:"ready",blocker:null,mcp:true,docs:"https://developers.intercom.com/docs"},
-  {n:"Freshdesk",cat:"Support & CS",auth:["API Key","Basic"],tier:"Self-Serve Free",api:"REST",verdict:"ready",blocker:null,mcp:false,docs:"https://developers.freshdesk.com/api"},
-  {n:"Help Scout",cat:"Support & CS",auth:["OAuth2","API Key"],tier:"Self-Serve Free (trial)",api:"REST",verdict:"ready",blocker:null,mcp:false,docs:"https://developer.helpscout.com"},
-  {n:"Gorgias",cat:"Support & CS",auth:["OAuth2","API Key"],tier:"Self-Serve Paid",api:"REST",verdict:"partial",blocker:"Paid plan required",mcp:false,docs:"https://developers.gorgias.com"},
-  {n:"LiveAgent",cat:"Support & CS",auth:["API Key"],tier:"Self-Serve Paid",api:"REST",verdict:"partial",blocker:"Docs partially behind login",mcp:false,docs:"https://www.liveagent.com/api"},
-  {n:"Gladly",cat:"Support & CS",auth:["API Key"],tier:"Gated (Enterprise)",api:"REST",verdict:"gated",blocker:"No self-serve — enterprise sales required",mcp:false,docs:"https://developer.gladly.com"},
-  {n:"Kustomer",cat:"Support & CS",auth:["API Key"],tier:"Gated (Enterprise)",api:"REST + GraphQL",verdict:"gated",blocker:"Acquired by Meta, partner approval required",mcp:false,docs:"https://developer.kustomer.com"},
-  {n:"Front",cat:"Support & CS",auth:["OAuth2","API Key"],tier:"Self-Serve Paid",api:"REST",verdict:"partial",blocker:"Paid plan required, rate limits strict",mcp:false,docs:"https://dev.frontapp.com"},
-  {n:"Tidio",cat:"Support & CS",auth:["OAuth2","API Key"],tier:"Self-Serve Free",api:"REST",verdict:"ready",blocker:null,mcp:false,docs:"https://www.tidio.com/kb/integrations/api"},
-
-  // Comms & Messaging
-  {n:"Slack",cat:"Comms & Messaging",auth:["OAuth2","Bot Token"],tier:"Self-Serve Free",api:"REST + Events",verdict:"ready",blocker:null,mcp:true,docs:"https://api.slack.com/docs"},
-  {n:"Twilio",cat:"Comms & Messaging",auth:["API Key","Basic"],tier:"Self-Serve Free (trial)",api:"REST",verdict:"ready",blocker:null,mcp:false,docs:"https://www.twilio.com/docs"},
-  {n:"Discord",cat:"Comms & Messaging",auth:["OAuth2","Bot Token"],tier:"Self-Serve Free",api:"REST + WebSocket",verdict:"ready",blocker:null,mcp:true,docs:"https://discord.com/developers/docs"},
-  {n:"Telegram",cat:"Comms & Messaging",auth:["Bot Token"],tier:"Self-Serve Free",api:"REST",verdict:"ready",blocker:null,mcp:true,docs:"https://core.telegram.org/bots/api"},
-  {n:"WhatsApp Business",cat:"Comms & Messaging",auth:["OAuth2","API Token"],tier:"Gated (Meta Approval)",api:"REST",verdict:"gated",blocker:"Meta Business Verification required",mcp:false,docs:"https://developers.facebook.com/docs/whatsapp"},
-  {n:"Sendbird",cat:"Comms & Messaging",auth:["API Key"],tier:"Self-Serve Free",api:"REST",verdict:"ready",blocker:null,mcp:false,docs:"https://sendbird.com/docs/chat"},
-  {n:"Vonage",cat:"Comms & Messaging",auth:["API Key","JWT"],tier:"Self-Serve Free",api:"REST",verdict:"ready",blocker:null,mcp:false,docs:"https://developer.vonage.com"},
-  {n:"Bandwidth",cat:"Comms & Messaging",auth:["Basic","OAuth2"],tier:"Gated (Partner)",api:"REST",verdict:"gated",blocker:"Requires carrier partner agreement",mcp:false,docs:"https://dev.bandwidth.com"},
-  {n:"Plivo",cat:"Comms & Messaging",auth:["Basic (Auth ID+Token)"],tier:"Self-Serve Free",api:"REST",verdict:"ready",blocker:null,mcp:false,docs:"https://www.plivo.com/docs"},
-  {n:"RingCentral",cat:"Comms & Messaging",auth:["OAuth2"],tier:"Self-Serve Free (trial)",api:"REST",verdict:"partial",blocker:"App approval needed for production",mcp:false,docs:"https://developers.ringcentral.com"},
-
-  // Marketing & Social
-  {n:"Mailchimp",cat:"Marketing & Social",auth:["OAuth2","API Key"],tier:"Self-Serve Free",api:"REST",verdict:"ready",blocker:null,mcp:true,docs:"https://mailchimp.com/developer/marketing/api"},
-  {n:"Klaviyo",cat:"Marketing & Social",auth:["API Key"],tier:"Self-Serve Free",api:"REST",verdict:"ready",blocker:null,mcp:false,docs:"https://developers.klaviyo.com/en"},
-  {n:"SendGrid",cat:"Marketing & Social",auth:["API Key"],tier:"Self-Serve Free",api:"REST",verdict:"ready",blocker:null,mcp:false,docs:"https://docs.sendgrid.com"},
-  {n:"Brevo",cat:"Marketing & Social",auth:["API Key"],tier:"Self-Serve Free",api:"REST",verdict:"ready",blocker:null,mcp:false,docs:"https://developers.brevo.com"},
-  {n:"HubSpot Marketing",cat:"Marketing & Social",auth:["OAuth2","API Key"],tier:"Self-Serve Free",api:"REST",verdict:"ready",blocker:null,mcp:true,docs:"https://developers.hubspot.com/docs/api/marketing"},
-  {n:"Pinterest API",cat:"Marketing & Social",auth:["OAuth2"],tier:"Gated (App Review)",api:"REST",verdict:"gated",blocker:"App Review required to access ads/organic endpoints",mcp:false,docs:"https://developers.pinterest.com/docs"},
-  {n:"Threads API",cat:"Marketing & Social",auth:["OAuth2"],tier:"Gated (Meta Approval)",api:"REST (Graph)",verdict:"gated",blocker:"Meta app review + permissions approval",mcp:false,docs:"https://developers.facebook.com/docs/threads"},
-  {n:"Beehiiv",cat:"Marketing & Social",auth:["API Key"],tier:"Self-Serve Paid",api:"REST",verdict:"partial",blocker:"API requires paid plan ($39+/mo)",mcp:false,docs:"https://developers.beehiiv.com"},
-  {n:"ActiveCampaign",cat:"Marketing & Social",auth:["API Key"],tier:"Self-Serve Paid",api:"REST",verdict:"partial",blocker:"Paid plan only",mcp:false,docs:"https://developers.activecampaign.com"},
-  {n:"Postmark",cat:"Marketing & Social",auth:["API Token"],tier:"Self-Serve Free (trial)",api:"REST",verdict:"ready",blocker:null,mcp:false,docs:"https://postmarkapp.com/developer"},
-
-  // Ecommerce
-  {n:"Shopify",cat:"Ecommerce",auth:["OAuth2","API Key"],tier:"Self-Serve Paid",api:"REST + GraphQL",verdict:"ready",blocker:null,mcp:true,docs:"https://shopify.dev/docs/api"},
-  {n:"WooCommerce",cat:"Ecommerce",auth:["API Key (consumer)"],tier:"Self-Serve Free",api:"REST",verdict:"ready",blocker:null,mcp:false,docs:"https://woocommerce.github.io/woocommerce-rest-api-docs"},
-  {n:"BigCommerce",cat:"Ecommerce",auth:["API Key","OAuth2"],tier:"Self-Serve Free (trial)",api:"REST",verdict:"ready",blocker:null,mcp:false,docs:"https://developer.bigcommerce.com/docs"},
-  {n:"Magento",cat:"Ecommerce",auth:["OAuth1","Token"],tier:"Self-Serve (self-hosted)",api:"REST + GraphQL",verdict:"partial",blocker:"Complex self-hosted setup",mcp:false,docs:"https://developer.adobe.com/commerce/webapi"},
-  {n:"Printify",cat:"Ecommerce",auth:["API Key"],tier:"Self-Serve Free",api:"REST",verdict:"ready",blocker:null,mcp:false,docs:"https://developers.printify.com"},
-  {n:"Printful",cat:"Ecommerce",auth:["OAuth2","API Key"],tier:"Self-Serve Free",api:"REST",verdict:"ready",blocker:null,mcp:false,docs:"https://developers.printful.com/docs"},
-  {n:"Shippo",cat:"Ecommerce",auth:["API Key"],tier:"Self-Serve Free",api:"REST",verdict:"ready",blocker:null,mcp:false,docs:"https://goshippo.com/docs/api"},
-  {n:"EasyPost",cat:"Ecommerce",auth:["API Key"],tier:"Self-Serve Free",api:"REST",verdict:"ready",blocker:null,mcp:false,docs:"https://www.easypost.com/docs/api"},
-  {n:"Ecwid",cat:"Ecommerce",auth:["OAuth2","API Token"],tier:"Self-Serve Free",api:"REST",verdict:"ready",blocker:null,mcp:false,docs:"https://api-docs.ecwid.com"},
-
-  // Research & Enrichment
-  {n:"Ahrefs",cat:"Research & Enrichment",auth:["API Key"],tier:"Self-Serve Paid ($99+/mo)",api:"REST",verdict:"partial",blocker:"High cost barrier",mcp:false,docs:"https://ahrefs.com/api"},
-  {n:"Apify",cat:"Research & Enrichment",auth:["API Key"],tier:"Self-Serve Free",api:"REST",verdict:"ready",blocker:null,mcp:true,docs:"https://docs.apify.com/api"},
-  {n:"Firecrawl",cat:"Research & Enrichment",auth:["API Key"],tier:"Self-Serve Free",api:"REST",verdict:"ready",blocker:null,mcp:true,docs:"https://docs.firecrawl.dev"},
-  {n:"Clay",cat:"Research & Enrichment",auth:["API Key"],tier:"Self-Serve Paid",api:"REST",verdict:"partial",blocker:"Paid plan required, no sandbox",mcp:false,docs:"https://developers.clay.com"},
-  {n:"Bright Data",cat:"Research & Enrichment",auth:["API Token"],tier:"Self-Serve Paid",api:"REST",verdict:"partial",blocker:"Proxy services need billing setup",mcp:false,docs:"https://docs.brightdata.com"},
-  {n:"Hunter.io",cat:"Research & Enrichment",auth:["API Key"],tier:"Self-Serve Free",api:"REST",verdict:"ready",blocker:null,mcp:false,docs:"https://hunter.io/api"},
-  {n:"Clearbit",cat:"Research & Enrichment",auth:["API Key (Bearer)"],tier:"Gated (acquired by HubSpot)",api:"REST",verdict:"gated",blocker:"Clearbit API now requires HubSpot paid plan",mcp:false,docs:"https://dashboard.clearbit.com/docs"},
-  {n:"PhantomBuster",cat:"Research & Enrichment",auth:["API Key"],tier:"Self-Serve Paid",api:"REST",verdict:"partial",blocker:"Paid plan required",mcp:false,docs:"https://phantombuster.com/developers"},
-  {n:"Exa.ai",cat:"Research & Enrichment",auth:["API Key"],tier:"Self-Serve Free",api:"REST",verdict:"ready",blocker:null,mcp:true,docs:"https://docs.exa.ai"},
-  {n:"Diffbot",cat:"Research & Enrichment",auth:["API Token"],tier:"Self-Serve Free (trial)",api:"REST",verdict:"ready",blocker:null,mcp:false,docs:"https://docs.diffbot.com"},
-
-  // Dev, Infra & Data
-  {n:"GitHub",cat:"Dev, Infra & Data",auth:["OAuth2","PAT","JWT"],tier:"Self-Serve Free",api:"REST + GraphQL",verdict:"ready",blocker:null,mcp:true,docs:"https://docs.github.com/en/rest"},
-  {n:"Vercel",cat:"Dev, Infra & Data",auth:["API Token"],tier:"Self-Serve Free",api:"REST",verdict:"ready",blocker:null,mcp:true,docs:"https://vercel.com/docs/rest-api"},
-  {n:"Netlify",cat:"Dev, Infra & Data",auth:["OAuth2","API Token"],tier:"Self-Serve Free",api:"REST",verdict:"ready",blocker:null,mcp:false,docs:"https://docs.netlify.com/api/get-started"},
-  {n:"Cloudflare",cat:"Dev, Infra & Data",auth:["API Token","API Key"],tier:"Self-Serve Free",api:"REST",verdict:"ready",blocker:null,mcp:true,docs:"https://developers.cloudflare.com/api"},
-  {n:"Supabase",cat:"Dev, Infra & Data",auth:["API Key","JWT"],tier:"Self-Serve Free",api:"REST + GraphQL",verdict:"ready",blocker:null,mcp:true,docs:"https://supabase.com/docs/reference/api"},
-  {n:"Railway",cat:"Dev, Infra & Data",auth:["API Token"],tier:"Self-Serve Free",api:"GraphQL",verdict:"ready",blocker:null,mcp:false,docs:"https://docs.railway.app/reference/public-api"},
-  {n:"Render",cat:"Dev, Infra & Data",auth:["API Key"],tier:"Self-Serve Free",api:"REST",verdict:"ready",blocker:null,mcp:false,docs:"https://api-docs.render.com"},
-  {n:"PlanetScale",cat:"Dev, Infra & Data",auth:["API Token (service)"],tier:"Self-Serve Free",api:"REST",verdict:"ready",blocker:null,mcp:false,docs:"https://api-docs.planetscale.com"},
-  {n:"Neon",cat:"Dev, Infra & Data",auth:["API Key","JWT"],tier:"Self-Serve Free",api:"REST",verdict:"ready",blocker:null,mcp:true,docs:"https://neon.tech/docs/reference/api-reference"},
-  {n:"Fly.io",cat:"Dev, Infra & Data",auth:["API Token"],tier:"Self-Serve Free",api:"REST + GraphQL",verdict:"ready",blocker:null,mcp:false,docs:"https://fly.io/docs/machines/api"},
-
-  // Productivity & PM
-  {n:"Linear",cat:"Productivity & PM",auth:["OAuth2","API Key"],tier:"Self-Serve Free",api:"GraphQL",verdict:"ready",blocker:null,mcp:true,docs:"https://developers.linear.app/docs"},
-  {n:"Jira",cat:"Productivity & PM",auth:["OAuth2","API Token"],tier:"Self-Serve Free",api:"REST",verdict:"ready",blocker:null,mcp:true,docs:"https://developer.atlassian.com/cloud/jira"},
-  {n:"Asana",cat:"Productivity & PM",auth:["OAuth2","PAT"],tier:"Self-Serve Free",api:"REST",verdict:"ready",blocker:null,mcp:true,docs:"https://developers.asana.com/docs"},
-  {n:"Monday.com",cat:"Productivity & PM",auth:["API Token"],tier:"Self-Serve Free (trial)",api:"GraphQL",verdict:"ready",blocker:null,mcp:false,docs:"https://developer.monday.com/api-reference"},
-  {n:"ClickUp",cat:"Productivity & PM",auth:["OAuth2","API Key"],tier:"Self-Serve Free",api:"REST",verdict:"ready",blocker:null,mcp:true,docs:"https://clickup.com/api"},
-  {n:"Notion",cat:"Productivity & PM",auth:["OAuth2","Integration Token"],tier:"Self-Serve Free",api:"REST",verdict:"ready",blocker:null,mcp:true,docs:"https://developers.notion.com/reference"},
-  {n:"Todoist",cat:"Productivity & PM",auth:["OAuth2","API Token"],tier:"Self-Serve Free",api:"REST",verdict:"ready",blocker:null,mcp:false,docs:"https://developer.todoist.com/rest/v2"},
-  {n:"Height",cat:"Productivity & PM",auth:["API Key","OAuth2"],tier:"Self-Serve Free (trial)",api:"REST",verdict:"partial",blocker:"Limited free tier for API",mcp:false,docs:"https://height.app/api-explorer"},
-  {n:"Basecamp",cat:"Productivity & PM",auth:["OAuth2"],tier:"Self-Serve Free (trial)",api:"REST",verdict:"partial",blocker:"30-day trial only",mcp:false,docs:"https://github.com/basecamp/bc3-api"},
-  {n:"Plane",cat:"Productivity & PM",auth:["API Key"],tier:"Self-Serve Free (open-source)",api:"REST",verdict:"ready",blocker:null,mcp:false,docs:"https://docs.plane.so/api-reference"},
-
-  // Finance & Fintech
-  {n:"Stripe",cat:"Finance & Fintech",auth:["API Key","Webhook"],tier:"Self-Serve Free",api:"REST",verdict:"ready",blocker:null,mcp:true,docs:"https://stripe.com/docs/api"},
-  {n:"Plaid",cat:"Finance & Fintech",auth:["API Key"],tier:"Gated (KYC + Production review)",api:"REST",verdict:"gated",blocker:"Production access requires compliance review",mcp:false,docs:"https://plaid.com/docs"},
-  {n:"Binance",cat:"Finance & Fintech",auth:["API Key (HMAC)"],tier:"Self-Serve Free",api:"REST + WebSocket",verdict:"ready",blocker:null,mcp:false,docs:"https://binance-docs.github.io/apidocs"},
-  {n:"Braintree",cat:"Finance & Fintech",auth:["API Key","OAuth2"],tier:"Self-Serve Free (sandbox)",api:"REST + GraphQL",verdict:"ready",blocker:null,mcp:false,docs:"https://developer.paypal.com/braintree/docs"},
-  {n:"Razorpay",cat:"Finance & Fintech",auth:["API Key (Basic)"],tier:"Self-Serve Free (India)",api:"REST",verdict:"partial",blocker:"India-focused, geo-gated globally",mcp:false,docs:"https://razorpay.com/docs/api"},
-  {n:"Wise",cat:"Finance & Fintech",auth:["API Token","RSA Key"],tier:"Self-Serve Free (sandbox)",api:"REST",verdict:"partial",blocker:"Complex crypto key setup for production",mcp:false,docs:"https://docs.wise.com/api-docs"},
-  {n:"Coinbase",cat:"Finance & Fintech",auth:["OAuth2","API Key"],tier:"Self-Serve Free",api:"REST",verdict:"ready",blocker:null,mcp:false,docs:"https://docs.cloud.coinbase.com"},
-  {n:"Dwolla",cat:"Finance & Fintech",auth:["OAuth2"],tier:"Gated (Application required)",api:"REST",verdict:"gated",blocker:"Application process with Dwolla team required",mcp:false,docs:"https://developers.dwolla.com"},
-  {n:"Finix",cat:"Finance & Fintech",auth:["Basic (Username/Password)"],tier:"Gated (Enterprise)",api:"REST",verdict:"blocked",blocker:"No self-serve — payment facilitator requires partnership",mcp:false,docs:"https://docs.finix.com"},
-  {n:"Adyen",cat:"Finance & Fintech",auth:["API Key","Basic"],tier:"Gated (Partner/Sales)",api:"REST",verdict:"gated",blocker:"Live credentials require partner onboarding",mcp:false,docs:"https://docs.adyen.com"},
-
-  // AI, Video & Audio
-  {n:"Fathom",cat:"AI, Video & Audio",auth:["API Key"],tier:"Gated (Private Beta)",api:"REST",verdict:"gated",blocker:"API is invite-only beta",mcp:false,docs:"https://fathom.video/developers"},
-  {n:"Reducto",cat:"AI, Video & Audio",auth:["API Key"],tier:"Self-Serve Free",api:"REST",verdict:"ready",blocker:null,mcp:false,docs:"https://reducto.ai/docs"},
-  {n:"Grain",cat:"AI, Video & Audio",auth:["OAuth2"],tier:"Self-Serve Paid",api:"REST",verdict:"partial",blocker:"Paid plan required for API access",mcp:false,docs:"https://grain.com/developers"},
-  {n:"Fireflies.ai",cat:"AI, Video & Audio",auth:["API Key"],tier:"Self-Serve Free",api:"GraphQL",verdict:"ready",blocker:null,mcp:false,docs:"https://docs.fireflies.ai"},
-  {n:"Otter.ai",cat:"AI, Video & Audio",auth:["API Key"],tier:"Gated (Approval needed)",api:"REST",verdict:"gated",blocker:"API access requires manual approval from Otter team",mcp:false,docs:"https://otter.ai/developer"},
-  {n:"AssemblyAI",cat:"AI, Video & Audio",auth:["API Key"],tier:"Self-Serve Free",api:"REST + WebSocket",verdict:"ready",blocker:null,mcp:true,docs:"https://www.assemblyai.com/docs"},
-  {n:"Deepgram",cat:"AI, Video & Audio",auth:["API Key"],tier:"Self-Serve Free",api:"REST + WebSocket",verdict:"ready",blocker:null,mcp:true,docs:"https://developers.deepgram.com/docs"},
-  {n:"ElevenLabs",cat:"AI, Video & Audio",auth:["API Key"],tier:"Self-Serve Free",api:"REST",verdict:"ready",blocker:null,mcp:true,docs:"https://docs.elevenlabs.io"},
-  {n:"Runway",cat:"AI, Video & Audio",auth:["API Key"],tier:"Self-Serve Paid",api:"REST",verdict:"partial",blocker:"Paid credits required",mcp:false,docs:"https://docs.runwayml.com"},
-  {n:"Synthesia",cat:"AI, Video & Audio",auth:["API Key"],tier:"Gated (Enterprise pricing)",api:"REST",verdict:"gated",blocker:"API access starts at $30/video or enterprise",mcp:false,docs:"https://docs.synthesia.io"},
+  {
+    "n": "Salesforce",
+    "cat": "CRM & Sales",
+    "auth": [
+      "OAuth2"
+    ],
+    "tier": "Self-Serve Free",
+    "api": "REST",
+    "verdict": "ready",
+    "blocker": null,
+    "mcp": true,
+    "docs": "https://developer.salesforce.com/docs/platform/api-rest/guide/intro-oauth-and-connected-apps.html"
+  },
+  {
+    "n": "Zendesk",
+    "cat": "Support & CS",
+    "auth": [
+      "OAuth2",
+      "API Key"
+    ],
+    "tier": "Self-Serve Paid",
+    "api": "REST",
+    "verdict": "ready",
+    "blocker": null,
+    "mcp": true,
+    "docs": "https://developer.zendesk.com/api-reference/introduction/security-and-auth/"
+  },
+  {
+    "n": "Slack",
+    "cat": "Comms & Messaging",
+    "auth": [
+      "OAuth2"
+    ],
+    "tier": "Self-Serve Free",
+    "api": "REST",
+    "verdict": "ready",
+    "blocker": null,
+    "mcp": true,
+    "docs": "https://api.slack.com"
+  },
+  {
+    "n": "Mailchimp",
+    "cat": "Marketing & Social",
+    "auth": [
+      "OAuth2",
+      "API Key"
+    ],
+    "tier": "Self-Serve Free",
+    "api": "REST",
+    "verdict": "ready",
+    "blocker": null,
+    "mcp": true,
+    "docs": "https://mailchimp.com/developer/marketing/guides/quick-start/"
+  },
+  {
+    "n": "Shopify",
+    "cat": "Ecommerce",
+    "auth": [
+      "OAuth2",
+      "API Key"
+    ],
+    "tier": "Self-Serve Free",
+    "api": "GraphQL",
+    "verdict": "ready",
+    "blocker": null,
+    "mcp": true,
+    "docs": "https://shopify.dev/docs"
+  },
+  {
+    "n": "Apify",
+    "cat": "Research & Enrichment",
+    "auth": [
+      "API Key",
+      "OAuth2"
+    ],
+    "tier": "Self-Serve Free",
+    "api": "REST",
+    "verdict": "ready",
+    "blocker": null,
+    "mcp": true,
+    "docs": "https://docs.apify.com/api/v2"
+  },
+  {
+    "n": "GitHub",
+    "cat": "Dev, Infra & Data",
+    "auth": [
+      "OAuth2",
+      "API Key"
+    ],
+    "tier": "Self-Serve Free",
+    "api": "REST",
+    "verdict": "ready",
+    "blocker": null,
+    "mcp": true,
+    "docs": "https://docs.github.com/en/rest"
+  },
+  {
+    "n": "Linear",
+    "cat": "Productivity & PM",
+    "auth": [
+      "OAuth2",
+      "API Key"
+    ],
+    "tier": "Self-Serve Free",
+    "api": "GraphQL",
+    "verdict": "ready",
+    "blocker": null,
+    "mcp": true,
+    "docs": "https://linear.app/developers"
+  },
+  {
+    "n": "Stripe",
+    "cat": "Finance & Fintech",
+    "auth": [
+      "API Key",
+      "OAuth2"
+    ],
+    "tier": "Self-Serve Free",
+    "api": "REST",
+    "verdict": "ready",
+    "blocker": null,
+    "mcp": true,
+    "docs": "https://docs.stripe.com/api"
+  },
+  {
+    "n": "Fathom",
+    "cat": "AI, Video & Audio",
+    "auth": [
+      "API Key",
+      "OAuth2"
+    ],
+    "tier": "Self-Serve Free",
+    "api": "REST",
+    "verdict": "ready",
+    "blocker": null,
+    "mcp": true,
+    "docs": "https://developers.fathom.ai/"
+  }
 ];
+
+// ─── DYNAMIC METRICS ────────────────────────────────────────────────────────
+function updateMetrics() {
+  const total = APPS.length;
+  if (!total) return;
+  const ready = APPS.filter(a => a.verdict === 'ready').length;
+  const partial = APPS.filter(a => a.verdict === 'partial').length;
+  const gated = APPS.filter(a => a.verdict === 'gated').length;
+  const blocked = APPS.filter(a => a.verdict === 'blocked').length;
+  const mcp = APPS.filter(a => a.mcp).length;
+  const catsCount = new Set(APPS.map(a => a.cat)).size;
+
+  if (document.getElementById('statTotalApps')) document.getElementById('statTotalApps').textContent = total;
+  if (document.getElementById('statReadyApps')) document.getElementById('statReadyApps').textContent = ready;
+  if (document.getElementById('statPartialApps')) document.getElementById('statPartialApps').textContent = partial;
+  if (document.getElementById('statGatedApps')) document.getElementById('statGatedApps').textContent = gated;
+  if (document.getElementById('statNoApiApps')) document.getElementById('statNoApiApps').textContent = blocked;
+  if (document.getElementById('statMcpApps')) document.getElementById('statMcpApps').textContent = mcp;
+  if (document.getElementById('statCategories')) document.getElementById('statCategories').textContent = catsCount;
+}
+updateMetrics();
 
 // ─── CATEGORY HEATMAP ───────────────────────────────────────────────────────
 const cats = {};

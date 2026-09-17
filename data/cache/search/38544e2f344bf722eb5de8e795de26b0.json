@@ -1,0 +1,17 @@
+[
+  {
+    "url": "https://developer.salesforce.com/blogs/2026/04/salesforce-hosted-mcp-servers-are-now-generally-available",
+    "title": "Salesforce Hosted MCP Servers Are Now Generally ...",
+    "content": "A hosted MCP server is a Salesforce-managed endpoint that exposes your org's logic and assets \u2014 data, flows, Apex actions, queries, and more \u2014 ..."
+  },
+  {
+    "url": "https://www.reddit.com/r/salesforce/comments/1uxzf51/salesforce_is_going_to_start_charging_for_mcp/",
+    "title": "Salesforce is going to start charging for MCP servers",
+    "content": "All products provide their MCP server for free, because it is just like an API call, which are usually billed anyways separately."
+  },
+  {
+    "url": "https://www.salesforce.com/blog/architecting-secure-agent-connectivity-mcp-apis/",
+    "title": "MCP and APIs for Secure Agent Connectivity",
+    "content": "We then decide to route this API access through MuleSoft's MCP Bridge to securely translate Salesforce pricing to the agent through an MCP tool."
+  }
+]

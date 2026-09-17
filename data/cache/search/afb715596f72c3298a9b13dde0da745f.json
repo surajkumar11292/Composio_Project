@@ -1,0 +1,17 @@
+[
+  {
+    "url": "https://docs.apify.com/integrations/mcp",
+    "title": "Apify MCP server | Platform",
+    "content": "The Apify's MCP server (mcp.apify.com) allows AI applications and agents to interact with the Apify platform using Model Context Protocol (MCP)."
+  },
+  {
+    "url": "https://apify.com/pricing",
+    "title": "Apify pricing - flexible plan + pay as you go",
+    "content": "Configure your Apify MCP server with Actors and tools for seamless integration with MCP clients. Add to plan Add-on $1 / GB Actor RAM. Add to plan Add-on from ..."
+  },
+  {
+    "url": "https://www.scalekit.com/blog/apify-mcp-vs-api",
+    "title": "Apify MCP vs Apify API for AI Agents (2026)",
+    "content": "Apify MCP accepts both an OAuth sign-in and a bearer API token, so it can run headless. This breaks the usual \"MCP is interactive-only\" rule."
+  }
+]

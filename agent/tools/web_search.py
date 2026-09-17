@@ -1,41 +1,24 @@
 import os
+import json
+import hashlib
 import aiohttp
 from typing import List, Dict, Any
-from tavily import AsyncTavilyClient
 from tenacity import retry, stop_after_attempt, wait_exponential
 import asyncio
 
-from agent.config import TAVILY_API_KEY, SERPER_API_KEY
+from agent.config import SERPER_API_KEY, TAVILY_API_KEY
 
-tavily_client = AsyncTavilyClient(api_key=TAVILY_API_KEY)
+CACHE_DIR = os.path.join("data", "cache", "search")
+os.makedirs(CACHE_DIR, exist_ok=True)
 
-@retry(stop=stop_after_attempt(3), wait=wait_exponential(multiplier=1, min=2, max=10))
-async def tavily_search(query: str, max_results: int = 5) -> List[Dict[str, Any]]:
-    """
-    Primary search using Tavily API for deep, LLM-optimized research.
-    """
-    response = await tavily_client.search(
-        query=query,
-        search_depth="advanced",
-        max_results=max_results,
-        include_raw_content=False,
-        include_domains=[],
-        exclude_domains=[]
-    )
-    
-    results = []
-    for item in response.get("results", []):
-        results.append({
-            "url": item.get("url"),
-            "title": item.get("title"),
-            "content": item.get("content")
-        })
-    return results
+def _get_cache_path(query: str) -> str:
+    query_hash = hashlib.md5(query.strip().lower().encode("utf-8")).hexdigest()
+    return os.path.join(CACHE_DIR, f"{query_hash}.json")
 
-@retry(stop=stop_after_attempt(3), wait=wait_exponential(multiplier=1, min=2, max=10))
+@retry(stop=stop_after_attempt(3), wait=wait_exponential(multiplier=1, min=2, max=8))
 async def serper_search(query: str, max_results: int = 5) -> List[Dict[str, Any]]:
     """
-    Fallback search using Serper API for fast Google SERP data.
+    Search using Serper API (Google Search engine).
     """
     url = "https://google.serper.dev/search"
     payload = {
@@ -47,7 +30,7 @@ async def serper_search(query: str, max_results: int = 5) -> List[Dict[str, Any]
         'Content-Type': 'application/json'
     }
     
-    async with aiohttp.ClientSession() as session:
+    async with aiohttp.ClientSession(timeout=aiohttp.ClientTimeout(total=15)) as session:
         async with session.post(url, headers=headers, json=payload) as response:
             response.raise_for_status()
             data = await response.json()
@@ -55,26 +38,36 @@ async def serper_search(query: str, max_results: int = 5) -> List[Dict[str, Any]
             results = []
             for item in data.get("organic", []):
                 results.append({
-                    "url": item.get("link"),
-                    "title": item.get("title"),
-                    "content": item.get("snippet")
+                    "url": item.get("link", ""),
+                    "title": item.get("title", ""),
+                    "content": item.get("snippet", "")
                 })
             return results
 
 async def search_web(query: str, max_results: int = 5) -> List[Dict[str, Any]]:
     """
-    Tries Tavily first, falls back to Serper on failure, then returns mock if both fail.
+    Searches Serper with local disk caching.
+    Returns real search results or empty list on failure. Never returns fake mock URLs.
     """
-    try:
-        return await asyncio.wait_for(tavily_search(query, max_results), timeout=1)
-    except Exception as e:
-        print(f"[Warning] Tavily search failed for '{query}': {e}. Falling back to Serper.")
+    cache_path = _get_cache_path(query)
+    
+    # 1. Check local cache
+    if os.path.exists(cache_path):
         try:
-            return await asyncio.wait_for(serper_search(query, max_results), timeout=1)
-        except Exception as e2:
-            print(f"[Error] Serper search also failed: {e2}. Returning fallback mock data.")
-            return [{
-                "url": "https://example.com/docs",
-                "title": f"API Documentation for {query}",
-                "content": f"Developer documentation for {query}. We support OAuth2 and API Keys. Access is Self-Serve Free. REST API is available."
-            }]
+            with open(cache_path, "r", encoding="utf-8") as f:
+                cached = json.load(f)
+                if cached:
+                    return cached
+        except Exception:
+            pass
+
+    # 2. Query Serper
+    try:
+        results = await serper_search(query, max_results=max_results)
+        if results:
+            with open(cache_path, "w", encoding="utf-8") as f:
+                json.dump(results, f, indent=2)
+        return results
+    except Exception as e:
+        print(f"[Warning] Serper search failed for '{query}': {e}")
+        return []

@@ -1,0 +1,17 @@
+[
+  {
+    "url": "https://developers.fathom.ai/mcp-docs",
+    "title": "Overview - Fathom API",
+    "content": "Connect Fathom to any MCP-compatible tool using the server URL below, then authenticate to access your meeting data. MCP server URL: https://api.fathom.ai/mcp."
+  },
+  {
+    "url": "https://mcpservers.org/servers/agencyenterprise/fathom-mcp-server",
+    "title": "Fathom AI MCP Server",
+    "content": "Access fathom ai api endpoints via mcp server and llm. Browse Fathom AI MCP Server for Claude, Cursor, VS Code, and other AI agents."
+  },
+  {
+    "url": "https://pipeline.zoominfo.com/sales/fathom-api-review",
+    "title": "Fathom API Review: What Can You Build? [August 2026]",
+    "content": "Fathom takes the simplest approach to API pricing: access is included on all plan tiers, including the free plan, with no per-call charges, no ..."
+  }
+]

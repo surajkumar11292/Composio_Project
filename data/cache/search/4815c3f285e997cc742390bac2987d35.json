@@ -1,0 +1,17 @@
+[
+  {
+    "url": "https://docs.stripe.com/mcp",
+    "title": "Model Context Protocol (MCP) | Stripe Documentation",
+    "content": "The Stripe Model Context Protocol (MCP) server provides tools that AI agents can use to interact with the Stripe API and search Stripe's knowledge base,"
+  },
+  {
+    "url": "https://www.scalekit.com/blog/stripe-mcp-vs-api",
+    "title": "Stripe MCP vs Stripe API for AI Agents (2026)",
+    "content": "Stripe MCP is the unusual one. Unlike most hosted MCP servers, it supports both OAuth and a restricted API key passed as a bearer token,"
+  },
+  {
+    "url": "https://zuplo.com/videos/building-a-monetized-api-part-3",
+    "title": "Video: Control Access to MCP Servers (2026-04-02)",
+    "content": "Monetize an MCP server on Zuplo by gating access to paid plans, Stripe Payment to an API \u2026 connect Stripe, and enable self-serve."
+  }
+]

@@ -1,0 +1,17 @@
+[
+  {
+    "url": "https://mailchimp.com/developer/transactional/guides/how-to-use-mailchimps-transactional-messaging-mcp/",
+    "title": "How to Use Mailchimp's Transactional Messaging MCP",
+    "content": "Our MCP specifically allows you to interact with the Transactional Messaging API, give onboarding help regarding Transactional Messaging, and submit feedback."
+  },
+  {
+    "url": "https://www.scalekit.com/blog/mailchimp-mcp-vs-api",
+    "title": "Mailchimp MCP vs API for production-ready AI Agents",
+    "content": "Mailchimp's official MCP covers only Transactional sending. Learn when to use the Marketing API, how auth differs, and how to handle ..."
+  },
+  {
+    "url": "https://mailchimp.com/developer/marketing/guides/quick-start/",
+    "title": "Marketing API Quick Start Guide",
+    "content": "Use this guide to start using the Mailchimp Marketing API. Learn how to generate your API key, install the client library, and make your first API call."
+  }
+]

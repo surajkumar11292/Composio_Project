@@ -1,0 +1,17 @@
+[
+  {
+    "url": "https://developers.fathom.ai/",
+    "title": "Introduction - Fathom API",
+    "content": "Generate an API key and make your first call in minutes. Build an app with Fathom OAuth \u2026 documentation is built and hosted on Mintlify, a developer ..."
+  },
+  {
+    "url": "https://developers.fathom.ai/api-overview",
+    "title": "Api overview - Fathom API",
+    "content": "All REST API resources are authenticated with API keys generated via the Fathom website's settings area. a developer documentation platform"
+  },
+  {
+    "url": "https://help.fathom.video/en/articles/8368641",
+    "title": "Public API",
+    "content": "Keep in mind \u00b7 API keys and access: API keys are created at the user level. Your key can access meetings recorded by you or shared to your Team."
+  }
+]

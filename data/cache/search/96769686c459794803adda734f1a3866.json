@@ -1,0 +1,17 @@
+[
+  {
+    "url": "https://shopify.dev/docs/api/usage/authentication",
+    "title": "Shopify API authentication",
+    "content": "To call a Shopify API, your code sends an access token in a request header to authenticate the identity that token represents (your app or a buyer) and ..."
+  },
+  {
+    "url": "https://shopify.dev/docs/apps/build/authentication-authorization",
+    "title": "About app authentication",
+    "content": "How Shopify apps authenticate to call the GraphQL Admin API on behalf of merchants, the tokens involved, and how to get set up."
+  },
+  {
+    "url": "https://community.shopify.com/t/admin-api-key-for-personal-use-devtools-not-showing-it-as-documentation-says/581876",
+    "title": "Admin API key for personal use \u2013 DevTools not showing it ...",
+    "content": "The \u201cAPI key\u201d you see in the app settings is essentially the Client ID if you were doing an OAuth flow, but for direct server-to-server calls ..."
+  }
+]

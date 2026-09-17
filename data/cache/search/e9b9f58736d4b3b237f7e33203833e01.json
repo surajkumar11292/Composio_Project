@@ -1,0 +1,17 @@
+[
+  {
+    "url": "https://docs.slack.dev/ai/slack-mcp-server",
+    "title": "Slack MCP server overview - Slack Developer Docs",
+    "content": "With the Slack MCP server, your integrated apps can search channels, send messages, and perform other Slack actions through MCP clients."
+  },
+  {
+    "url": "https://www.scalekit.com/blog/slack-mcp-vs-api",
+    "title": "Slack MCP vs Slack API for AI Agents: Which to Build Against",
+    "content": "Compare Slack's MCP server and Web API for AI agents. Covers capability gaps, auth models, credential isolation, and when to use each path ..."
+  },
+  {
+    "url": "https://docs.slack.dev/changelog/2026/02/17/slack-mcp",
+    "title": "Announcing the Slack MCP server and Real-time Search API",
+    "content": "The MCP server enables AI agents to interact with Slack content through tools designed for LLM-driven discovery, configuration, and execution."
+  }
+]

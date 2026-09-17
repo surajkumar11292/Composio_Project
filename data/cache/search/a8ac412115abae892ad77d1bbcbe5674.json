@@ -1,0 +1,17 @@
+[
+  {
+    "url": "https://developer.zendesk.com/api-reference/introduction/security-and-auth/",
+    "title": "Security and authentication",
+    "content": "You must be a verified user to make API requests. Zendesk supports using OAuth access tokens to authenticate API requests."
+  },
+  {
+    "url": "https://support.zendesk.com/hc/en-us/articles/4408889192858-Managing-API-token-access-to-the-Zendesk-API",
+    "title": "Managing API token access to the Zendesk API",
+    "content": "Users can use an API token to authenticate API requests. API tokens are auto-generated passwords that you can use with your email address..."
+  },
+  {
+    "url": "https://developer.zendesk.com/documentation/authentication/creating-and-using-oauth-tokens-with-the-api/",
+    "title": "Creating and using OAuth access tokens with the API",
+    "content": "This guide shows how you can use the API to create OAuth access tokens on your own behalf. The guide also covers how to use OAuth access tokens to authenticate ..."
+  }
+]

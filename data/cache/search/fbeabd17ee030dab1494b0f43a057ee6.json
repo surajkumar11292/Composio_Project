@@ -1,0 +1,17 @@
+[
+  {
+    "url": "https://shopify.dev/changelog/mcp-server-for-the-shopify-dev-assistant",
+    "title": "Shopify.dev MCP Server - Shopify developer changelog",
+    "content": "The MCP server gives your AI assistant access to Shopify's development resources, enabling it to search our docs, introspect API schemas, and ..."
+  },
+  {
+    "url": "https://www.shopify.com/news/spring-26-edition-dev",
+    "title": "Agentic commerce for every developer: The Spring '26 ...",
+    "content": "Anyone can now build end-to-end agentic commerce on Shopify, and the platform underneath every app gets a foundational rebuild."
+  },
+  {
+    "url": "https://shopify.dev/docs/apps/build/storefront-mcp",
+    "title": "About Storefront MCP",
+    "content": "MCP servers: API endpoints that provide structured access to Shopify's commerce data, such as products, cart operations, and customer information."
+  }
+]

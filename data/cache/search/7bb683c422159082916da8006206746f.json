@@ -1,0 +1,17 @@
+[
+  {
+    "url": "https://linear.app/developers/oauth-2-0-authentication",
+    "title": "OAuth 2.0 authentication \u2013 Linear Developers",
+    "content": "Linear supports OAuth2 authentication, which is recommended if you're building applications to integrate with Linear. token as a long-lived API key."
+  },
+  {
+    "url": "https://linear.app/docs/api-and-webhooks",
+    "title": "API and Webhooks \u2013 Linear Docs",
+    "content": "Members can create their own API keys from Settings. Create and manage webhooks and OAuth applications in Settings > Administration > API."
+  },
+  {
+    "url": "https://linear.app/developers",
+    "title": "Linear Developers",
+    "content": "Use OAuth 2.0 or personal API keys to authenticate your requests to the Linear API Agents How to best integrate an AI agent into Linear TypeScript"
+  }
+]

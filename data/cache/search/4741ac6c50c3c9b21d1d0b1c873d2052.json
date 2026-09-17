@@ -1,0 +1,17 @@
+[
+  {
+    "url": "https://github.com/settings/tokens",
+    "title": "GitHub Token Settings",
+    "content": "No information is available for this page."
+  },
+  {
+    "url": "https://docs.github.com/apps/oauth-apps/building-oauth-apps/authorizing-oauth-apps",
+    "title": "Authorizing OAuth apps",
+    "content": "Once the user has authorized, the app will receive an access token that can be used to make requests to the API on behalf of a user. The endpoint takes the ..."
+  },
+  {
+    "url": "https://docs.github.com/en/rest/apps/oauth-applications",
+    "title": "REST API endpoints for OAuth authorizations",
+    "content": "OAuth applications and GitHub applications with OAuth authorizations can use this API method for checking OAuth token validity without exceeding the normal rate ..."
+  }
+]

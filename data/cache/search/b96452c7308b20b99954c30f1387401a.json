@@ -1,0 +1,17 @@
+[
+  {
+    "url": "https://docs.apify.com/api/v2",
+    "title": "Apify API",
+    "content": "Use your API token to authenticate requests. You can find it on the Integrations page in Apify Console. This method is more secure than query parameters, as ..."
+  },
+  {
+    "url": "https://docs.apify.com/integrations/api",
+    "title": "API integration | Platform",
+    "content": "You can authenticate the Apify API in two ways. You can either pass the token via the Authorization HTTP header or the URL token query parameter. We always ..."
+  },
+  {
+    "url": "https://docs.apify.com/account/settings",
+    "title": "Account settings | Platform",
+    "content": "Choose an authentication method: API key or bearer token - the MCP server uses a static API key or personal access token. Enter the key. Apify verifies it ..."
+  }
+]
