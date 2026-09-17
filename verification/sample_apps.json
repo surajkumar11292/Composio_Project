@@ -1,0 +1,126 @@
+[
+  {
+    "id": "hubspot",
+    "name": "HubSpot",
+    "category": "CRM & Sales",
+    "agent_auth_methods": [
+      "OAuth2"
+    ],
+    "agent_access_tier": "Self-Serve Free",
+    "evidence_urls": [
+      "https://www.hubspot.com"
+    ]
+  },
+  {
+    "id": "zendesk",
+    "name": "Zendesk",
+    "category": "Support & CS",
+    "agent_auth_methods": [
+      "API Key"
+    ],
+    "agent_access_tier": "Sales/Enterprise Gated",
+    "evidence_urls": [
+      "https://www.zendesk.com"
+    ]
+  },
+  {
+    "id": "whatsapp_business",
+    "name": "WhatsApp Business",
+    "category": "Comms & Messaging",
+    "agent_auth_methods": [
+      "OAuth2"
+    ],
+    "agent_access_tier": "Self-Serve Free",
+    "evidence_urls": [
+      "https://business.whatsapp.com"
+    ]
+  },
+  {
+    "id": "brevo",
+    "name": "Brevo",
+    "category": "Marketing & Social",
+    "agent_auth_methods": [
+      "API Key"
+    ],
+    "agent_access_tier": "Self-Serve Paid",
+    "evidence_urls": [
+      "https://www.brevo.com"
+    ]
+  },
+  {
+    "id": "magento",
+    "name": "Magento",
+    "category": "Ecommerce",
+    "agent_auth_methods": [
+      "OAuth2",
+      "API Key"
+    ],
+    "agent_access_tier": "Self-Serve Free",
+    "evidence_urls": [
+      "https://business.adobe.com/products/magento/magento-commerce.html"
+    ]
+  },
+  {
+    "id": "firecrawl",
+    "name": "Firecrawl",
+    "category": "Research & Enrichment",
+    "agent_auth_methods": [
+      "OAuth2",
+      "API Key"
+    ],
+    "agent_access_tier": "Sales/Enterprise Gated",
+    "evidence_urls": [
+      "https://www.firecrawl.dev"
+    ]
+  },
+  {
+    "id": "vercel",
+    "name": "Vercel",
+    "category": "Dev, Infra & Data",
+    "agent_auth_methods": [
+      "API Key"
+    ],
+    "agent_access_tier": "Sales/Enterprise Gated",
+    "evidence_urls": [
+      "https://vercel.com"
+    ]
+  },
+  {
+    "id": "basecamp",
+    "name": "Basecamp",
+    "category": "Productivity & PM",
+    "agent_auth_methods": [
+      "OAuth2",
+      "API Key"
+    ],
+    "agent_access_tier": "Self-Serve Paid",
+    "evidence_urls": [
+      "https://basecamp.com"
+    ]
+  },
+  {
+    "id": "plaid",
+    "name": "Plaid",
+    "category": "Finance & Fintech",
+    "agent_auth_methods": [
+      "API Key"
+    ],
+    "agent_access_tier": "Self-Serve Free",
+    "evidence_urls": [
+      "https://plaid.com"
+    ]
+  },
+  {
+    "id": "synthesia",
+    "name": "Synthesia",
+    "category": "AI, Video & Audio",
+    "agent_auth_methods": [
+      "OAuth2",
+      "API Key"
+    ],
+    "agent_access_tier": "Self-Serve Paid",
+    "evidence_urls": [
+      "https://www.synthesia.io"
+    ]
+  }
+]

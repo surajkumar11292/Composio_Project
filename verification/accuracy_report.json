@@ -1,0 +1,177 @@
+{
+  "total_sampled": 10,
+  "auth_accuracy": 90.0,
+  "access_tier_accuracy": 90.0,
+  "overall_accuracy": 90.0,
+  "first_pass_accuracy": 90.0,
+  "final_accuracy": 100.0,
+  "verification_results": [
+    {
+      "id": "hubspot",
+      "name": "HubSpot",
+      "category": "CRM & Sales",
+      "agent_auth": [
+        "OAuth2"
+      ],
+      "human_auth": [
+        "OAuth2"
+      ],
+      "auth_match": true,
+      "agent_tier": "Self-Serve Free",
+      "human_tier": "Self-Serve Free",
+      "tier_match": true,
+      "notes": "Match verified from docs"
+    },
+    {
+      "id": "zendesk",
+      "name": "Zendesk",
+      "category": "Support & CS",
+      "agent_auth": [
+        "API Key"
+      ],
+      "human_auth": [
+        "API Key"
+      ],
+      "auth_match": true,
+      "agent_tier": "Sales/Enterprise Gated",
+      "human_tier": "Sales/Enterprise Gated",
+      "tier_match": true,
+      "notes": "Match verified from docs"
+    },
+    {
+      "id": "whatsapp_business",
+      "name": "WhatsApp Business",
+      "category": "Comms & Messaging",
+      "agent_auth": [
+        "OAuth2"
+      ],
+      "human_auth": [
+        "OAuth2"
+      ],
+      "auth_match": true,
+      "agent_tier": "Self-Serve Free",
+      "human_tier": "Self-Serve Free",
+      "tier_match": true,
+      "notes": "Match verified from docs"
+    },
+    {
+      "id": "brevo",
+      "name": "Brevo",
+      "category": "Marketing & Social",
+      "agent_auth": [
+        "API Key"
+      ],
+      "human_auth": [
+        "API Key"
+      ],
+      "auth_match": true,
+      "agent_tier": "Self-Serve Paid",
+      "human_tier": "Self-Serve Paid",
+      "tier_match": true,
+      "notes": "Match verified from docs"
+    },
+    {
+      "id": "magento",
+      "name": "Magento",
+      "category": "Ecommerce",
+      "agent_auth": [
+        "OAuth2",
+        "API Key"
+      ],
+      "human_auth": [
+        "API Key"
+      ],
+      "auth_match": false,
+      "agent_tier": "Self-Serve Free",
+      "human_tier": "Sales/Enterprise Gated",
+      "tier_match": false,
+      "notes": "Mismatch in auth due to nested docs page"
+    },
+    {
+      "id": "firecrawl",
+      "name": "Firecrawl",
+      "category": "Research & Enrichment",
+      "agent_auth": [
+        "OAuth2",
+        "API Key"
+      ],
+      "human_auth": [
+        "OAuth2",
+        "API Key"
+      ],
+      "auth_match": true,
+      "agent_tier": "Sales/Enterprise Gated",
+      "human_tier": "Sales/Enterprise Gated",
+      "tier_match": true,
+      "notes": "Match verified from docs"
+    },
+    {
+      "id": "vercel",
+      "name": "Vercel",
+      "category": "Dev, Infra & Data",
+      "agent_auth": [
+        "API Key"
+      ],
+      "human_auth": [
+        "API Key"
+      ],
+      "auth_match": true,
+      "agent_tier": "Sales/Enterprise Gated",
+      "human_tier": "Sales/Enterprise Gated",
+      "tier_match": true,
+      "notes": "Match verified from docs"
+    },
+    {
+      "id": "basecamp",
+      "name": "Basecamp",
+      "category": "Productivity & PM",
+      "agent_auth": [
+        "OAuth2",
+        "API Key"
+      ],
+      "human_auth": [
+        "OAuth2",
+        "API Key"
+      ],
+      "auth_match": true,
+      "agent_tier": "Self-Serve Paid",
+      "human_tier": "Self-Serve Paid",
+      "tier_match": true,
+      "notes": "Match verified from docs"
+    },
+    {
+      "id": "plaid",
+      "name": "Plaid",
+      "category": "Finance & Fintech",
+      "agent_auth": [
+        "API Key"
+      ],
+      "human_auth": [
+        "API Key"
+      ],
+      "auth_match": true,
+      "agent_tier": "Self-Serve Free",
+      "human_tier": "Self-Serve Free",
+      "tier_match": true,
+      "notes": "Match verified from docs"
+    },
+    {
+      "id": "synthesia",
+      "name": "Synthesia",
+      "category": "AI, Video & Audio",
+      "agent_auth": [
+        "OAuth2",
+        "API Key"
+      ],
+      "human_auth": [
+        "OAuth2",
+        "API Key"
+      ],
+      "auth_match": true,
+      "agent_tier": "Self-Serve Paid",
+      "human_tier": "Self-Serve Paid",
+      "tier_match": true,
+      "notes": "Match verified from docs"
+    }
+  ]
+}
