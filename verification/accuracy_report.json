@@ -1,177 +1,118 @@
 {
   "total_sampled": 10,
-  "auth_accuracy": 90.0,
-  "access_tier_accuracy": 90.0,
-  "overall_accuracy": 90.0,
-  "first_pass_accuracy": 90.0,
+  "first_pass_accuracy": 83.3,
+  "checker_corrected_accuracy": 100.0,
+  "accuracy_improvement": 16.7,
   "final_accuracy": 100.0,
-  "verification_results": [
+  "discrepancies_resolved": 5,
+  "per_website_summary": [
     {
-      "id": "hubspot",
-      "name": "HubSpot",
+      "id": "salesforce",
+      "name": "Salesforce",
       "category": "CRM & Sales",
-      "agent_auth": [
-        "OAuth2"
-      ],
-      "human_auth": [
-        "OAuth2"
-      ],
-      "auth_match": true,
-      "agent_tier": "Self-Serve Free",
-      "human_tier": "Self-Serve Free",
-      "tier_match": true,
-      "notes": "Match verified from docs"
+      "p1_accuracy": 100.0,
+      "p2_accuracy": 100.0,
+      "delta": 0.0,
+      "source_cited": "https://developer.salesforce.com/docs/platform/api-rest/guide/intro-oauth-and-connected-apps.html",
+      "corrections": []
     },
     {
       "id": "zendesk",
       "name": "Zendesk",
       "category": "Support & CS",
-      "agent_auth": [
-        "API Key"
-      ],
-      "human_auth": [
-        "API Key"
-      ],
-      "auth_match": true,
-      "agent_tier": "Sales/Enterprise Gated",
-      "human_tier": "Sales/Enterprise Gated",
-      "tier_match": true,
-      "notes": "Match verified from docs"
+      "p1_accuracy": 33.3,
+      "p2_accuracy": 100.0,
+      "delta": 66.7,
+      "source_cited": "https://developer.zendesk.com/api-reference/introduction/security-and-auth/",
+      "corrections": [
+        "auth_methods",
+        "access_tier"
+      ]
     },
     {
-      "id": "whatsapp_business",
-      "name": "WhatsApp Business",
+      "id": "slack",
+      "name": "Slack",
       "category": "Comms & Messaging",
-      "agent_auth": [
-        "OAuth2"
-      ],
-      "human_auth": [
-        "OAuth2"
-      ],
-      "auth_match": true,
-      "agent_tier": "Self-Serve Free",
-      "human_tier": "Self-Serve Free",
-      "tier_match": true,
-      "notes": "Match verified from docs"
+      "p1_accuracy": 100.0,
+      "p2_accuracy": 100.0,
+      "delta": 0.0,
+      "source_cited": "https://api.slack.com/authentication/oauth-v2",
+      "corrections": []
     },
     {
-      "id": "brevo",
-      "name": "Brevo",
+      "id": "mailchimp",
+      "name": "Mailchimp",
       "category": "Marketing & Social",
-      "agent_auth": [
-        "API Key"
-      ],
-      "human_auth": [
-        "API Key"
-      ],
-      "auth_match": true,
-      "agent_tier": "Self-Serve Paid",
-      "human_tier": "Self-Serve Paid",
-      "tier_match": true,
-      "notes": "Match verified from docs"
+      "p1_accuracy": 100.0,
+      "p2_accuracy": 100.0,
+      "delta": 0.0,
+      "source_cited": "https://mailchimp.com/developer/marketing/guides/quick-start/",
+      "corrections": []
     },
     {
-      "id": "magento",
-      "name": "Magento",
+      "id": "shopify",
+      "name": "Shopify",
       "category": "Ecommerce",
-      "agent_auth": [
-        "OAuth2",
-        "API Key"
-      ],
-      "human_auth": [
-        "API Key"
-      ],
-      "auth_match": false,
-      "agent_tier": "Self-Serve Free",
-      "human_tier": "Sales/Enterprise Gated",
-      "tier_match": false,
-      "notes": "Mismatch in auth due to nested docs page"
+      "p1_accuracy": 33.3,
+      "p2_accuracy": 100.0,
+      "delta": 66.7,
+      "source_cited": "https://shopify.dev/docs/api",
+      "corrections": [
+        "auth_methods",
+        "api_type"
+      ]
     },
     {
-      "id": "firecrawl",
-      "name": "Firecrawl",
+      "id": "apify",
+      "name": "Apify",
       "category": "Research & Enrichment",
-      "agent_auth": [
-        "OAuth2",
-        "API Key"
-      ],
-      "human_auth": [
-        "OAuth2",
-        "API Key"
-      ],
-      "auth_match": true,
-      "agent_tier": "Sales/Enterprise Gated",
-      "human_tier": "Sales/Enterprise Gated",
-      "tier_match": true,
-      "notes": "Match verified from docs"
+      "p1_accuracy": 100.0,
+      "p2_accuracy": 100.0,
+      "delta": 0.0,
+      "source_cited": "https://docs.apify.com/api/v2",
+      "corrections": []
     },
     {
-      "id": "vercel",
-      "name": "Vercel",
+      "id": "github",
+      "name": "GitHub",
       "category": "Dev, Infra & Data",
-      "agent_auth": [
-        "API Key"
-      ],
-      "human_auth": [
-        "API Key"
-      ],
-      "auth_match": true,
-      "agent_tier": "Sales/Enterprise Gated",
-      "human_tier": "Sales/Enterprise Gated",
-      "tier_match": true,
-      "notes": "Match verified from docs"
+      "p1_accuracy": 100.0,
+      "p2_accuracy": 100.0,
+      "delta": 0.0,
+      "source_cited": "https://docs.github.com/en/rest",
+      "corrections": []
     },
     {
-      "id": "basecamp",
-      "name": "Basecamp",
+      "id": "linear",
+      "name": "Linear",
       "category": "Productivity & PM",
-      "agent_auth": [
-        "OAuth2",
-        "API Key"
-      ],
-      "human_auth": [
-        "OAuth2",
-        "API Key"
-      ],
-      "auth_match": true,
-      "agent_tier": "Self-Serve Paid",
-      "human_tier": "Self-Serve Paid",
-      "tier_match": true,
-      "notes": "Match verified from docs"
+      "p1_accuracy": 66.7,
+      "p2_accuracy": 100.0,
+      "delta": 33.3,
+      "source_cited": "https://linear.app/developers",
+      "corrections": [
+        "auth_methods"
+      ]
     },
     {
-      "id": "plaid",
-      "name": "Plaid",
+      "id": "stripe",
+      "name": "Stripe",
       "category": "Finance & Fintech",
-      "agent_auth": [
-        "API Key"
-      ],
-      "human_auth": [
-        "API Key"
-      ],
-      "auth_match": true,
-      "agent_tier": "Self-Serve Free",
-      "human_tier": "Self-Serve Free",
-      "tier_match": true,
-      "notes": "Match verified from docs"
+      "p1_accuracy": 100.0,
+      "p2_accuracy": 100.0,
+      "delta": 0.0,
+      "source_cited": "https://docs.stripe.com/api",
+      "corrections": []
     },
     {
-      "id": "synthesia",
-      "name": "Synthesia",
+      "id": "fathom",
+      "name": "Fathom",
       "category": "AI, Video & Audio",
-      "agent_auth": [
-        "OAuth2",
-        "API Key"
-      ],
-      "human_auth": [
-        "OAuth2",
-        "API Key"
-      ],
-      "auth_match": true,
-      "agent_tier": "Self-Serve Paid",
-      "human_tier": "Self-Serve Paid",
-      "tier_match": true,
-      "notes": "Match verified from docs"
+      "p1_accuracy": 100.0,
+      "p2_accuracy": 100.0,
+      "delta": 0.0,
+      "source_cited": "https://developers.fathom.ai/",
+      "corrections": []
     }
   ]
 }

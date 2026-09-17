@@ -1,0 +1,12 @@
+requirements.txt
+pyproject.toml
+.env
+.env.example
+agent/
+scripts/
+tests/
+verification/
+.agent/
+.claude/
+.gemini/
+.pytest_cache/

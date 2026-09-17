@@ -1,0 +1,300 @@
+[
+  {
+    "id": "salesforce",
+    "name": "Salesforce",
+    "category": "CRM & Sales",
+    "auth_methods": [
+      "OAuth2"
+    ],
+    "access_tier": "Self-Serve Free",
+    "has_public_docs": true,
+    "docs_url": "https://developer.salesforce.com/docs/platform/api-rest/guide/intro-oauth-and-connected-apps.html",
+    "api_type": "REST",
+    "has_mcp_server": true,
+    "mcp_server_url": null,
+    "buildability": "Ready to Build",
+    "blocker": null,
+    "confidence_score": 0.95,
+    "evidence_urls": [
+      "https://developer.salesforce.com/docs/platform/connect-rest-api/guide/intro_using_oauth.html",
+      "https://developer.salesforce.com/docs/platform/api-rest/guide/quickstart-oauth.html",
+      "https://developer.salesforce.com/docs/platform/api-rest/guide/intro-oauth-and-connected-apps.html",
+      "https://developer.salesforce.com/blogs/2026/04/salesforce-hosted-mcp-servers-are-now-generally-available",
+      "https://www.reddit.com/r/salesforce/comments/1uxzf51/salesforce_is_going_to_start_charging_for_mcp/"
+    ],
+    "raw_notes": "Salesforce provides robust REST APIs authenticated via OAuth2 using Connected Apps or External Client Apps. Developers can register for free Developer Edition accounts to access APIs and build integrations instantly. Additionally, Salesforce offers hosted MCP servers for AI agent connectivity.",
+    "researched_at": "2026-09-17T01:35:55.003731Z",
+    "agent_version": "1.0.0",
+    "manually_verified": false,
+    "verification_notes": null
+  },
+  {
+    "id": "zendesk",
+    "name": "Zendesk",
+    "category": "Support & CS",
+    "auth_methods": [
+      "OAuth2",
+      "API Key"
+    ],
+    "access_tier": "Self-Serve Paid",
+    "has_public_docs": true,
+    "docs_url": "https://developer.zendesk.com/api-reference/introduction/security-and-auth/",
+    "api_type": "REST",
+    "has_mcp_server": true,
+    "mcp_server_url": "https://www.zendesk.com/marketplace/apps/support/1191848/mcp-server/",
+    "buildability": "Ready to Build",
+    "blocker": null,
+    "confidence_score": 0.95,
+    "evidence_urls": [
+      "https://developer.zendesk.com/api-reference/introduction/security-and-auth/",
+      "https://support.zendesk.com/hc/en-us/articles/4408889192858-Managing-API-token-access-to-the-Zendesk-API",
+      "https://developer.zendesk.com/documentation/authentication/creating-and-using-oauth-tokens-with-the-api/",
+      "https://www.zendesk.com/marketplace/apps/support/1191848/mcp-server/",
+      "https://swifteq.com/post/zendesk-mcp-server-use-cases"
+    ],
+    "raw_notes": "Zendesk provides complete REST API coverage with self-serve paid access starting at $19/month. API access is fully supported using standard OAuth2 and API token authentication. An official/marketplace MCP server integration is already available for AI agent workflows.",
+    "researched_at": "2026-09-17T01:36:08.376221Z",
+    "agent_version": "1.0.0",
+    "manually_verified": false,
+    "verification_notes": null
+  },
+  {
+    "id": "slack",
+    "name": "Slack",
+    "category": "Comms & Messaging",
+    "auth_methods": [
+      "OAuth2"
+    ],
+    "access_tier": "Self-Serve Free",
+    "has_public_docs": true,
+    "docs_url": "https://api.slack.com",
+    "api_type": "REST",
+    "has_mcp_server": true,
+    "mcp_server_url": "https://docs.slack.dev/ai/slack-mcp-server",
+    "buildability": "Ready to Build",
+    "blocker": null,
+    "confidence_score": 1.0,
+    "evidence_urls": [
+      "https://docs.slack.dev/authentication/installing-with-oauth",
+      "https://api.slack.com/apps",
+      "https://docs.slack.dev/authentication/tokens",
+      "https://docs.slack.dev/ai/slack-mcp-server",
+      "https://www.scalekit.com/blog/slack-mcp-vs-api"
+    ],
+    "raw_notes": "Slack provides robust self-serve REST APIs and OAuth2 authentication, allowing developers to build integrations immediately. Slack officially supports a first-party Model Context Protocol (MCP) server designed for AI agent discovery, search, and action execution.",
+    "researched_at": "2026-09-17T01:36:25.850644Z",
+    "agent_version": "1.0.0",
+    "manually_verified": false,
+    "verification_notes": null
+  },
+  {
+    "id": "mailchimp",
+    "name": "Mailchimp",
+    "category": "Marketing & Social",
+    "auth_methods": [
+      "OAuth2",
+      "API Key"
+    ],
+    "access_tier": "Self-Serve Free",
+    "has_public_docs": true,
+    "docs_url": "https://mailchimp.com/developer/marketing/guides/quick-start/",
+    "api_type": "REST",
+    "has_mcp_server": true,
+    "mcp_server_url": null,
+    "buildability": "Ready to Build",
+    "blocker": null,
+    "confidence_score": 1.0,
+    "evidence_urls": [
+      "https://mailchimp.com/developer/marketing/guides/quick-start/",
+      "https://mailchimp.com/developer/marketing/docs/fundamentals/",
+      "https://mailchimp.com/developer/marketing/guides/access-user-data-oauth-2/",
+      "https://mailchimp.com/developer/transactional/guides/how-to-use-mailchimps-transactional-messaging-mcp/",
+      "https://www.scalekit.com/blog/mailchimp-mcp-vs-api"
+    ],
+    "raw_notes": "Mailchimp provides a self-serve REST API supporting both API Keys and OAuth2 authentication. Detailed developer guides and documentation are publicly accessible, and Mailchimp offers an official Model Context Protocol (MCP) server for transactional messaging.",
+    "researched_at": "2026-09-17T01:36:44.292876Z",
+    "agent_version": "1.0.0",
+    "manually_verified": false,
+    "verification_notes": null
+  },
+  {
+    "id": "shopify",
+    "name": "Shopify",
+    "category": "Ecommerce",
+    "auth_methods": [
+      "OAuth2",
+      "API Key"
+    ],
+    "access_tier": "Self-Serve Free",
+    "has_public_docs": true,
+    "docs_url": "https://shopify.dev/docs",
+    "api_type": "GraphQL",
+    "has_mcp_server": true,
+    "mcp_server_url": "https://shopify.dev/docs/apps/build/storefront-mcp",
+    "buildability": "Ready to Build",
+    "blocker": null,
+    "confidence_score": 1.0,
+    "evidence_urls": [
+      "https://shopify.dev/docs/api/usage/authentication",
+      "https://shopify.dev/docs/apps/build/authentication-authorization",
+      "https://community.shopify.com/t/admin-api-key-for-personal-use-devtools-not-showing-it-as-documentation-says/581876",
+      "https://shopify.dev/changelog/mcp-server-for-the-shopify-dev-assistant",
+      "https://www.shopify.com/news/spring-26-edition-dev"
+    ],
+    "raw_notes": "Shopify offers fully self-serve access to its APIs via free developer accounts and custom apps, using OAuth2 and API token authentication. The platform features robust GraphQL and REST APIs with comprehensive public documentation. Additionally, Shopify provides official MCP servers for both developer assistance and storefront operations.",
+    "researched_at": "2026-09-17T01:37:27.813405Z",
+    "agent_version": "1.0.0",
+    "manually_verified": false,
+    "verification_notes": null
+  },
+  {
+    "id": "apify",
+    "name": "Apify",
+    "category": "Research & Enrichment",
+    "auth_methods": [
+      "API Key",
+      "OAuth2"
+    ],
+    "access_tier": "Self-Serve Free",
+    "has_public_docs": true,
+    "docs_url": "https://docs.apify.com/api/v2",
+    "api_type": "REST",
+    "has_mcp_server": true,
+    "mcp_server_url": "https://mcp.apify.com",
+    "buildability": "Ready to Build",
+    "blocker": null,
+    "confidence_score": 1.0,
+    "evidence_urls": [
+      "https://docs.apify.com/api/v2",
+      "https://docs.apify.com/integrations/api",
+      "https://docs.apify.com/account/settings",
+      "https://docs.apify.com/integrations/mcp",
+      "https://apify.com/pricing"
+    ],
+    "raw_notes": "Apify provides a fully self-serve platform with comprehensive REST API documentation and easy API key authentication. An official MCP server is available at mcp.apify.com supporting both bearer API tokens and OAuth login, making it completely ready for AI agent integration.",
+    "researched_at": "2026-09-17T01:38:40.521053Z",
+    "agent_version": "1.0.0",
+    "manually_verified": false,
+    "verification_notes": null
+  },
+  {
+    "id": "github",
+    "name": "GitHub",
+    "category": "Dev, Infra & Data",
+    "auth_methods": [
+      "OAuth2",
+      "API Key"
+    ],
+    "access_tier": "Self-Serve Free",
+    "has_public_docs": true,
+    "docs_url": "https://docs.github.com/en/rest",
+    "api_type": "REST",
+    "has_mcp_server": true,
+    "mcp_server_url": null,
+    "buildability": "Ready to Build",
+    "blocker": null,
+    "confidence_score": 1.0,
+    "evidence_urls": [
+      "https://github.com/settings/tokens",
+      "https://docs.github.com/apps/oauth-apps/building-oauth-apps/authorizing-oauth-apps",
+      "https://docs.github.com/en/rest/apps/oauth-applications",
+      "https://github.com/pricing",
+      "https://www.scalekit.com/blog/github-mcp-vs-api"
+    ],
+    "raw_notes": "GitHub provides a robust self-serve platform with standard OAuth2 and Personal Access Token authentication. Comprehensive public REST and GraphQL documentation is available, making it completely ready for integration into an AI agent toolkit alongside existing Model Context Protocol (MCP) support.",
+    "researched_at": "2026-09-17T01:41:09.348101Z",
+    "agent_version": "1.0.0",
+    "manually_verified": false,
+    "verification_notes": null
+  },
+  {
+    "id": "linear",
+    "name": "Linear",
+    "category": "Productivity & PM",
+    "auth_methods": [
+      "OAuth2",
+      "API Key"
+    ],
+    "access_tier": "Self-Serve Free",
+    "has_public_docs": true,
+    "docs_url": "https://linear.app/developers",
+    "api_type": "GraphQL",
+    "has_mcp_server": true,
+    "mcp_server_url": null,
+    "buildability": "Ready to Build",
+    "blocker": null,
+    "confidence_score": 1.0,
+    "evidence_urls": [
+      "https://linear.app/developers/oauth-2-0-authentication",
+      "https://linear.app/docs/api-and-webhooks",
+      "https://linear.app/developers",
+      "https://www.merge.dev/blog/linear-api-key",
+      "https://www.scalekit.com/blog/linear-mcp-vs-api"
+    ],
+    "raw_notes": "Linear provides fully self-serve developer access with support for OAuth2 and personal API keys. The platform features robust GraphQL API documentation and an official MCP server already available for AI agent integrations.",
+    "researched_at": "2026-09-17T01:41:14.202343Z",
+    "agent_version": "1.0.0",
+    "manually_verified": false,
+    "verification_notes": null
+  },
+  {
+    "id": "stripe",
+    "name": "Stripe",
+    "category": "Finance & Fintech",
+    "auth_methods": [
+      "API Key",
+      "OAuth2"
+    ],
+    "access_tier": "Self-Serve Free",
+    "has_public_docs": true,
+    "docs_url": "https://docs.stripe.com/api",
+    "api_type": "REST",
+    "has_mcp_server": true,
+    "mcp_server_url": null,
+    "buildability": "Ready to Build",
+    "blocker": null,
+    "confidence_score": 1.0,
+    "evidence_urls": [
+      "https://docs.stripe.com/api/authentication",
+      "https://docs.stripe.com/stripe-apps/api-authentication/oauth",
+      "https://docs.stripe.com/keys",
+      "https://docs.stripe.com/mcp",
+      "https://www.scalekit.com/blog/stripe-mcp-vs-api"
+    ],
+    "raw_notes": "Stripe provides comprehensive public REST documentation, self-serve developer access with API keys and OAuth 2.0 support, and an official Model Context Protocol (MCP) server for AI agent interactions.",
+    "researched_at": "2026-09-17T01:41:18.914070Z",
+    "agent_version": "1.0.0",
+    "manually_verified": false,
+    "verification_notes": null
+  },
+  {
+    "id": "fathom",
+    "name": "Fathom",
+    "category": "AI, Video & Audio",
+    "auth_methods": [
+      "API Key",
+      "OAuth2"
+    ],
+    "access_tier": "Self-Serve Free",
+    "has_public_docs": true,
+    "docs_url": "https://developers.fathom.ai/",
+    "api_type": "REST",
+    "has_mcp_server": true,
+    "mcp_server_url": "https://api.fathom.ai/mcp",
+    "buildability": "Ready to Build",
+    "blocker": null,
+    "confidence_score": 1.0,
+    "evidence_urls": [
+      "https://developers.fathom.ai/",
+      "https://developers.fathom.ai/api-overview",
+      "https://help.fathom.video/en/articles/8368641",
+      "https://developers.fathom.ai/mcp-docs",
+      "https://mcpservers.org/servers/agencyenterprise/fathom-mcp-server"
+    ],
+    "raw_notes": "Fathom provides self-serve API access starting from free plans using standard API keys and OAuth2. Comprehensive REST documentation is available via Mintlify, and an official MCP server URL is provided for immediate agent integration.",
+    "researched_at": "2026-09-17T01:41:23.359353Z",
+    "agent_version": "1.0.0",
+    "manually_verified": false,
+    "verification_notes": null
+  }
+]

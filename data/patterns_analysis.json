@@ -1,108 +1,144 @@
 {
-  "total_apps": 10,
+  "total_apps": 100,
   "auth_distribution": {
     "OAuth2": {
-      "count": 10,
-      "pct": 100.0
+      "count": 62,
+      "pct": 62.0
     },
     "API Key": {
-      "count": 8,
-      "pct": 80.0
+      "count": 66,
+      "pct": 66.0
     }
   },
   "access_tier_distribution": {
     "Self-Serve Free": {
-      "count": 9,
-      "pct": 90.0
+      "count": 37,
+      "pct": 37.0
     },
     "Self-Serve Paid": {
-      "count": 1,
-      "pct": 10.0
+      "count": 39,
+      "pct": 39.0
+    },
+    "Sales/Enterprise Gated": {
+      "count": 24,
+      "pct": 24.0
     }
   },
   "buildability_distribution": {
     "Ready to Build": {
-      "count": 10,
-      "pct": 100.0
+      "count": 38,
+      "pct": 38.0
+    },
+    "Partially Ready": {
+      "count": 62,
+      "pct": 62.0
     }
   },
   "buildability_by_category": {
     "CRM & Sales": {
-      "READY": 1,
-      "PARTIAL": 0,
+      "READY": 3,
+      "PARTIAL": 7,
       "GATED": 0,
       "BLOCKED": 0
     },
     "Support & CS": {
-      "READY": 1,
-      "PARTIAL": 0,
+      "READY": 3,
+      "PARTIAL": 7,
       "GATED": 0,
       "BLOCKED": 0
     },
     "Comms & Messaging": {
-      "READY": 1,
-      "PARTIAL": 0,
+      "READY": 6,
+      "PARTIAL": 4,
       "GATED": 0,
       "BLOCKED": 0
     },
     "Marketing & Social": {
-      "READY": 1,
-      "PARTIAL": 0,
+      "READY": 2,
+      "PARTIAL": 8,
       "GATED": 0,
       "BLOCKED": 0
     },
     "Ecommerce": {
-      "READY": 1,
-      "PARTIAL": 0,
+      "READY": 5,
+      "PARTIAL": 5,
       "GATED": 0,
       "BLOCKED": 0
     },
     "Research & Enrichment": {
-      "READY": 1,
-      "PARTIAL": 0,
+      "READY": 4,
+      "PARTIAL": 6,
       "GATED": 0,
       "BLOCKED": 0
     },
     "Dev, Infra & Data": {
-      "READY": 1,
-      "PARTIAL": 0,
+      "READY": 5,
+      "PARTIAL": 5,
       "GATED": 0,
       "BLOCKED": 0
     },
     "Productivity & PM": {
-      "READY": 1,
-      "PARTIAL": 0,
+      "READY": 3,
+      "PARTIAL": 7,
       "GATED": 0,
       "BLOCKED": 0
     },
     "Finance & Fintech": {
-      "READY": 1,
-      "PARTIAL": 0,
+      "READY": 5,
+      "PARTIAL": 5,
       "GATED": 0,
       "BLOCKED": 0
     },
     "AI, Video & Audio": {
-      "READY": 1,
-      "PARTIAL": 0,
+      "READY": 2,
+      "PARTIAL": 8,
       "GATED": 0,
       "BLOCKED": 0
     }
   },
   "mcp_coverage": {
-    "has_mcp": 10,
-    "no_mcp": 0
+    "has_mcp": 56,
+    "no_mcp": 44
   },
   "easy_wins": [
     "Salesforce",
+    "HubSpot",
+    "Attio",
+    "LiveAgent",
+    "Tidio",
     "Slack",
+    "Telegram",
+    "WhatsApp Business",
+    "Sendbird",
+    "Vonage",
+    "Plivo",
     "Mailchimp",
+    "Threads API",
     "Shopify",
+    "WooCommerce",
+    "Magento",
+    "Printify",
+    "Printful",
     "Apify",
+    "Bright Data",
+    "Hunter.io",
+    "Exa.ai",
     "GitHub",
+    "Netlify",
+    "Cloudflare",
+    "PlanetScale",
+    "Fly.io",
     "Linear",
+    "Jira",
+    "Plane",
     "Stripe",
-    "Fathom"
+    "Plaid",
+    "Wise",
+    "Coinbase",
+    "Finix",
+    "Fathom",
+    "Reducto"
   ],
   "top_blockers": [],
-  "executive_narrative": "### Executive Summary: AI Agent Integration Readiness\n\n#### Key Takeaway\nOur evaluation of the core API dataset reveals unprecedented integration readiness across the board. With a 100% \"Ready to Build\" status and zero architectural blockers, our engineering and agent operations can immediately pivot from discovery to rapid deployment.\n\n#### Dominant Auth & Gating Patterns\n* **OAuth2 Supremacy:** OAuth2 is the universal standard across 100% of the evaluated applications, making it the primary protocol for our agent session management. \n* **API Key Fallback:** 80% of profiles simultaneously support API Keys, offering a streamlined secondary auth vector for backend-to-backend agent execution.\n* **Frictionless Access Tiers:** 90% of apps offer self-serve free tiers, while 10% require self-serve paid access. Crucially, zero enterprise gating or sales-lockout hurdles exist in this cohort.\n\n#### Fast-Track Immediate Opportunities\n* **Total Day-One Capacity:** Exactly 100% of the analyzed apps (spanning industry leaders like Salesforce, Slack, GitHub, and Stripe) are fully ready for immediate integration.\n* **Zero Blockers:** There are no technical, legal, or rate-limiting blockers identified within this dataset. \n* **Universal Category Ease:** Every single category\u2014from CRM & Sales to Finance & Fintech, and Dev Infra\u2014demonstrates a flawless \"READY\" score with zero partial or blocked states, making all verticals equally exceptional for quick wins.\n\n#### Recommended Composio Strategy (MCP Gateway)\n* **Immediate Deployment:** Capitalize on the 100% Model Context Protocol (MCP) coverage currently present in the dataset. We should instantly spin up our MCP gateway to bridge these APIs directly to our agent frameworks.\n* **Standardize OAuth2 Flows:** Build a centralized, reusable OAuth2 credential vault to fast-track agent authorization across all self-serve free tiers.\n* **Scale Outbound Execution:** Since no integration friction exists in this cohort, direct engineering resources toward parallelized multi-app agent workflows (e.g., combining Stripe, Salesforce, and Slack) to maximize early AI agent utility."
+  "executive_narrative": "### Executive Summary: Q1 API Readiness & Integration Assessment\n\n#### Key Takeaway\nOut of 100 evaluated SaaS profiles, **38 applications are fully primed for immediate AI agent integration**. While our ecosystem boasts robust baseline protocol compatibility, capturing the remaining 62% requires navigating commercial gating and incomplete developer tooling.\n\n#### Dominant Auth & Gating Patterns\n*   **Authentication:** The ecosystem is heavily split between API Keys (66%) and OAuth2 (62%), with many providers supporting both. This dual standard requires our agent framework to natively handle dynamic credential injection alongside token refresh lifecycles.\n*   **Commercial Access Barriers:** Only 37% of apps offer a Self-Serve Free tier. The vast majority (39% Self-Serve Paid, 24% Sales/Enterprise Gated) introduce immediate cost or procurement friction, meaning our agent deployment pipeline must account for paid trial provisioning and API credit management.\n\n#### Fast-Track Immediate Opportunities\n*   **Easiest Verticals:** *Comms & Messaging* (60% ready) and *Finance & Fintech* (50% ready) represent the lowest-friction entry points due to mature, standardized developer documentation and permissive testing tiers.\n*   **High-Value Quick Wins:** 38 specific targets\u2014including critical enterprise drivers like Salesforce, HubSpot, GitHub, Stripe, and Shopify\u2014are greenlit for immediate native integration. \n\n#### Recommended Composio Strategy (MCP Gateway)\n*   **Leverage Existing MCP Momentum:** 56% of evaluated apps already feature Model Context Protocol (MCP) coverage. We must prioritize these platforms to drastically accelerate agent tool-calling deployment.\n*   **Bridge the Partial Gap:** The remaining 62% of apps are classified as \"Partially Ready.\" Rather than building custom connectors from scratch, our engineering roadmap should utilize standardized wrapper modules to handle inconsistent pagination, rate limits, and missing schema definitions in the non-MCP cohort."
 }

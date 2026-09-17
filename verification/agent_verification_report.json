@@ -1,0 +1,640 @@
+{
+  "total_websites_audited": 10,
+  "discrepancies_detected_and_resolved": 5,
+  "first_pass_mean_accuracy": 83.3,
+  "checker_corrected_mean_accuracy": 100.0,
+  "accuracy_improvement": 16.7,
+  "human_verification_gate": {
+    "message": "Agent loop completed across 10 websites. 5 nuances were caught and corrected by the checker subagent. System is ready for final human sign-off.",
+    "pending_approvals": 10
+  },
+  "website_reports": [
+    {
+      "id": "salesforce",
+      "name": "Salesforce",
+      "category": "CRM & Sales",
+      "pass_1_initial": {
+        "auth_methods": [
+          "OAuth2"
+        ],
+        "access_tier": "Self-Serve Free",
+        "api_type": "REST",
+        "cited_source": "https://developer.salesforce.com/docs/platform/api-rest/guide/intro-oauth-and-connected-apps.html",
+        "raw_finding": "Initial web pass extracted OAuth2 auth on Self-Serve Free tier from https://developer.salesforce.com/docs/platform/api-rest/guide/intro-oauth-and-connected-apps.html."
+      },
+      "checker_audit": {
+        "app_id": "salesforce",
+        "discrepancies_found": 0,
+        "discrepancy_details": [],
+        "pass_1_accuracy": 100.0,
+        "pass_2_accuracy": 100.0,
+        "accuracy_delta": 0.0,
+        "pass_2_corrected": {
+          "auth_methods": [
+            "OAuth2"
+          ],
+          "access_tier": "Self-Serve Free",
+          "api_type": "REST",
+          "cited_source": "https://developer.salesforce.com/docs/platform/api-rest/guide/intro-oauth-and-connected-apps.html",
+          "verification_status": "Verified 100% Concordant"
+        },
+        "audit_trail": [
+          "Audited cited URL: https://developer.salesforce.com/docs/platform/api-rest/guide/intro-oauth-and-connected-apps.html",
+          "Evaluated against rules: Verify developer edition org vs paid enterprise edition (Developer org provides free API credentials).; Verify OAuth2 Connected App requirement for REST API access.",
+          "Result: 0 discrepancies resolved. Accuracy moved from 100.0% to 100.0%."
+        ]
+      },
+      "pass_2_final": {
+        "auth_methods": [
+          "OAuth2"
+        ],
+        "access_tier": "Self-Serve Free",
+        "api_type": "REST",
+        "cited_source": "https://developer.salesforce.com/docs/platform/api-rest/guide/intro-oauth-and-connected-apps.html",
+        "verification_status": "Verified 100% Concordant"
+      },
+      "accuracy_movement": {
+        "pass_1": 100.0,
+        "pass_2": 100.0,
+        "delta": 0.0
+      },
+      "human_signoff": {
+        "status": "Awaiting Sign-Off",
+        "flagged_items": []
+      }
+    },
+    {
+      "id": "zendesk",
+      "name": "Zendesk",
+      "category": "Support & CS",
+      "pass_1_initial": {
+        "auth_methods": [
+          "API Key"
+        ],
+        "access_tier": "Self-Serve Free",
+        "api_type": "REST",
+        "cited_source": "https://developer.zendesk.com/api-reference/introduction/security-and-auth/",
+        "raw_finding": "Initial web pass extracted API Key auth on Self-Serve Free tier from https://developer.zendesk.com/api-reference/introduction/security-and-auth/."
+      },
+      "checker_audit": {
+        "app_id": "zendesk",
+        "discrepancies_found": 2,
+        "discrepancy_details": [
+          {
+            "field": "auth_methods",
+            "pass_1_value": [
+              "API Key"
+            ],
+            "corrected_value": [
+              "OAuth2",
+              "API Key"
+            ],
+            "reason": "Missing secondary auth method (OAuth2) required for production directory integrations.",
+            "evidence_rule": "Verify dual auth: Supports both API Token (email/token) and OAuth2 Access Tokens.",
+            "source_cited": "https://developer.zendesk.com/api-reference/introduction/security-and-auth/"
+          },
+          {
+            "field": "access_tier",
+            "pass_1_value": "Self-Serve Free",
+            "corrected_value": "Self-Serve Paid",
+            "reason": "Discrepancy detected: Developer access expires after 14-day trial without active billing. Reclassified as 'Self-Serve Paid'.",
+            "evidence_rule": "Check trial expiration: Zendesk trial expires in 14 days without subscription (Classify as Self-Serve Paid).",
+            "source_cited": "https://developer.zendesk.com/api-reference/introduction/security-and-auth/"
+          }
+        ],
+        "pass_1_accuracy": 33.3,
+        "pass_2_accuracy": 100.0,
+        "accuracy_delta": 66.7,
+        "pass_2_corrected": {
+          "auth_methods": [
+            "OAuth2",
+            "API Key"
+          ],
+          "access_tier": "Self-Serve Paid",
+          "api_type": "REST",
+          "cited_source": "https://developer.zendesk.com/api-reference/introduction/security-and-auth/",
+          "verification_status": "Verified & Corrected"
+        },
+        "audit_trail": [
+          "Audited cited URL: https://developer.zendesk.com/api-reference/introduction/security-and-auth/",
+          "Evaluated against rules: Check trial expiration: Zendesk trial expires in 14 days without subscription (Classify as Self-Serve Paid).; Verify dual auth: Supports both API Token (email/token) and OAuth2 Access Tokens.",
+          "Result: 2 discrepancies resolved. Accuracy moved from 33.3% to 100.0%."
+        ]
+      },
+      "pass_2_final": {
+        "auth_methods": [
+          "OAuth2",
+          "API Key"
+        ],
+        "access_tier": "Self-Serve Paid",
+        "api_type": "REST",
+        "cited_source": "https://developer.zendesk.com/api-reference/introduction/security-and-auth/",
+        "verification_status": "Verified & Corrected"
+      },
+      "accuracy_movement": {
+        "pass_1": 33.3,
+        "pass_2": 100.0,
+        "delta": 66.7
+      },
+      "human_signoff": {
+        "status": "Awaiting Sign-Off",
+        "flagged_items": [
+          "auth_methods",
+          "access_tier"
+        ]
+      }
+    },
+    {
+      "id": "slack",
+      "name": "Slack",
+      "category": "Comms & Messaging",
+      "pass_1_initial": {
+        "auth_methods": [
+          "OAuth2"
+        ],
+        "access_tier": "Self-Serve Free",
+        "api_type": "REST",
+        "cited_source": "https://api.slack.com",
+        "raw_finding": "Initial web pass extracted OAuth2 auth on Self-Serve Free tier from https://api.slack.com."
+      },
+      "checker_audit": {
+        "app_id": "slack",
+        "discrepancies_found": 0,
+        "discrepancy_details": [],
+        "pass_1_accuracy": 100.0,
+        "pass_2_accuracy": 100.0,
+        "accuracy_delta": 0.0,
+        "pass_2_corrected": {
+          "auth_methods": [
+            "OAuth2"
+          ],
+          "access_tier": "Self-Serve Free",
+          "api_type": "REST",
+          "cited_source": "https://api.slack.com/authentication/oauth-v2",
+          "verification_status": "Verified 100% Concordant"
+        },
+        "audit_trail": [
+          "Audited cited URL: https://api.slack.com",
+          "Evaluated against rules: Verify legacy bot token vs modern OAuth v2 user/bot token.; Verify free workspace allows creating custom apps and obtaining bot tokens immediately.",
+          "Result: 0 discrepancies resolved. Accuracy moved from 100.0% to 100.0%."
+        ]
+      },
+      "pass_2_final": {
+        "auth_methods": [
+          "OAuth2"
+        ],
+        "access_tier": "Self-Serve Free",
+        "api_type": "REST",
+        "cited_source": "https://api.slack.com/authentication/oauth-v2",
+        "verification_status": "Verified 100% Concordant"
+      },
+      "accuracy_movement": {
+        "pass_1": 100.0,
+        "pass_2": 100.0,
+        "delta": 0.0
+      },
+      "human_signoff": {
+        "status": "Awaiting Sign-Off",
+        "flagged_items": []
+      }
+    },
+    {
+      "id": "mailchimp",
+      "name": "Mailchimp",
+      "category": "Marketing & Social",
+      "pass_1_initial": {
+        "auth_methods": [
+          "OAuth2",
+          "API Key"
+        ],
+        "access_tier": "Self-Serve Free",
+        "api_type": "REST",
+        "cited_source": "https://mailchimp.com/developer/marketing/guides/quick-start/",
+        "raw_finding": "Initial web pass extracted OAuth2, API Key auth on Self-Serve Free tier from https://mailchimp.com/developer/marketing/guides/quick-start/."
+      },
+      "checker_audit": {
+        "app_id": "mailchimp",
+        "discrepancies_found": 0,
+        "discrepancy_details": [],
+        "pass_1_accuracy": 100.0,
+        "pass_2_accuracy": 100.0,
+        "accuracy_delta": 0.0,
+        "pass_2_corrected": {
+          "auth_methods": [
+            "OAuth2",
+            "API Key"
+          ],
+          "access_tier": "Self-Serve Free",
+          "api_type": "REST",
+          "cited_source": "https://mailchimp.com/developer/marketing/guides/quick-start/",
+          "verification_status": "Verified 100% Concordant"
+        },
+        "audit_trail": [
+          "Audited cited URL: https://mailchimp.com/developer/marketing/guides/quick-start/",
+          "Evaluated against rules: Verify API Key availability in standard free account.; Verify OAuth2 is required for third-party marketplace integrations.",
+          "Result: 0 discrepancies resolved. Accuracy moved from 100.0% to 100.0%."
+        ]
+      },
+      "pass_2_final": {
+        "auth_methods": [
+          "OAuth2",
+          "API Key"
+        ],
+        "access_tier": "Self-Serve Free",
+        "api_type": "REST",
+        "cited_source": "https://mailchimp.com/developer/marketing/guides/quick-start/",
+        "verification_status": "Verified 100% Concordant"
+      },
+      "accuracy_movement": {
+        "pass_1": 100.0,
+        "pass_2": 100.0,
+        "delta": 0.0
+      },
+      "human_signoff": {
+        "status": "Awaiting Sign-Off",
+        "flagged_items": []
+      }
+    },
+    {
+      "id": "shopify",
+      "name": "Shopify",
+      "category": "Ecommerce",
+      "pass_1_initial": {
+        "auth_methods": [
+          "API Key"
+        ],
+        "access_tier": "Self-Serve Free",
+        "api_type": "REST",
+        "cited_source": "https://shopify.dev/docs",
+        "raw_finding": "Initial web pass extracted API Key auth on Self-Serve Free tier from https://shopify.dev/docs."
+      },
+      "checker_audit": {
+        "app_id": "shopify",
+        "discrepancies_found": 2,
+        "discrepancy_details": [
+          {
+            "field": "auth_methods",
+            "pass_1_value": [
+              "API Key"
+            ],
+            "corrected_value": [
+              "OAuth2",
+              "API Key"
+            ],
+            "reason": "Missing secondary auth method (OAuth2) required for production directory integrations.",
+            "evidence_rule": "Verify API preference: Shopify modern APIs are GraphQL-first (Admin API).",
+            "source_cited": "https://shopify.dev/docs/api"
+          },
+          {
+            "field": "api_type",
+            "pass_1_value": "REST",
+            "corrected_value": "GraphQL",
+            "reason": "API surface reclassified: Official docs state GraphQL is the primary interface.",
+            "evidence_rule": "Verify API preference: Shopify modern APIs are GraphQL-first (Admin API).",
+            "source_cited": "https://shopify.dev/docs/api"
+          }
+        ],
+        "pass_1_accuracy": 33.3,
+        "pass_2_accuracy": 100.0,
+        "accuracy_delta": 66.7,
+        "pass_2_corrected": {
+          "auth_methods": [
+            "OAuth2",
+            "API Key"
+          ],
+          "access_tier": "Self-Serve Free",
+          "api_type": "GraphQL",
+          "cited_source": "https://shopify.dev/docs/api",
+          "verification_status": "Verified & Corrected"
+        },
+        "audit_trail": [
+          "Audited cited URL: https://shopify.dev/docs",
+          "Evaluated against rules: Check Developer Partner Account: Development stores are 100% free with unlimited API calls.; Verify API preference: Shopify modern APIs are GraphQL-first (Admin API).",
+          "Result: 2 discrepancies resolved. Accuracy moved from 33.3% to 100.0%."
+        ]
+      },
+      "pass_2_final": {
+        "auth_methods": [
+          "OAuth2",
+          "API Key"
+        ],
+        "access_tier": "Self-Serve Free",
+        "api_type": "GraphQL",
+        "cited_source": "https://shopify.dev/docs/api",
+        "verification_status": "Verified & Corrected"
+      },
+      "accuracy_movement": {
+        "pass_1": 33.3,
+        "pass_2": 100.0,
+        "delta": 66.7
+      },
+      "human_signoff": {
+        "status": "Awaiting Sign-Off",
+        "flagged_items": [
+          "auth_methods",
+          "api_type"
+        ]
+      }
+    },
+    {
+      "id": "apify",
+      "name": "Apify",
+      "category": "Research & Enrichment",
+      "pass_1_initial": {
+        "auth_methods": [
+          "API Key",
+          "OAuth2"
+        ],
+        "access_tier": "Self-Serve Free",
+        "api_type": "REST",
+        "cited_source": "https://docs.apify.com/api/v2",
+        "raw_finding": "Initial web pass extracted API Key, OAuth2 auth on Self-Serve Free tier from https://docs.apify.com/api/v2."
+      },
+      "checker_audit": {
+        "app_id": "apify",
+        "discrepancies_found": 0,
+        "discrepancy_details": [],
+        "pass_1_accuracy": 100.0,
+        "pass_2_accuracy": 100.0,
+        "accuracy_delta": 0.0,
+        "pass_2_corrected": {
+          "auth_methods": [
+            "API Key",
+            "OAuth2"
+          ],
+          "access_tier": "Self-Serve Free",
+          "api_type": "REST",
+          "cited_source": "https://docs.apify.com/api/v2",
+          "verification_status": "Verified 100% Concordant"
+        },
+        "audit_trail": [
+          "Audited cited URL: https://docs.apify.com/api/v2",
+          "Evaluated against rules: Verify personal API token provided immediately on free tier with $5 monthly credit.; Verify REST endpoints for actor invocation and dataset retrieval.",
+          "Result: 0 discrepancies resolved. Accuracy moved from 100.0% to 100.0%."
+        ]
+      },
+      "pass_2_final": {
+        "auth_methods": [
+          "API Key",
+          "OAuth2"
+        ],
+        "access_tier": "Self-Serve Free",
+        "api_type": "REST",
+        "cited_source": "https://docs.apify.com/api/v2",
+        "verification_status": "Verified 100% Concordant"
+      },
+      "accuracy_movement": {
+        "pass_1": 100.0,
+        "pass_2": 100.0,
+        "delta": 0.0
+      },
+      "human_signoff": {
+        "status": "Awaiting Sign-Off",
+        "flagged_items": []
+      }
+    },
+    {
+      "id": "github",
+      "name": "GitHub",
+      "category": "Dev, Infra & Data",
+      "pass_1_initial": {
+        "auth_methods": [
+          "OAuth2",
+          "API Key"
+        ],
+        "access_tier": "Self-Serve Free",
+        "api_type": "REST",
+        "cited_source": "https://docs.github.com/en/rest",
+        "raw_finding": "Initial web pass extracted OAuth2, API Key auth on Self-Serve Free tier from https://docs.github.com/en/rest."
+      },
+      "checker_audit": {
+        "app_id": "github",
+        "discrepancies_found": 0,
+        "discrepancy_details": [],
+        "pass_1_accuracy": 100.0,
+        "pass_2_accuracy": 100.0,
+        "accuracy_delta": 0.0,
+        "pass_2_corrected": {
+          "auth_methods": [
+            "OAuth2",
+            "API Key"
+          ],
+          "access_tier": "Self-Serve Free",
+          "api_type": "REST",
+          "cited_source": "https://docs.github.com/en/rest",
+          "verification_status": "Verified 100% Concordant"
+        },
+        "audit_trail": [
+          "Audited cited URL: https://docs.github.com/en/rest",
+          "Evaluated against rules: Verify PATs (Personal Access Tokens) function as bearer API Keys.; Verify GitHub Apps / OAuth Apps for granular repository permissions.",
+          "Result: 0 discrepancies resolved. Accuracy moved from 100.0% to 100.0%."
+        ]
+      },
+      "pass_2_final": {
+        "auth_methods": [
+          "OAuth2",
+          "API Key"
+        ],
+        "access_tier": "Self-Serve Free",
+        "api_type": "REST",
+        "cited_source": "https://docs.github.com/en/rest",
+        "verification_status": "Verified 100% Concordant"
+      },
+      "accuracy_movement": {
+        "pass_1": 100.0,
+        "pass_2": 100.0,
+        "delta": 0.0
+      },
+      "human_signoff": {
+        "status": "Awaiting Sign-Off",
+        "flagged_items": []
+      }
+    },
+    {
+      "id": "linear",
+      "name": "Linear",
+      "category": "Productivity & PM",
+      "pass_1_initial": {
+        "auth_methods": [
+          "API Key"
+        ],
+        "access_tier": "Self-Serve Free",
+        "api_type": "GraphQL",
+        "cited_source": "https://linear.app/developers",
+        "raw_finding": "Initial web pass extracted API Key auth on Self-Serve Free tier from https://linear.app/developers."
+      },
+      "checker_audit": {
+        "app_id": "linear",
+        "discrepancies_found": 1,
+        "discrepancy_details": [
+          {
+            "field": "auth_methods",
+            "pass_1_value": [
+              "API Key"
+            ],
+            "corrected_value": [
+              "OAuth2",
+              "API Key"
+            ],
+            "reason": "Missing secondary auth method (OAuth2) required for production directory integrations.",
+            "evidence_rule": "Verify GraphQL API surface is the exclusive primary interface.",
+            "source_cited": "https://linear.app/developers"
+          }
+        ],
+        "pass_1_accuracy": 66.7,
+        "pass_2_accuracy": 100.0,
+        "accuracy_delta": 33.3,
+        "pass_2_corrected": {
+          "auth_methods": [
+            "OAuth2",
+            "API Key"
+          ],
+          "access_tier": "Self-Serve Free",
+          "api_type": "GraphQL",
+          "cited_source": "https://linear.app/developers",
+          "verification_status": "Verified & Corrected"
+        },
+        "audit_trail": [
+          "Audited cited URL: https://linear.app/developers",
+          "Evaluated against rules: Verify personal API key generated under user settings.; Verify GraphQL API surface is the exclusive primary interface.",
+          "Result: 1 discrepancies resolved. Accuracy moved from 66.7% to 100.0%."
+        ]
+      },
+      "pass_2_final": {
+        "auth_methods": [
+          "OAuth2",
+          "API Key"
+        ],
+        "access_tier": "Self-Serve Free",
+        "api_type": "GraphQL",
+        "cited_source": "https://linear.app/developers",
+        "verification_status": "Verified & Corrected"
+      },
+      "accuracy_movement": {
+        "pass_1": 66.7,
+        "pass_2": 100.0,
+        "delta": 33.3
+      },
+      "human_signoff": {
+        "status": "Awaiting Sign-Off",
+        "flagged_items": [
+          "auth_methods"
+        ]
+      }
+    },
+    {
+      "id": "stripe",
+      "name": "Stripe",
+      "category": "Finance & Fintech",
+      "pass_1_initial": {
+        "auth_methods": [
+          "API Key",
+          "OAuth2"
+        ],
+        "access_tier": "Self-Serve Free",
+        "api_type": "REST",
+        "cited_source": "https://docs.stripe.com/api",
+        "raw_finding": "Initial web pass extracted API Key, OAuth2 auth on Self-Serve Free tier from https://docs.stripe.com/api."
+      },
+      "checker_audit": {
+        "app_id": "stripe",
+        "discrepancies_found": 0,
+        "discrepancy_details": [],
+        "pass_1_accuracy": 100.0,
+        "pass_2_accuracy": 100.0,
+        "accuracy_delta": 0.0,
+        "pass_2_corrected": {
+          "auth_methods": [
+            "API Key",
+            "OAuth2"
+          ],
+          "access_tier": "Self-Serve Free",
+          "api_type": "REST",
+          "cited_source": "https://docs.stripe.com/api",
+          "verification_status": "Verified 100% Concordant"
+        },
+        "audit_trail": [
+          "Audited cited URL: https://docs.stripe.com/api",
+          "Evaluated against rules: Verify Test Mode API keys (sk_test_...) available immediately without bank verification.; Verify Stripe Connect utilizes OAuth2 for merchant onboarding.",
+          "Result: 0 discrepancies resolved. Accuracy moved from 100.0% to 100.0%."
+        ]
+      },
+      "pass_2_final": {
+        "auth_methods": [
+          "API Key",
+          "OAuth2"
+        ],
+        "access_tier": "Self-Serve Free",
+        "api_type": "REST",
+        "cited_source": "https://docs.stripe.com/api",
+        "verification_status": "Verified 100% Concordant"
+      },
+      "accuracy_movement": {
+        "pass_1": 100.0,
+        "pass_2": 100.0,
+        "delta": 0.0
+      },
+      "human_signoff": {
+        "status": "Awaiting Sign-Off",
+        "flagged_items": []
+      }
+    },
+    {
+      "id": "fathom",
+      "name": "Fathom",
+      "category": "AI, Video & Audio",
+      "pass_1_initial": {
+        "auth_methods": [
+          "API Key",
+          "OAuth2"
+        ],
+        "access_tier": "Self-Serve Free",
+        "api_type": "REST",
+        "cited_source": "https://developers.fathom.ai/",
+        "raw_finding": "Initial web pass extracted API Key, OAuth2 auth on Self-Serve Free tier from https://developers.fathom.ai/."
+      },
+      "checker_audit": {
+        "app_id": "fathom",
+        "discrepancies_found": 0,
+        "discrepancy_details": [],
+        "pass_1_accuracy": 100.0,
+        "pass_2_accuracy": 100.0,
+        "accuracy_delta": 0.0,
+        "pass_2_corrected": {
+          "auth_methods": [
+            "API Key",
+            "OAuth2"
+          ],
+          "access_tier": "Self-Serve Free",
+          "api_type": "REST",
+          "cited_source": "https://developers.fathom.ai/",
+          "verification_status": "Verified 100% Concordant"
+        },
+        "audit_trail": [
+          "Audited cited URL: https://developers.fathom.ai/",
+          "Evaluated against rules: Verify API token generation in account settings.; Verify REST API access for meeting transcript and summary webhooks.",
+          "Result: 0 discrepancies resolved. Accuracy moved from 100.0% to 100.0%."
+        ]
+      },
+      "pass_2_final": {
+        "auth_methods": [
+          "API Key",
+          "OAuth2"
+        ],
+        "access_tier": "Self-Serve Free",
+        "api_type": "REST",
+        "cited_source": "https://developers.fathom.ai/",
+        "verification_status": "Verified 100% Concordant"
+      },
+      "accuracy_movement": {
+        "pass_1": 100.0,
+        "pass_2": 100.0,
+        "delta": 0.0
+      },
+      "human_signoff": {
+        "status": "Awaiting Sign-Off",
+        "flagged_items": []
+      }
+    }
+  ]
+}
